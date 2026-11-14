@@ -1692,6 +1692,8 @@ const ART_STYLE = `
   .a-bag { transform-origin: 50% 0; animation: fd-swing 2.4s ease-in-out infinite; }
   .a-bag path { animation: fd-hop 1.2s ease-in-out infinite; }
   .a-sun .rays { transform-origin: center; animation: fd-spin 12s linear infinite; transform-box: view-box; }
+  /* The rays turn around the sun's centre: their own rotate(… 12 12) is in the drawing's coordinates, not their box's. */
+  .a-sun .rays rect { transform-box: view-box; }
   .a-sun .core { transform-origin: center; animation: fd-pulse 3s ease-in-out infinite; }
   .a-beach .umbrella { transform-origin: 50% 100%; animation: fd-sway 3s ease-in-out infinite; }
   .a-beach .wave { fill: color-mix(in srgb, var(--fd-school) 60%, var(--primary-text-color)); opacity: .7; animation: fd-wave 1.5s linear infinite; }
@@ -2043,7 +2045,7 @@ class FamilyDayBase extends HTMLElement {
   }
 
   // The chips under the answer: tomorrow's bin collections ("Recycling tonight"), today's and tomorrow's birthdays,
-  // today's name day. A calendar still loading shows nothing yet (it is never what tomorrow is).
+  // today's and tomorrow's name days. A calendar still loading shows nothing yet (it is never what tomorrow is).
   _extrasOf(today, tomorrow, src, tz) {
     const h = this._hass;
     const read = (id) => {
@@ -2066,8 +2068,11 @@ class FamilyDayBase extends HTMLElement {
     }
     birthdays.sort((a, b) => a.tomorrow - b.tomorrow);
     const c = this._config;
-    const saint = (c.show_saint ?? lang(h, c) === "fr") ? saintOf(today) : null;
-    return { waste, birthdays, saint };
+    // Today's name day, and tomorrow's ("St Albert · tomorrow"): the card speaks of tomorrow.
+    const saints = (c.show_saint ?? lang(h, c) === "fr")
+      ? [saintOf(today), saintOf(tomorrow) && { ...saintOf(tomorrow), tomorrow: true }].filter(Boolean)
+      : [];
+    return { waste, birthdays, saints };
   }
 
   // The chips' HTML (none: empty), under the answer on the full card and under the header on the mini card.
@@ -2084,7 +2089,9 @@ class FamilyDayBase extends HTMLElement {
       ...x.birthdays.map((b) =>
         chip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : "", b.tomorrow ? fmtRel(1, L) : ""].filter(Boolean).join(" · "), this._t("birthday_title"), b.id),
       ),
-      ...(x.saint ? [chip("x-saint", ICONS.flower, x.saint.name, [this._t("saint_title"), x.saint.all.join(", ")].filter(Boolean).join(" : "))] : []),
+      ...x.saints.map((n) =>
+        chip("x-saint", ICONS.flower, n.tomorrow ? `${n.name} · ${fmtRel(1, L)}` : n.name, [this._t("saint_title"), n.all.join(", ")].filter(Boolean).join(" : ")),
+      ),
     ];
     return chips.length ? `<div class="extras${cls}">${chips.join("")}</div>` : "";
   }

@@ -339,7 +339,7 @@ test("the language follows Home Assistant, or the `language` option, and the tim
   const { fd, hass } = setup(SCENARIOS.sunday);
   const fr = text(await mount(fd, { ...hass, language: "fr", locale: { language: "fr", time_zone: "server" } }));
   assert.match(fr, /Demain Lundi 16 novembre École/);
-  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert Alex 8:00 · French/);
+  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert Ste Marguerite · demain Alex 8:00 · French/);
   assert.match(fr, /Christmas holidays · dans 34 jours Sam\. 19 déc\./);
   const de = text(await mount(fd, hass, { language: "de" }));
   assert.match(de, /Morgen Montag, 16. November Schule/);
@@ -448,7 +448,8 @@ test("chips: tomorrow's bins, today's and tomorrow's birthdays, today's name day
   assert.doesNotMatch(out, /St Albert/);
   assert.match(html(card), /class="xchip w-yellow clickable" role="button" tabindex="0" data-entity="calendar.collecte_dechets"/);
   const saint = await mount(fd, hass, { show_saint: true });
-  assert.match(text(saint), /Lucas · tomorrow St Albert/);
+  // Today's name day, then tomorrow's (Monday, November 16).
+  assert.match(text(saint), /Lucas · tomorrow St Albert Ste Marguerite · tomorrow/);
   assert.match(html(saint), /title="Name day : St Albert le Grand"/);
   const off = text(await mount(fd, hass, { show_waste: false, show_birthdays: false }));
   assert.doesNotMatch(off, /Recycling|Emma/);
@@ -490,4 +491,10 @@ test("name days, bin colours, birthday names and ages", () => {
   assert.equal(fd.birthdayName("Emma's birthday"), "Emma");
   assert.equal(fd.birthdayAge({ summary: "Léa", description: "née en 2017", start: "2026-11-15" }), 9);
   assert.equal(fd.birthdayAge({ summary: "Léa", description: "", start: "2026-11-15" }), null);
+});
+
+test("the sun's rays turn around its centre in every browser (transform-box of the rays)", () => {
+  // `.art-svg rect { transform-box: fill-box }` would make Safari read a ray's rotate(… 12 12) around the ray's own box.
+  const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
+  assert.match(src, /\.a-sun \.rays rect \{ transform-box: view-box; \}/);
 });

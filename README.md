@@ -38,7 +38,7 @@ Made for French families: the school holidays come from the education ministry's
 - **One row per child** on a school day, from Pronote: the time of the first lesson and its subject (a cancelled lesson is skipped), **No lessons**, or **Timetable not known yet**
 - **School holidays**: the next ones with a countdown (**Christmas holidays · in 34 days**), or, during the holidays, a progress bar with the day back at school (**back in 7 days**, day 10 of 16)
 - **Next public holiday** with its date and countdown
-- **Chips under the answer**: tomorrow's **bin collections** (**Recycling tonight**, tinted with the colour of the bin), **today's and tomorrow's birthdays** from a calendar (**Emma · 9 years**, **Lucas · tomorrow**) and, in French, **today's name day** (**St Albert**); each opens its calendar, and the mini card shows them under its header
+- **Chips under the answer**: tomorrow's **bin collections** (**Recycling tonight**, tinted with the colour of the bin), **today's and tomorrow's birthdays** from a calendar (**Emma · 9 years**, **Lucas · tomorrow**) and, in French, **today's and tomorrow's name days** (**St Albert**, **Ste Marguerite · tomorrow**); each opens its calendar, and the mini card shows them under its header
 - Mini card: one line for tomorrow (**Tomorrow: school 8:00 AM** / **No school tomorrow**), the holidays countdown under it and the pill; its **detail button** (top right) unfolds the full card, and a click anywhere outside the card folds it back
 - Click the answer, a child or a line to open its source in Home Assistant (more-info dialog)
 - Visual editor in the dashboard UI for both cards (the list of children stays in YAML)
@@ -175,7 +175,7 @@ language: fr
 | `birthdays` | both | Birthday calendars found | Calendar of the birthdays, or a list of them; `false` to use none |
 | `show_waste` | both | `true` | Chip of each bin collected tomorrow (to put out tonight) |
 | `show_birthdays` | both | `true` | Chip of each birthday of today and tomorrow |
-| `show_saint` | both | `true` in French, else `false` | Chip of today's name day, from the French calendar of saints |
+| `show_saint` | both | `true` in French, else `false` | Chips of today's and tomorrow's name days, from the French calendar of saints |
 | `show_countdown` | mini | `true` | School holidays countdown under the mini card's answer |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card (with the same options, so `show_children`, `show_holidays`… can be set on the mini card too, in YAML or in its visual editor) and switches back; a click outside the card also brings the compact view back. `false` removes the button |
 | `language` | both | Auto | Force language: `en`, `fr`, `de`, `es`, `it`, `nl`, `pt`, `pl`, `sr`, `sr-Latn`, `ro`, `da`, `sv`, `bg`, `ru`, `uk`, `hu`, `sk`, `cs`, `sl`, `lv` or `el` (auto-detects from HA settings) |
@@ -285,7 +285,7 @@ The chips sit under the answer on the full card and under the header on the mini
 
 - **Bins**: every event of the bin calendars that starts tomorrow, one chip per kind (**Recycling tonight**). Its colour comes from the words of its kind: yellow (packaging, `jaune`, `recycling`), blue (paper), brown (food and garden waste, `bio`), green (glass, `verre`), grey (household waste, `ordures ménagères`), else amber.
 - **Birthdays**: the events of today and tomorrow of the birthday calendars, today's first. The name is the event's title without the birthday words (`Anniversaire de Léa`, `Léa's birthday` → `Léa`); a birth year in the title or the description (`née en 2017`) gives the age.
-- **Name day**: today's name day of the traditional French calendar (the *fêtes à souhaiter*), built into the card: **St Albert**, **Ste Cécile**, or the feast (**Toussaint**). Its tooltip lists the saints of the day from the open data set [Les saints et fêtes du calendrier](https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier) of data.gouv.fr (the liturgical saints, where the name day is often missing). It is on by default when the card speaks French.
+- **Name day**: today's and tomorrow's name days of the traditional French calendar (the *fêtes à souhaiter*), built into the card: **St Albert**, **Ste Marguerite · tomorrow**, or the feast (**Toussaint**). Its tooltip lists the saints of the day from the open data set [Les saints et fêtes du calendrier](https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier) of data.gouv.fr (the liturgical saints, where the name day is often missing). It is on by default when the card speaks French.
 
 ## Development
 
