@@ -36,7 +36,7 @@ Made for French families: the school holidays come from the education ministry's
 - **One row per child** on a school day, from Pronote: the time of the first lesson and its subject (a cancelled lesson is skipped), **No lessons**, or **Timetable not known yet**
 - **School holidays**: the next ones with a countdown (**Christmas holidays · in 34 days**), or, during the holidays, a progress bar with the day back at school (**back in 7 days**, day 10 of 16)
 - **Next public holiday** with its date and countdown
-- **Chips under the answer**: tomorrow's **bin collections** (**Recycling tonight**, tinted with the colour of the bin), **today's and tomorrow's birthdays** from a calendar (**Emma · 9 years**, **Lucas · tomorrow**) and, in French, **today's name day** (**St Albert**); each opens its calendar, and the mini card shows them under its header
+- **Chips under the answer**: tomorrow's **bin collections** (**Recycling tonight**, tinted with the colour of the bin), **today's and tomorrow's birthdays** from a calendar (**Emma · 9 years**, **Lucas · tomorrow**) and, in French, **today's saints** (**St Albert le Grand**); each opens its calendar, and the mini card shows them under its header
 - Mini card: one line for tomorrow (**Tomorrow: school 8:00 AM** / **No school tomorrow**), the holidays countdown under it and the pill; its **detail button** (top right) unfolds the full card, and a click anywhere outside the card folds it back
 - Click the answer, a child or a line to open its source in Home Assistant (more-info dialog)
 - Visual editor in the dashboard UI for both cards (the list of children stays in YAML)
@@ -283,7 +283,7 @@ The chips sit under the answer on the full card and under the header on the mini
 
 - **Bins**: every event of the bin calendars that starts tomorrow, one chip per kind (**Recycling tonight**). Its colour comes from the words of its kind: yellow (packaging, `jaune`, `recycling`), blue (paper), brown (food and garden waste, `bio`), green (glass, `verre`), grey (household waste, `ordures ménagères`), else amber.
 - **Birthdays**: the events of today and tomorrow of the birthday calendars, today's first. The name is the event's title without the birthday words (`Anniversaire de Léa`, `Léa's birthday` → `Léa`); a birth year in the title or the description (`née en 2017`) gives the age.
-- **Name day**: today's saint of the French calendar of name days (the *fêtes à souhaiter*), built into the card: **St Martin**, **Ste Cécile**, or the feast (**Toussaint**). It is on by default when the card speaks French.
+- **Name day**: today's saints, from the open data set [Les saints et fêtes du calendrier](https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier) of data.gouv.fr, built into the card. The chip shows the saint of the traditional French calendar of name days when the data set has it, else the first of the day (**St Albert le Grand**, **Ste Cécile**, **Toussaint**); its tooltip lists every saint of the day. It is on by default when the card speaks French.
 
 ## Development
 
@@ -337,6 +337,10 @@ The names of the holidays come from your calendars, in their own language. Contr
 ## Credits
 
 The Pronote logo comes from the [Home Assistant brands](https://github.com/home-assistant/brands) repository; Pronote is a trademark of Index Éducation. The Workday, Holiday and Remote calendar pictures are their Material Design Icons. This project is not affiliated with Index Éducation, the hass-pronote project or the French Ministry of Education.
+
+## Data
+
+The saints of the name day chip come from [Les saints et fêtes du calendrier](https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier) (data.gouv.fr), under the [Licence Ouverte / Open Licence](https://www.etalab.gouv.fr/licence-ouverte-open-licence/), version of 2024-09-07, with May and June put back in place, accents and typos fixed and the days' saints reordered.
 
 ## License
 
