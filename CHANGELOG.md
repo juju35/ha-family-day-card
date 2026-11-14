@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 - 2026-11-14
+
+### Fixes
+- The weekend picture: the sun's rays turned around the corner of each ray in Safari and the iOS app, and flew around the card; they turn around the sun again.
+- Name day: tomorrow's name day is shown next to today's (**St Sidoine**, **St Albert · tomorrow**), so that today's is no longer read as tomorrow's under the answer about tomorrow.
+
 ## 1.1.1 - 2026-11-14
 
 ### Fixes
