@@ -14,7 +14,7 @@ const pair = (file, type, width, at, config = {}, extra = {}, first = "light") =
 
 export const shots = [
   // Sunday evening: school tomorrow, each child's first lesson, the Christmas holidays and Christmas Day ahead.
-  ...pair("card", "family-day-card", 420, "sunday"),
+  ...pair("card", "family-day-card", 420, "sunday", { show_saint: true }),
   ...pair("mini-card", "family-day-mini-card", 380, "sunday"),
   // Friday evening: the weekend tomorrow.
   ...pair("card-weekend", "family-day-card", 420, "friday", {}, {}, "dark"),

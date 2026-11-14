@@ -36,6 +36,7 @@ Made for French families: the school holidays come from the education ministry's
 - **One row per child** on a school day, from Pronote: the time of the first lesson and its subject (a cancelled lesson is skipped), **No lessons**, or **Timetable not known yet**
 - **School holidays**: the next ones with a countdown (**Christmas holidays · in 34 days**), or, during the holidays, a progress bar with the day back at school (**back in 7 days**, day 10 of 16)
 - **Next public holiday** with its date and countdown
+- **Chips under the answer**: tomorrow's **bin collections** (**Recycling tonight**, tinted with the colour of the bin), **today's and tomorrow's birthdays** from a calendar (**Emma · 9 years**, **Lucas · tomorrow**) and, in French, **today's name day** (**St Albert**); each opens its calendar, and the mini card shows them under its header
 - Mini card: one line for tomorrow (**Tomorrow: school 8:00 AM** / **No school tomorrow**), the holidays countdown under it and the pill; its **detail button** (top right) unfolds the full card, and a click anywhere outside the card folds it back
 - Click the answer, a child or a line to open its source in Home Assistant (more-info dialog)
 - Visual editor in the dashboard UI for both cards (the list of children stays in YAML)
@@ -51,6 +52,8 @@ Made for French families: the school holidays come from the education ministry's
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/remote_calendar.svg" alt="" width="16"> [Remote calendar](https://www.home-assistant.io/integrations/remote_calendar/) (core, `remote_calendar`) | The school holidays calendar: the French education ministry's ICS of your zone ([Calendrier scolaire](https://data.education.gouv.fr/explore/dataset/fr-en-calendrier-scolaire/) on data.education.gouv.fr), or any calendar whose name says school holidays (`vacances`, `scolaire`, `school`, `Ferien`…) |
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/holiday.svg" alt="" width="16"> [Holiday](https://www.home-assistant.io/integrations/holiday/) (core, `holiday`) | The public holidays calendar of your country |
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/pronote.png" alt="" width="16"> [Pronote](https://github.com/delphiki/hass-pronote) (custom, `pronote`) | The timetables of each child (one device per child): today's, tomorrow's and the next day's lessons, their start, subject and cancellation |
+| [Waste Collection Schedule](https://github.com/mampfes/hacs_waste_collection_schedule) (custom, `waste_collection_schedule`) | Its calendars: tomorrow's bin collections (any calendar named after the bins works too: `poubelle`, `déchets`, `collecte`, `waste`, `Müll`…) |
+| [Local calendar](https://www.home-assistant.io/integrations/local_calendar/) (core, `local_calendar`) or any calendar | The birthdays: a calendar whose name says birthdays (`anniversaires`, `birthdays`, `Geburtstage`…), one yearly event per birthday, with the birth year in it for the age |
 
 None is required: without Workday, school days are Monday to Friday (or `school_days`); without a school holidays or public holidays calendar, its line and its kind of day are left out; without Pronote, the answer reads **School day** and there are no children's rows. The cards need at least one of them.
 
@@ -134,6 +137,12 @@ show_subtitle: true
 show_children: true
 show_holidays: true
 show_public_holidays: true
+waste: calendar.collecte_dechets
+birthdays:
+  - calendar.anniversaires
+show_waste: true
+show_birthdays: true
+show_saint: true
 language: fr
 ```
 
@@ -160,6 +169,11 @@ language: fr
 | `show_children` | both | `true` | One row per child on a school day (Pronote) |
 | `show_holidays` | both | `true` | School holidays line: the next ones with a countdown, or the current ones with their progress |
 | `show_public_holidays` | both | `true` | Next public holiday line |
+| `waste` | both | Bin calendars found | Calendar of the bin collections, or a list of them; `false` to use none |
+| `birthdays` | both | Birthday calendars found | Calendar of the birthdays, or a list of them; `false` to use none |
+| `show_waste` | both | `true` | Chip of each bin collected tomorrow (to put out tonight) |
+| `show_birthdays` | both | `true` | Chip of each birthday of today and tomorrow |
+| `show_saint` | both | `true` in French, else `false` | Chip of today's name day, from the French calendar of saints |
 | `show_countdown` | mini | `true` | School holidays countdown under the mini card's answer |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card (with the same options, so `show_children`, `show_holidays`… can be set on the mini card too, in YAML or in its visual editor) and switches back; a click outside the card also brings the compact view back. `false` removes the button |
 | `language` | both | Auto | Force language: `en`, `fr`, `de`, `es`, `it`, `nl`, `pt`, `pl`, `sr`, `sr-Latn`, `ro`, `da`, `sv`, `bg`, `ru`, `uk`, `hu`, `sk`, `cs`, `sl`, `lv` or `el` (auto-detects from HA settings) |
@@ -262,6 +276,14 @@ On a school day, each child's row reads the Pronote timetable that is about tomo
 ### Holidays and public holidays
 
 The calendars are read through the Home Assistant API for 100 days back and 400 days ahead, once for all the cards of the page, again every 6 hours, when the calendar's state changes and on the next day. The school holidays line shows the holidays going on today (their progress, day N of the total and the day back at school, which is the end of the event) or else the next ones with a countdown; the public holidays line shows the next public holiday from today on.
+
+### Bins, birthdays and name day
+
+The chips sit under the answer on the full card and under the header on the mini card, whatever tomorrow is; a chip opens its calendar.
+
+- **Bins**: every event of the bin calendars that starts tomorrow, one chip per kind (**Recycling tonight**). Its colour comes from the words of its kind: yellow (packaging, `jaune`, `recycling`), blue (paper), brown (food and garden waste, `bio`), green (glass, `verre`), grey (household waste, `ordures ménagères`), else amber.
+- **Birthdays**: the events of today and tomorrow of the birthday calendars, today's first. The name is the event's title without the birthday words (`Anniversaire de Léa`, `Léa's birthday` → `Léa`); a birth year in the title or the description (`née en 2017`) gives the age.
+- **Name day**: today's saint of the French calendar of name days (the *fêtes à souhaiter*), built into the card: **St Martin**, **Ste Cécile**, or the feast (**Toussaint**). It is on by default when the card speaks French.
 
 ## Development
 

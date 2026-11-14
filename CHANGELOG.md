@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 - 2026-11-14
+
+### Features
+- **Bins, birthdays and name day** ([#2](https://github.com/juju35/ha-family-day-card/issues/2), suggested by @mielikki33): chips under the answer (under the header on the mini card) for tomorrow's bin collections (**Recycling tonight**, in the colour of the bin, from Waste Collection Schedule or any calendar named after the bins), today's and tomorrow's birthdays from a birthday calendar (**Emma · 9 years**, **Lucas · tomorrow**, the age from a birth year in the event) and today's name day of the French calendar (**St Albert**, on by default in French). New options `waste`, `birthdays`, `show_waste`, `show_birthdays` and `show_saint`, also in the visual editors.
+
 ## 1.0.0 - 2026-11-14
 
 ### Features

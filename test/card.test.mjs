@@ -65,6 +65,7 @@ test("calendar events: all-day and timed events, end exclusive, ignored summarie
     start: "2026-12-19",
     end: "2027-01-04",
     summary: "Vacances de Noël",
+    description: "",
   });
   // A timed event ending at midnight does not cover the next day; a timed one in Paris.
   assert.equal(fd.eventSpan({ start: { dateTime: "2026-12-24T23:00:00Z" }, end: { dateTime: "2026-12-25T23:00:00Z" } }, "Europe/Paris").end, "2026-12-26");
@@ -145,8 +146,9 @@ test("Sunday evening: school tomorrow at the earliest first lesson, a row per ch
   assert.match(out, /Christmas holidays · in 34 days Sat, Dec 19/);
   assert.match(out, /Christmas Day · in 40 days Fri, Dec 25/);
   assert.match(html(card), /class="headline k-school/);
-  // Each calendar read once, with a window around today; Workday asked about tomorrow only.
-  assert.equal(calls.api.length, 2);
+  // Each calendar read once (school and public holidays, birthdays, bins), with a window around today; Workday asked
+  // about tomorrow only.
+  assert.equal(calls.api.length, 4);
   assert.ok(calls.api.every((p) => /start=2026-08-07/.test(decodeURIComponent(p))));
   assert.deepEqual(
     calls.ws.map((m) => m.service_data.check_date),
@@ -160,7 +162,7 @@ test("the calendars are read once for every card of the page and not again on ea
   await mount(fd, hass, {}, fd.FamilyDayMiniCard);
   a.hass = { ...hass, states: { ...hass.states } };
   await flush();
-  assert.equal(calls.api.length, 2);
+  assert.equal(calls.api.length, 4);
 });
 
 test("no school tomorrow: weekend, public holiday, day off, holidays — without the children's rows", async () => {
@@ -337,7 +339,7 @@ test("the language follows Home Assistant, or the `language` option, and the tim
   const { fd, hass } = setup(SCENARIOS.sunday);
   const fr = text(await mount(fd, { ...hass, language: "fr", locale: { language: "fr", time_zone: "server" } }));
   assert.match(fr, /Demain Lundi 16 novembre École/);
-  assert.match(fr, /École à 8:00 Alex 8:00 · French/);
+  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert Alex 8:00 · French/);
   assert.match(fr, /Christmas holidays · dans 34 jours Sam\. 19 déc\./);
   const de = text(await mount(fd, hass, { language: "de" }));
   assert.match(de, /Morgen Montag, 16. November Schule/);
@@ -418,10 +420,66 @@ test("the editors keep options at their default out of the YAML", () => {
   assert.ok(!names.includes("children") && !names.includes("ignore"), "children and ignore stay YAML only");
   assert.equal(ed._form.computeLabel({ name: "workday" }), "Workday sensor");
   assert.equal(ed._form.data.show_countdown, true);
+  for (const n of ["waste", "birthdays", "show_waste", "show_birthdays", "show_saint"]) assert.ok(names.includes(n), n);
+  // The name day is on by default in French only: the form shows it so, and keeps it out of the YAML at that default.
+  assert.equal(ed._form.data.show_saint, false);
+  const fr = new fd.FamilyDayCardEditor();
+  fr.setConfig({ language: "fr" });
+  fr.hass = { states: {}, entities: {}, devices: {}, language: "en" };
+  assert.equal(fr._form.data.show_saint, true);
+  const sent = [];
+  fr.dispatchEvent = (ev) => sent.push(ev.detail.config);
+  fr._form.listeners["value-changed"]({ detail: { value: { language: "fr", show_saint: true }, }, stopPropagation() {} });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr" });
 });
 
 test("the cards register their pickers and sizes", () => {
   const fd = load();
   assert.deepEqual(JSON.parse(JSON.stringify(fd.window.customCards.map((c) => c.type))), ["family-day-card", "family-day-mini-card"]);
   assert.deepEqual({ ...new fd.FamilyDayCard().getGridOptions() }, { columns: 12, min_columns: 6 });
+});
+
+test("chips: tomorrow's bins, today's and tomorrow's birthdays, today's name day in French (#2)", async () => {
+  const { fd, hass } = setup(SCENARIOS.sunday);
+  const card = await mount(fd, hass);
+  const out = text(card);
+  assert.match(out, /School at 8:00 AM Recycling tonight Emma · 9 years Lucas · tomorrow Alex/);
+  // The name days are French: off by default in another language, on with show_saint.
+  assert.doesNotMatch(out, /St Albert/);
+  assert.match(html(card), /class="xchip w-yellow clickable" role="button" tabindex="0" data-entity="calendar.collecte_dechets"/);
+  assert.match(text(await mount(fd, hass, { show_saint: true })), /Lucas · tomorrow St Albert/);
+  const off = text(await mount(fd, hass, { show_waste: false, show_birthdays: false }));
+  assert.doesNotMatch(off, /Recycling|Emma/);
+  // A calendar set in the options replaces the ones found; false turns them off.
+  assert.doesNotMatch(text(await mount(fd, hass, { birthdays: false })), /Emma/);
+  // The mini card shows them under its header.
+  const mini = await mount(fd, hass, {}, fd.FamilyDayMiniCard);
+  assert.match(html(mini), /class="extras mini"/);
+  assert.match(text(mini), /Recycling tonight/);
+  // A weekend: no collection on Saturday, no birthday.
+  const { fd: fd2, hass: h2 } = setup(SCENARIOS.friday);
+  assert.doesNotMatch(html(await mount(fd2, h2)), /class="extras/);
+});
+
+test("name days, bin colours, birthday names and ages", () => {
+  const fd = load();
+  assert.equal(fd.saintOf("2026-11-11"), "St Martin");
+  assert.equal(fd.saintOf("2026-11-22"), "Ste Cécile");
+  assert.equal(fd.saintOf("2026-06-29"), "Sts Pierre et Paul");
+  assert.equal(fd.saintOf("2026-11-01"), "Toussaint");
+  assert.equal(fd.saintOf("2028-02-29"), "St Auguste");
+  for (const m of fd.SAINTS.map((x) => x.length)) assert.ok([29, 30, 31].includes(m));
+  assert.deepEqual([...fd.SAINTS.map((x) => x.length)], [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+  assert.equal(fd.binColor("Poubelle jaune"), "yellow");
+  assert.equal(fd.binColor("Verre"), "green");
+  assert.equal(fd.binColor("Papier / carton"), "blue");
+  assert.equal(fd.binColor("Biodéchets"), "brown");
+  assert.equal(fd.binColor("Ordures ménagères"), "gray");
+  assert.equal(fd.binColor("Encombrants"), "default");
+  assert.equal(fd.birthdayName("Anniversaire de Léa"), "Léa");
+  assert.equal(fd.birthdayName("Anniversaire d'Inès"), "Inès");
+  assert.equal(fd.birthdayName("🎂 Léa (2017)"), "Léa");
+  assert.equal(fd.birthdayName("Emma's birthday"), "Emma");
+  assert.equal(fd.birthdayAge({ summary: "Léa", description: "née en 2017", start: "2026-11-15" }), 9);
+  assert.equal(fd.birthdayAge({ summary: "Léa", description: "", start: "2026-11-15" }), null);
 });
