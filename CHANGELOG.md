@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1 - 2026-11-14
+
+### Fixes
+- Name day chip: it shows the name day to wish of the traditional French calendar again (**St Gaston** on February 6, **Ste Sophie** on May 25), not the first liturgical saint of the day. data.gouv.fr's data set lists the liturgical saints, where 135 name days of 366 are missing; its saints of the day stay in the chip's tooltip.
+
 ## 1.1.0 - 2026-11-14
 
 ### Features

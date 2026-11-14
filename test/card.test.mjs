@@ -339,7 +339,7 @@ test("the language follows Home Assistant, or the `language` option, and the tim
   const { fd, hass } = setup(SCENARIOS.sunday);
   const fr = text(await mount(fd, { ...hass, language: "fr", locale: { language: "fr", time_zone: "server" } }));
   assert.match(fr, /Demain Lundi 16 novembre École/);
-  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert le Grand Alex 8:00 · French/);
+  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert Alex 8:00 · French/);
   assert.match(fr, /Christmas holidays · dans 34 jours Sam\. 19 déc\./);
   const de = text(await mount(fd, hass, { language: "de" }));
   assert.match(de, /Morgen Montag, 16. November Schule/);
@@ -447,7 +447,9 @@ test("chips: tomorrow's bins, today's and tomorrow's birthdays, today's name day
   // The name days are French: off by default in another language, on with show_saint.
   assert.doesNotMatch(out, /St Albert/);
   assert.match(html(card), /class="xchip w-yellow clickable" role="button" tabindex="0" data-entity="calendar.collecte_dechets"/);
-  assert.match(text(await mount(fd, hass, { show_saint: true })), /Lucas · tomorrow St Albert le Grand/);
+  const saint = await mount(fd, hass, { show_saint: true });
+  assert.match(text(saint), /Lucas · tomorrow St Albert/);
+  assert.match(html(saint), /title="Name day : St Albert le Grand"/);
   const off = text(await mount(fd, hass, { show_waste: false, show_birthdays: false }));
   assert.doesNotMatch(off, /Recycling|Emma/);
   // A calendar set in the options replaces the ones found; false turns them off.
@@ -464,15 +466,16 @@ test("chips: tomorrow's bins, today's and tomorrow's birthdays, today's name day
 test("name days, bin colours, birthday names and ages", () => {
   const fd = load();
   const saint = (k) => fd.saintOf(k)?.name;
-  assert.equal(saint("2026-11-11"), "St Martin de Tours");
+  assert.equal(saint("2026-11-11"), "St Martin");
   assert.equal(saint("2026-11-22"), "Ste Cécile");
-  assert.equal(saint("2026-06-29"), "St Pierre");
+  assert.equal(saint("2026-06-29"), "Sts Pierre et Paul");
   assert.equal(saint("2026-11-01"), "Toussaint");
-  assert.equal(saint("2026-01-03"), "Ste Geneviève");
-  assert.equal(saint("2028-02-29"), "St Oswald de Worcester");
-  // May and June put back in place: Joan of Arc on May 30, Saint John the Baptist on June 24.
+  assert.equal(saint("2026-02-06"), "St Gaston");
+  assert.equal(saint("2028-02-29"), "St Auguste");
+  assert.deepEqual([...fd.NAME_DAYS.map((x) => x.length)], [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+  // The tooltip's saints of the day come from data.gouv.fr, May and June put back in place.
   assert.ok(fd.saintOf("2026-05-30").all.includes("Ste Jeanne D'Arc"));
-  assert.equal(saint("2026-06-24"), "Jean le Baptiste");
+  assert.ok(fd.saintOf("2026-02-06").all.includes("St Paul Miki"));
   assert.deepEqual([...fd.SAINTS.map((x) => x.length)], [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
   assert.ok(fd.SAINTS.flat(2).every((n) => n && !/Ã|à®|à«| {2}/.test(n)), "no broken accent");
   assert.equal(fd.binColor("Poubelle jaune"), "yellow");

@@ -1270,7 +1270,8 @@ const CALENDAR_REFRESH_MS = 6 * 3600e3;
 // Open Licence: https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier), one month per entry, days split
 // by "|", the saints of a day by ";". Fixed from the file of 2024-09-07: May and June put back in place (they are
 // swapped there, June with a 31st), broken accents and typos corrected, and on each day the saint of the traditional
-// French calendar of name days moved first when the data set has it (it gives the saints in alphabetical order).
+// French calendar of name days moved first when the data set has it (it gives the saints in alphabetical order). These
+// are the liturgical saints: the name days to wish (NAME_DAYS, below) are often not among them.
 const SAINTS = [
   "Jour de l'an;Ste Marie Mère de Dieu;Ste Euphrosine;St Odilon|St Basile le Grand;St Adélard (ou Adalhard);St Grégoire de Nazianze (le Jeune);St Macaire le Jeune|Ste Geneviève;Ste Bertille;St Daniel|Ste Angèle de Foligno;St Grégoire de Langres;St Marcien;St Robert de Reims|Ste Emilienne;St Télesphore|St Melaine de Rennes;St Balthazar;St Gaspard;St Guérin;St Melchior|St Raymond de Penyafort;St Aldric;St Canut Lavard;St Reynold|St Lucien;Ste Gudule|St Adrien de Canterbury;St Julien l'Hospitalier|St Guillaume de Bourges;Ste Séthride|Ste Fidelmie;St Théodose le Cénobiarque|St Arcade;Ste Césarie;Ste Tatienne (ou Tatiana)|St Hilaire de Poitiers;St Léonce de Césarée|St Engelmar;St Félix de Nole;Ste Macrine l'Ancienne|St Paul l'Ermite;Ste Tarcice|St Marcel 1er|St Antoine le Grand;St Sulpice le Pieux|Ste Prisque (ou Prisca);Ste Thècle|St Canut;Ste Messaline;Ste Pia|St Sébastien;St Fabien|Ste Agnès de Rome;St Fructueux|St Vincent Pallotti;St Vincent, Diacre|St Barnard;Ste Erémentienne;St Ildefonse de Tolède;Ste Lufthilde|St François de Sales|Conversion de St Paul|St Timothée;St Tite|Ste Angèle de Mérici;St Julien du Mans|St Callinique;Ste Cannera|St Gildas le Sage;St Valère;St Sulpice|Ste Martine;Ste Aldegonde;Ste Hyacinthe de Mariscotti|Ste Marcelle;St Cyrus;St Eusèbe, ermite;St Jean Bosco;St Zotique",
   "Ste Brigitte de Kildare;St Jean de la Grille;St Sévère de Ravenne|St Adalbaud;Chandeleur;Ste Hadéloge|St Blaise de Sébaste;St Anschaire|St André Corsini;St Gilbert de Sempringham;Ste Jeanne de Valois|Ste Agathe de Catane|Ste Dorothée;St Paul Miki|Ste Julienne de Bologne;St Chryseuil|St Jean de Matha;St Jérôme Emiliani|Ste Apolline|Ste Scholastique|Notre-Dame de Lourdes;St Adolphe|Ste Eulalie de Barcelone|Ste Béatrice d'Ornacieux;St Polyeucte|St Valentin;St Méthode|St Faustin;St Jovite|Ste Julienne de Nicomédie;St Onésime|St Polychrone;St Théodule|St Claude;St Flavien de Constantinople;St Fructule;Ste Gertrude Comensoli|St Gabin de Rome;St Boniface de Lausanne;St Conrad de Plaisance|Ste Aimée|St Pierre Damien|Chaire St Pierre Apôtre;Ste Marguerite de Cortone|St Lazare;St Polycarpe de Smyrne|St Modeste;Ste Primitive|St Césaire de Nazianze;St Tarasius;Ste Walburge|St Nestor;St Alexandre|Ste Honorine;St Gabriel de l'Addolorata|St Romain de Condat;St Hilaire, pape;St Théophile d'Adana|St Oswald de Worcester",
@@ -1285,11 +1286,32 @@ const SAINTS = [
   "Toussaint (tous les saints);St Austremoine;St Floribert;St Mathurin|Défunts;St Anempodiste;St Elpidephore|St Hubert;St Gwénaël;St Martin de Porrès|St Charles Borromée;St Porphyre|Ste Elisabeth (mère de Jean-Baptiste);St Zacharie (père de Jean-Baptiste)|St Léonard de Noblac|Ste Carine;St Ernest;St Florent de Strasbourg;St Willibrord|St Geoffroy (ou Godefroy);St Maur|St Théodore le Tiron|St Léon le Grand;St André Avellin;St Tryphon|St Martin de Tours;St Théodore le Studite|St Christin;St Josaphat|St Brice;St Didace;St Nicolas 1er le Grand|St Saens;St Sérapion|St Albert le Grand|Ste Marguerite d'Ecosse;Ste Gertrude la Grande|Ste Elisabeth de Hongrie;St Aignan;St Grégoire le Thaumaturge|St Hésyque d'Antioche;St Mummole;St Pierre, apôtre;St Tanguy|Ste Ermenburge;St Exupère|St Edmond;St Félix de Valois;St Octave|Ste Amalberge;Présence de Marie|Ste Cécile;Ste Appia;St Philémon|St Clément 1er|Ste Flora;St Chrysogone;Ste Maria;St Romain du Mans|Ste Catherine d'Alexandrie;Ste Joconde;St Moïse|Ste Delphine;St Conrad de Constance;St Gautier d'Aulne|St Séverin;St Maxime de Riez|St Jacques de la Marche;Ste Catherine Labouré;St Sosthène|St Saturnin;St Hilaire;Ste Illuminée|St André, apôtre;Ste Justine",
   "St Diodore;St Eloi|Ste Viviane (ou Bibiane);Ste Aurélie|St François-Xavier|Ste Barbe;St Jean Damascène|St Gérard;St Nicet;St Sabbas|St Nicolas de Myre|St Ambroise de Milan;St Agathon|Immaculée conception;Ste Gonthilde;St Romaric|St Pierre Fourier;Ste Léocadie|St Miltiade|St Daniel le Stylite;St Damasse 1er|Ste Jeanne-Françoise de Chantal|Ste Lucie de Syracuse;St Josse de Bretagne;Ste Odile|St Jean de la Croix|Ste Ninon;Ste Marie Crucifiée de Rose|Ste Adélaïde;St Adon|St Calanique;St Judicaël;Ste Olympiade|St Gatien;St Zozime|St Urbain IV;St Nemèse|St Théophile;St Ammon|St Pierre Casinius;St Dioscore;St Honorat de Toulouse;St Thémistocle|Ste Françoise-Xavière Cabrini;St Flavien;St Zénon|Ste Anatolie;St Servule;Ste Victoire|Ste Adèle;St Delphin;Ste Irmine;St Métrobe|Noël;Ste Adalsinde;Ste Alburge|St Etienne de Protomartyr;St Denys|St Jean l'Evangéliste, apôtre|Sts Innocents|St David;St Thomas Becket|St Sabin (ou Sabinien)|St Sylvestre;Ste Colombe de Sens;Ste Mélanie la Jeune;St Potentin"
 ].map((m) => m.split("|").map((d) => d.split(";")));
-/** The saints of a day ("YYYY-MM-DD"): { name (the first, short: "St Martin de Tours", "Toussaint"), all }, or null. */
+// Name days of the traditional French calendar (the "fêtes à souhaiter"), one month per entry, one day per name: a
+// plain name is a saint (St), "*" a female saint (Ste), "+" several (Sts), "!" a feast. The chip shows them; its
+// tooltip lists the saints of the day from the data set above.
+const NAME_DAYS = [
+  "!Jour de l'An|Basile|*Geneviève|Odilon|Édouard|Mélaine|Raymond|Lucien|*Alix|Guillaume|Paulin|*Tatiana|*Yvette|*Nina|Rémi|Marcel|*Roseline|*Prisca|Marius|Sébastien|*Agnès|Vincent|Barnard|François de Sales|!Conversion de saint Paul|*Paule|*Angèle|Thomas d'Aquin|Gildas|*Martine|*Marcelle",
+  "*Ella|!Présentation du Seigneur|Blaise|*Véronique|*Agathe|Gaston|*Eugénie|*Jacqueline|*Apolline|Arnaud|!Notre-Dame de Lourdes|Félix|*Béatrice|Valentin|Claude|*Julienne|Alexis|*Bernadette|Gabin|*Aimée|Pierre Damien|*Isabelle|Lazare|Modeste|Roméo|Nestor|*Honorine|Romain|Auguste",
+  "Aubin|Charles le Bon|Guénolé|Casimir|*Olive|*Colette|*Félicité|Jean de Dieu|*Françoise|Vivien|*Rosine|*Justine|Rodrigue|*Mathilde|*Louise|*Bénédicte|Patrice|Cyrille|Joseph|Herbert|*Clémence|*Léa|Victorien|*Catherine de Suède|!Annonciation|*Larissa|Habib|Gontran|*Gwladys|Amédée|Benjamin",
+  "Hugues|*Sandrine|Richard|Isidore|*Irène|Marcellin|Jean-Baptiste de La Salle|*Julie|Gautier|Fulbert|Stanislas|Jules|*Ida|Maxime|Paterne|Benoît-Joseph|Anicet|Parfait|*Emma|*Odette|Anselme|Alexandre|Georges|Fidèle|Marc|*Alida|*Zita|*Valérie|*Catherine de Sienne|Robert",
+  "!Fête du Travail|Boris|+Philippe et Jacques|Sylvain|*Judith|*Prudence|*Gisèle|Désiré|Pacôme|*Solange|*Estelle|Achille|*Rolande|Matthias|*Denise|Honoré|Pascal|Éric|Yves|Bernardin|Constantin|Émile|Didier|Donatien|*Sophie|Bérenger|Augustin de Cantorbéry|Germain|Aymar|Ferdinand|!Visitation",
+  "Justin|*Blandine|Kévin|*Clotilde|Igor|Norbert|Gilbert|Médard|*Diane|Landry|Barnabé|Guy|Antoine de Padoue|Élisée|*Germaine|Jean-François Régis|Hervé|Léonce|Romuald|Silvère|Rodolphe|Alban|*Audrey|Jean-Baptiste|Prosper|Anthelme|Fernand|Irénée|+Pierre et Paul|Martial",
+  "Thierry|Martinien|Thomas|Florent|Antoine|*Mariette|Raoul|Thibaut|*Amandine|Ulrich|Benoît|Olivier|+Henri et Joël|!Fête nationale|Donald|!Notre-Dame du Mont-Carmel|*Charlotte|Frédéric|Arsène|*Marina|Victor|*Marie-Madeleine|*Brigitte|*Christine|Jacques|+Anne et Joachim|*Nathalie|Samson|*Marthe|*Juliette|Ignace de Loyola",
+  "Alphonse|Julien Eymard|*Lydie|Jean-Marie Vianney|Abel|!Transfiguration|Gaétan|Dominique|Amour|Laurent|*Claire|*Clarisse|Hippolyte|Evrard|!Assomption|Armel|Hyacinthe|*Hélène|Jean Eudes|Bernard|Christophe|Fabrice|*Rose de Lima|Barthélemy|Louis|*Natacha|*Monique|Augustin|*Sabine|Fiacre|Aristide",
+  "Gilles|*Ingrid|Grégoire|*Rosalie|*Raïssa|Bertrand|*Reine|!Nativité de Marie|Alain|*Inès|Adelphe|Apollinaire|Aimé|!Croix glorieuse|Roland|*Édith|Renaud|*Nadège|*Émilie|Davy|Matthieu|Maurice|Constant|*Thècle|Hermann|+Côme et Damien|Vincent de Paul|Venceslas|+Michel, Gabriel et Raphaël|Jérôme",
+  "*Thérèse de l'Enfant-Jésus|Léger|Gérard|François d'Assise|*Fleur|Bruno|Serge|*Pélagie|Denis|Ghislain|Firmin|Wilfried|Géraud|Juste|*Thérèse d'Avila|*Edwige|Baudouin|Luc|René|*Adeline|*Céline|*Élodie|Jean de Capistran|Florentin|Crépin|Dimitri|*Émeline|+Simon et Jude|Narcisse|*Bienvenue|Quentin",
+  "!Toussaint|!Défunts|Hubert|Charles|*Sylvie|*Bertille|*Carine|Geoffroy|Théodore|Léon|Martin|Christian|Brice|Sidoine|Albert|*Marguerite|*Élisabeth|*Aude|Tanguy|Edmond|!Présentation de Marie|*Cécile|Clément|*Flora|*Catherine|*Delphine|Séverin|Jacques de la Marche|Saturnin|André",
+  "*Florence|*Viviane|François-Xavier|*Barbara|Gérald|Nicolas|Ambroise|!Immaculée Conception|Pierre Fourier|Romaric|Daniel|*Jeanne-Françoise de Chantal|*Lucie|*Odile|*Ninon|*Alice|Gaël|Gatien|Urbain|Théophile|Pierre Canisius|*Françoise-Xavière|Armand|*Adèle|!Noël|Étienne|Jean|!Saints Innocents|David|Roger|Sylvestre",
+].map((m) => m.split("|"));
+/** The name day of a day ("YYYY-MM-DD"): { name ("St Martin", "Ste Cécile", "Sts Pierre et Paul", "Toussaint"),
+ *  all (the saints of the day, from the data set) }, or null. */
 const saintOf = (key) => {
-  const all = SAINTS[Number(key.slice(5, 7)) - 1]?.[Number(key.slice(8, 10)) - 1];
-  if (!all?.length) return null;
-  return { name: all[0].replace(/\s*\(.*\)\s*$/, "").replace(/,.*$/, "").trim(), all };
+  const m = Number(key.slice(5, 7)) - 1;
+  const d = Number(key.slice(8, 10)) - 1;
+  const raw = NAME_DAYS[m]?.[d];
+  if (!raw) return null;
+  const prefix = { "*": "Ste ", "+": "Sts ", "!": "" }[raw[0]];
+  return { name: prefix === undefined ? `St ${raw}` : prefix + raw.slice(1), all: SAINTS[m]?.[d] || [] };
 };
 
 // Bin collection calendars and birthday calendars, by integration or by name (any language the card speaks).
@@ -2062,7 +2084,7 @@ class FamilyDayBase extends HTMLElement {
       ...x.birthdays.map((b) =>
         chip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : "", b.tomorrow ? fmtRel(1, L) : ""].filter(Boolean).join(" · "), this._t("birthday_title"), b.id),
       ),
-      ...(x.saint ? [chip("x-saint", ICONS.flower, x.saint.name, `${this._t("saint_title")} : ${x.saint.all.join(", ")}`)] : []),
+      ...(x.saint ? [chip("x-saint", ICONS.flower, x.saint.name, [this._t("saint_title"), x.saint.all.join(", ")].filter(Boolean).join(" : "))] : []),
     ];
     return chips.length ? `<div class="extras${cls}">${chips.join("")}</div>` : "";
   }
