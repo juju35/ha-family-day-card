@@ -243,6 +243,16 @@ The cards read the Home Assistant entity and device registries instead of entity
 
 Tomorrow is, in this order: a **public holiday** when the public holidays calendar has an event on that day; the **school holidays** when the school holidays calendar does (the longest event covering the day, the `ignore` events left out); the **weekend** when it is not a school day of the week (`school_days`, else Workday's `workdays`, else Monday to Friday); a **day off** when Workday says tomorrow is not a working day; else a **school day**. Days follow the time zone of your Home Assistant profile.
 
+| Kind of day | Color |
+|---|---|
+| School | blue |
+| Weekend | green |
+| Public holiday | deep purple |
+| Holidays | orange |
+| Day off | teal |
+
+The card's own badge (the backpack) keeps its rose accent whatever the day.
+
 Workday is asked about tomorrow with its `workday.check_date` action (the answer is shared by all the cards of the page and kept 6 hours), unless its sensor is already about tomorrow (`days_offset: 1`), whose state is then read. While a calendar is loading, tomorrow reads **Loading…**; a calendar that fails to load is left out.
 
 ### First lessons

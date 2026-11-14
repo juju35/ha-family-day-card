@@ -1289,8 +1289,8 @@ const art = (kind) => `<svg class="art-svg" viewBox="0 0 24 24" aria-hidden="tru
 // ---------------------------------------------------------------------------
 
 const BASE_STYLE = `
-  :host { --fd-accent: #7e57c2; --fd-school: #1e88e5; --fd-weekend: var(--success-color, #43a047); --fd-holidays: #fb8c00;
-          --fd-public: #e91e63; --fd-off: #00897b; --fd-idle: var(--disabled-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
+  :host { --fd-accent: #d81b60; --fd-school: #1e88e5; --fd-weekend: var(--success-color, #43a047); --fd-holidays: #fb8c00;
+          --fd-public: #5e35b1; --fd-off: #00897b; --fd-idle: var(--disabled-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
   ha-card { overflow: hidden; container-type: inline-size; }
   /* A size container has no width of its own: this zero-height grid gives the card a natural width without a minimum. */
   :host { display: block; min-width: 0; --fd-natural-width: 380px; }
@@ -2139,4 +2139,4 @@ for (const card of [
   if (!window.customCards.some((c) => c.type === card.type)) window.customCards.push({ ...card, preview: true, documentationURL: "https://github.com/juju35/ha-family-day-card" });
 }
 
-console.info(`%c FAMILY-DAY-CARD %c v${VERSION} `, "color: white; background: #7e57c2; font-weight: 700;", "color: #7e57c2; background: white; font-weight: 700;");
+console.info(`%c FAMILY-DAY-CARD %c v${VERSION} `, "color: white; background: #d81b60; font-weight: 700;", "color: #d81b60; background: white; font-weight: 700;");
