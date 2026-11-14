@@ -11,9 +11,7 @@
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    id="svg8"
    version="1.1"
-   viewBox="0 0 210 297"
-   height="297mm"
-   width="210mm">
+   viewBox="30.9841 27.850878 100 100">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -167,13 +165,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
-    <rect
-       y="27.850878"
-       x="30.9841"
-       height="100"
-       width="100"
-       id="rect833"
-       style="fill:none;fill-rule:evenodd;stroke-width:0.264583;stroke:#000000" />
+
     <g
        inkscape:export-filename="C:\Users\Steffen\Downloads\icon.png"
        inkscape:export-ydpi="76.470062"
