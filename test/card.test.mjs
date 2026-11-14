@@ -474,7 +474,7 @@ test("name days, bin colours, birthday names and ages", () => {
   assert.ok(fd.saintOf("2026-05-30").all.includes("Ste Jeanne D'Arc"));
   assert.equal(saint("2026-06-24"), "Jean le Baptiste");
   assert.deepEqual([...fd.SAINTS.map((x) => x.length)], [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
-  assert.ok(fd.SAINTS.flat(2).every((n) => n && !/Ã|à®|à«|  /.test(n)), "no broken accent");
+  assert.ok(fd.SAINTS.flat(2).every((n) => n && !/Ã|à®|à«| {2}/.test(n)), "no broken accent");
   assert.equal(fd.binColor("Poubelle jaune"), "yellow");
   assert.equal(fd.binColor("Verre"), "green");
   assert.equal(fd.binColor("Papier / carton"), "blue");
