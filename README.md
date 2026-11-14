@@ -14,7 +14,9 @@
   <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/workday.svg" alt="Workday" width="64">&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/remote_calendar.svg" alt="Remote calendar" width="64">&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/holiday.svg" alt="Holiday" width="64">&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/pronote.png" alt="Pronote" width="64">
+  <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/pronote.png" alt="Pronote" width="64">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/waste_collection_schedule.svg" alt="Waste Collection Schedule" width="64">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/local_calendar.png" alt="Local calendar" width="64">
 </p>
 
 Lovelace cards for Home Assistant that answer the family's evening question: **is there school tomorrow?** Tomorrow is a school day, the weekend, a public holiday or the school holidays, school starts at the **first lesson** of your children, and the next **school holidays** (with a countdown, or their progress while they last) and the next **public holiday** are one glance away.
@@ -52,8 +54,8 @@ Made for French families: the school holidays come from the education ministry's
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/remote_calendar.svg" alt="" width="16"> [Remote calendar](https://www.home-assistant.io/integrations/remote_calendar/) (core, `remote_calendar`) | The school holidays calendar: the French education ministry's ICS of your zone ([Calendrier scolaire](https://data.education.gouv.fr/explore/dataset/fr-en-calendrier-scolaire/) on data.education.gouv.fr), or any calendar whose name says school holidays (`vacances`, `scolaire`, `school`, `Ferien`…) |
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/holiday.svg" alt="" width="16"> [Holiday](https://www.home-assistant.io/integrations/holiday/) (core, `holiday`) | The public holidays calendar of your country |
 | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/pronote.png" alt="" width="16"> [Pronote](https://github.com/delphiki/hass-pronote) (custom, `pronote`) | The timetables of each child (one device per child): today's, tomorrow's and the next day's lessons, their start, subject and cancellation |
-| [Waste Collection Schedule](https://github.com/mampfes/hacs_waste_collection_schedule) (custom, `waste_collection_schedule`) | Its calendars: tomorrow's bin collections (any calendar named after the bins works too: `poubelle`, `déchets`, `collecte`, `waste`, `Müll`…) |
-| [Local calendar](https://www.home-assistant.io/integrations/local_calendar/) (core, `local_calendar`) or any calendar | The birthdays: a calendar whose name says birthdays (`anniversaires`, `birthdays`, `Geburtstage`…), one yearly event per birthday, with the birth year in it for the age |
+| <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/waste_collection_schedule.svg" alt="" width="16"> [Waste Collection Schedule](https://github.com/mampfes/hacs_waste_collection_schedule) (custom, `waste_collection_schedule`) | Its calendars: tomorrow's bin collections (any calendar named after the bins works too: `poubelle`, `déchets`, `collecte`, `waste`, `Müll`…) |
+| <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/images/local_calendar.png" alt="" width="16"> [Local calendar](https://www.home-assistant.io/integrations/local_calendar/) (core, `local_calendar`) or any calendar | The birthdays: a calendar whose name says birthdays (`anniversaires`, `birthdays`, `Geburtstage`…), one yearly event per birthday, with the birth year in it for the age |
 
 None is required: without Workday, school days are Monday to Friday (or `school_days`); without a school holidays or public holidays calendar, its line and its kind of day are left out; without Pronote, the answer reads **School day** and there are no children's rows. The cards need at least one of them.
 
@@ -336,7 +338,7 @@ The names of the holidays come from your calendars, in their own language. Contr
 
 ## Credits
 
-The Pronote logo comes from the [Home Assistant brands](https://github.com/home-assistant/brands) repository; Pronote is a trademark of Index Éducation. The Workday, Holiday and Remote calendar pictures are their Material Design Icons. This project is not affiliated with Index Éducation, the hass-pronote project or the French Ministry of Education.
+The Pronote logo comes from the [Home Assistant brands](https://github.com/home-assistant/brands) repository; Pronote is a trademark of Index Éducation. The Workday, Holiday, Remote calendar and Local calendar pictures are their Material Design Icons; the Waste Collection Schedule logo comes from its [repository](https://github.com/mampfes/hacs_waste_collection_schedule). This project is not affiliated with Index Éducation, the hass-pronote project or the French Ministry of Education.
 
 ## Data
 
