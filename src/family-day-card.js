@@ -56,6 +56,17 @@ const STRINGS = {
     lang_auto: "Automatic",
     zoom_in: "Show the full card",
     zoom_out: "Show the compact card",
+    waste_tonight: "{type} tonight",
+    waste_title: "Bin collection tomorrow",
+    birthday_title: "Birthday",
+    saint_title: "Name day",
+    opt_show_waste: "Show bin collection",
+    opt_show_birthdays: "Show birthdays",
+    opt_show_saint: "Show name day (saint)",
+    opt_waste: "Bin collection calendars",
+    opt_birthdays: "Birthday calendars",
+    help_waste: "Calendars of the bin collections, such as Waste Collection Schedule's (found automatically when left empty)",
+    help_birthdays: "Calendars with one event per birthday, with the birth year for the age (found automatically when left empty)",
   },
   fr: {
     title: "Demain",
@@ -100,6 +111,17 @@ const STRINGS = {
     lang_auto: "Automatique",
     zoom_in: "Afficher la carte complète",
     zoom_out: "Afficher la carte compacte",
+    waste_tonight: "{type} ce soir",
+    waste_title: "Collecte des déchets demain",
+    birthday_title: "Anniversaire",
+    saint_title: "Fête du jour",
+    opt_show_waste: "Afficher la collecte des déchets",
+    opt_show_birthdays: "Afficher les anniversaires",
+    opt_show_saint: "Afficher la fête du jour (saint)",
+    opt_waste: "Calendriers de collecte des déchets",
+    opt_birthdays: "Calendriers des anniversaires",
+    help_waste: "Calendriers de collecte des déchets, comme ceux de Waste Collection Schedule (trouvés automatiquement si vide)",
+    help_birthdays: "Calendriers avec un événement par anniversaire, l’année de naissance pour l’âge (trouvés automatiquement si vide)",
   },
   de: {
     title: "Morgen",
@@ -144,6 +166,17 @@ const STRINGS = {
     lang_auto: "Automatisch",
     zoom_in: "Vollständige Karte anzeigen",
     zoom_out: "Kompakte Karte anzeigen",
+    waste_tonight: "{type} heute Abend",
+    waste_title: "Müllabfuhr morgen",
+    birthday_title: "Geburtstag",
+    saint_title: "Namenstag",
+    opt_show_waste: "Müllabfuhr anzeigen",
+    opt_show_birthdays: "Geburtstage anzeigen",
+    opt_show_saint: "Namenstag anzeigen (Heiliger)",
+    opt_waste: "Kalender der Müllabfuhr",
+    opt_birthdays: "Geburtstagskalender",
+    help_waste: "Kalender der Müllabfuhr, z. B. von Waste Collection Schedule (automatisch gefunden, wenn leer)",
+    help_birthdays: "Kalender mit einem Termin pro Geburtstag, mit dem Geburtsjahr für das Alter (automatisch gefunden, wenn leer)",
   },
   es: {
     title: "Mañana",
@@ -188,6 +221,17 @@ const STRINGS = {
     lang_auto: "Automático",
     zoom_in: "Mostrar la tarjeta completa",
     zoom_out: "Mostrar la tarjeta compacta",
+    waste_tonight: "{type} esta noche",
+    waste_title: "Recogida de basura mañana",
+    birthday_title: "Cumpleaños",
+    saint_title: "Santo del día",
+    opt_show_waste: "Mostrar la recogida de basura",
+    opt_show_birthdays: "Mostrar los cumpleaños",
+    opt_show_saint: "Mostrar el santo del día",
+    opt_waste: "Calendarios de recogida de basura",
+    opt_birthdays: "Calendarios de cumpleaños",
+    help_waste: "Calendarios de recogida de basura, como los de Waste Collection Schedule (se buscan solos si se deja vacío)",
+    help_birthdays: "Calendarios con un evento por cumpleaños, con el año de nacimiento para la edad (se buscan solos si se deja vacío)",
   },
   it: {
     title: "Domani",
@@ -232,6 +276,17 @@ const STRINGS = {
     lang_auto: "Automatica",
     zoom_in: "Mostra la scheda completa",
     zoom_out: "Mostra la scheda compatta",
+    waste_tonight: "{type} stasera",
+    waste_title: "Raccolta rifiuti domani",
+    birthday_title: "Compleanno",
+    saint_title: "Onomastico",
+    opt_show_waste: "Mostra la raccolta rifiuti",
+    opt_show_birthdays: "Mostra i compleanni",
+    opt_show_saint: "Mostra l’onomastico (santo)",
+    opt_waste: "Calendari della raccolta rifiuti",
+    opt_birthdays: "Calendari dei compleanni",
+    help_waste: "Calendari della raccolta rifiuti, come quelli di Waste Collection Schedule (trovati da soli se vuoto)",
+    help_birthdays: "Calendari con un evento per compleanno, con l’anno di nascita per l’età (trovati da soli se vuoto)",
   },
   nl: {
     title: "Morgen",
@@ -276,6 +331,17 @@ const STRINGS = {
     lang_auto: "Automatisch",
     zoom_in: "Volledige kaart tonen",
     zoom_out: "Compacte kaart tonen",
+    waste_tonight: "{type} vanavond",
+    waste_title: "Afvalophaling morgen",
+    birthday_title: "Verjaardag",
+    saint_title: "Naamdag",
+    opt_show_waste: "Afvalophaling tonen",
+    opt_show_birthdays: "Verjaardagen tonen",
+    opt_show_saint: "Naamdag tonen (heilige)",
+    opt_waste: "Agenda’s van de afvalophaling",
+    opt_birthdays: "Verjaardagsagenda’s",
+    help_waste: "Agenda’s van de afvalophaling, zoals die van Waste Collection Schedule (automatisch gevonden als leeg)",
+    help_birthdays: "Agenda’s met één afspraak per verjaardag, met het geboortejaar voor de leeftijd (automatisch gevonden als leeg)",
   },
   pt: {
     title: "Amanhã",
@@ -320,6 +386,17 @@ const STRINGS = {
     lang_auto: "Automático",
     zoom_in: "Mostrar o cartão completo",
     zoom_out: "Mostrar o cartão compacto",
+    waste_tonight: "{type} esta noite",
+    waste_title: "Recolha do lixo amanhã",
+    birthday_title: "Aniversário",
+    saint_title: "Dia do santo",
+    opt_show_waste: "Mostrar a recolha do lixo",
+    opt_show_birthdays: "Mostrar os aniversários",
+    opt_show_saint: "Mostrar o dia do santo",
+    opt_waste: "Calendários da recolha do lixo",
+    opt_birthdays: "Calendários de aniversários",
+    help_waste: "Calendários da recolha do lixo, como os do Waste Collection Schedule (encontrados automaticamente se vazio)",
+    help_birthdays: "Calendários com um evento por aniversário, com o ano de nascimento para a idade (encontrados automaticamente se vazio)",
   },
   pl: {
     title: "Jutro",
@@ -364,6 +441,17 @@ const STRINGS = {
     lang_auto: "Automatyczny",
     zoom_in: "Pokaż pełną kartę",
     zoom_out: "Pokaż kompaktową kartę",
+    waste_tonight: "{type} dziś wieczorem",
+    waste_title: "Wywóz śmieci jutro",
+    birthday_title: "Urodziny",
+    saint_title: "Imieniny",
+    opt_show_waste: "Pokaż wywóz śmieci",
+    opt_show_birthdays: "Pokaż urodziny",
+    opt_show_saint: "Pokaż imieniny (święty)",
+    opt_waste: "Kalendarze wywozu śmieci",
+    opt_birthdays: "Kalendarze urodzin",
+    help_waste: "Kalendarze wywozu śmieci, np. z Waste Collection Schedule (wyszukiwane automatycznie, gdy puste)",
+    help_birthdays: "Kalendarze z jednym wydarzeniem na urodziny, z rokiem urodzenia dla wieku (wyszukiwane automatycznie, gdy puste)",
   },
   sr: {
     title: "Сутра",
@@ -408,6 +496,17 @@ const STRINGS = {
     lang_auto: "Аутоматски",
     zoom_in: "Прикажи пуну картицу",
     zoom_out: "Прикажи компактну картицу",
+    waste_tonight: "{type} вечерас",
+    waste_title: "Одвоз отпада сутра",
+    birthday_title: "Рођендан",
+    saint_title: "Имендан",
+    opt_show_waste: "Прикажи одвоз отпада",
+    opt_show_birthdays: "Прикажи рођендане",
+    opt_show_saint: "Прикажи имендан (светац)",
+    opt_waste: "Календари одвоза отпада",
+    opt_birthdays: "Календари рођендана",
+    help_waste: "Календари одвоза отпада, као они из Waste Collection Schedule (аутоматски пронађени ако је празно)",
+    help_birthdays: "Календари са по једним догађајем за сваки рођендан, са годином рођења за узраст (аутоматски пронађени ако је празно)",
   },
   "sr-Latn": {
     title: "Sutra",
@@ -452,6 +551,17 @@ const STRINGS = {
     lang_auto: "Automatski",
     zoom_in: "Prikaži punu karticu",
     zoom_out: "Prikaži kompaktnu karticu",
+    waste_tonight: "{type} večeras",
+    waste_title: "Odvoz otpada sutra",
+    birthday_title: "Rođendan",
+    saint_title: "Imendan",
+    opt_show_waste: "Prikaži odvoz otpada",
+    opt_show_birthdays: "Prikaži rođendane",
+    opt_show_saint: "Prikaži imendan (svetac)",
+    opt_waste: "Kalendari odvoza otpada",
+    opt_birthdays: "Kalendari rođendana",
+    help_waste: "Kalendari odvoza otpada, kao oni iz Waste Collection Schedule (automatski pronađeni ako je prazno)",
+    help_birthdays: "Kalendari sa po jednim događajem za svaki rođendan, sa godinom rođenja za uzrast (automatski pronađeni ako je prazno)",
   },
   ro: {
     title: "Mâine",
@@ -496,6 +606,17 @@ const STRINGS = {
     lang_auto: "Automat",
     zoom_in: "Afișează cardul complet",
     zoom_out: "Afișează cardul compact",
+    waste_tonight: "{type} în seara asta",
+    waste_title: "Colectarea gunoiului mâine",
+    birthday_title: "Zi de naștere",
+    saint_title: "Onomastică",
+    opt_show_waste: "Afișează colectarea gunoiului",
+    opt_show_birthdays: "Afișează zilele de naștere",
+    opt_show_saint: "Afișează onomastica (sfântul)",
+    opt_waste: "Calendare de colectare a gunoiului",
+    opt_birthdays: "Calendare cu zile de naștere",
+    help_waste: "Calendare de colectare a gunoiului, ca cele din Waste Collection Schedule (găsite automat dacă e gol)",
+    help_birthdays: "Calendare cu un eveniment pe zi de naștere, cu anul nașterii pentru vârstă (găsite automat dacă e gol)",
   },
   da: {
     title: "I morgen",
@@ -540,6 +661,17 @@ const STRINGS = {
     lang_auto: "Automatisk",
     zoom_in: "Vis det fulde kort",
     zoom_out: "Vis det kompakte kort",
+    waste_tonight: "{type} i aften",
+    waste_title: "Affaldsafhentning i morgen",
+    birthday_title: "Fødselsdag",
+    saint_title: "Navnedag",
+    opt_show_waste: "Vis affaldsafhentning",
+    opt_show_birthdays: "Vis fødselsdage",
+    opt_show_saint: "Vis navnedag (helgen)",
+    opt_waste: "Kalendere for affaldsafhentning",
+    opt_birthdays: "Fødselsdagskalendere",
+    help_waste: "Kalendere for affaldsafhentning, som dem fra Waste Collection Schedule (findes automatisk, hvis tom)",
+    help_birthdays: "Kalendere med én begivenhed pr. fødselsdag, med fødselsåret for alderen (findes automatisk, hvis tom)",
   },
   sv: {
     title: "I morgon",
@@ -584,6 +716,17 @@ const STRINGS = {
     lang_auto: "Automatiskt",
     zoom_in: "Visa hela kortet",
     zoom_out: "Visa det kompakta kortet",
+    waste_tonight: "{type} i kväll",
+    waste_title: "Sophämtning i morgon",
+    birthday_title: "Födelsedag",
+    saint_title: "Namnsdag",
+    opt_show_waste: "Visa sophämtning",
+    opt_show_birthdays: "Visa födelsedagar",
+    opt_show_saint: "Visa namnsdag (helgon)",
+    opt_waste: "Kalendrar för sophämtning",
+    opt_birthdays: "Födelsedagskalendrar",
+    help_waste: "Kalendrar för sophämtning, som de från Waste Collection Schedule (hittas automatiskt om tom)",
+    help_birthdays: "Kalendrar med en händelse per födelsedag, med födelseåret för åldern (hittas automatiskt om tom)",
   },
   bg: {
     title: "Утре",
@@ -628,6 +771,17 @@ const STRINGS = {
     lang_auto: "Автоматично",
     zoom_in: "Показване на пълната карта",
     zoom_out: "Показване на компактната карта",
+    waste_tonight: "{type} довечера",
+    waste_title: "Извозване на отпадъци утре",
+    birthday_title: "Рожден ден",
+    saint_title: "Имен ден",
+    opt_show_waste: "Показване на извозването на отпадъци",
+    opt_show_birthdays: "Показване на рождените дни",
+    opt_show_saint: "Показване на имения ден (светец)",
+    opt_waste: "Календари за извозване на отпадъци",
+    opt_birthdays: "Календари с рождени дни",
+    help_waste: "Календари за извозване на отпадъци, като тези на Waste Collection Schedule (намират се автоматично, ако е празно)",
+    help_birthdays: "Календари с по едно събитие за всеки рожден ден, с годината на раждане за възрастта (намират се автоматично, ако е празно)",
   },
   ru: {
     title: "Завтра",
@@ -672,6 +826,17 @@ const STRINGS = {
     lang_auto: "Автоматически",
     zoom_in: "Показать полную карточку",
     zoom_out: "Показать компактную карточку",
+    waste_tonight: "{type} сегодня вечером",
+    waste_title: "Вывоз мусора завтра",
+    birthday_title: "День рождения",
+    saint_title: "Именины",
+    opt_show_waste: "Показывать вывоз мусора",
+    opt_show_birthdays: "Показывать дни рождения",
+    opt_show_saint: "Показывать именины (святой)",
+    opt_waste: "Календари вывоза мусора",
+    opt_birthdays: "Календари дней рождения",
+    help_waste: "Календари вывоза мусора, например из Waste Collection Schedule (находятся автоматически, если пусто)",
+    help_birthdays: "Календари с одним событием на день рождения, с годом рождения для возраста (находятся автоматически, если пусто)",
   },
   uk: {
     title: "Завтра",
@@ -716,6 +881,17 @@ const STRINGS = {
     lang_auto: "Автоматично",
     zoom_in: "Показати повну картку",
     zoom_out: "Показати компактну картку",
+    waste_tonight: "{type} сьогодні ввечері",
+    waste_title: "Вивезення сміття завтра",
+    birthday_title: "День народження",
+    saint_title: "Іменини",
+    opt_show_waste: "Показувати вивезення сміття",
+    opt_show_birthdays: "Показувати дні народження",
+    opt_show_saint: "Показувати іменини (святий)",
+    opt_waste: "Календарі вивезення сміття",
+    opt_birthdays: "Календарі днів народження",
+    help_waste: "Календарі вивезення сміття, наприклад з Waste Collection Schedule (знаходяться автоматично, якщо порожньо)",
+    help_birthdays: "Календарі з однією подією на день народження, з роком народження для віку (знаходяться автоматично, якщо порожньо)",
   },
   hu: {
     title: "Holnap",
@@ -760,6 +936,17 @@ const STRINGS = {
     lang_auto: "Automatikus",
     zoom_in: "Teljes kártya megjelenítése",
     zoom_out: "Kompakt kártya megjelenítése",
+    waste_tonight: "{type} ma este",
+    waste_title: "Szemétszállítás holnap",
+    birthday_title: "Születésnap",
+    saint_title: "Névnap",
+    opt_show_waste: "Szemétszállítás megjelenítése",
+    opt_show_birthdays: "Születésnapok megjelenítése",
+    opt_show_saint: "Névnap megjelenítése (szent)",
+    opt_waste: "Szemétszállítási naptárak",
+    opt_birthdays: "Születésnapi naptárak",
+    help_waste: "Szemétszállítási naptárak, például a Waste Collection Schedule naptárai (üresen automatikusan megtalálja)",
+    help_birthdays: "Naptárak születésnaponként egy eseménnyel, a születési évvel az életkorhoz (üresen automatikusan megtalálja)",
   },
   sk: {
     title: "Zajtra",
@@ -804,6 +991,17 @@ const STRINGS = {
     lang_auto: "Automaticky",
     zoom_in: "Zobraziť úplnú kartu",
     zoom_out: "Zobraziť kompaktnú kartu",
+    waste_tonight: "{type} dnes večer",
+    waste_title: "Odvoz odpadu zajtra",
+    birthday_title: "Narodeniny",
+    saint_title: "Meniny",
+    opt_show_waste: "Zobraziť odvoz odpadu",
+    opt_show_birthdays: "Zobraziť narodeniny",
+    opt_show_saint: "Zobraziť meniny (svätý)",
+    opt_waste: "Kalendáre odvozu odpadu",
+    opt_birthdays: "Kalendáre narodenín",
+    help_waste: "Kalendáre odvozu odpadu, napríklad z Waste Collection Schedule (nájdené automaticky, ak je prázdne)",
+    help_birthdays: "Kalendáre s jednou udalosťou na narodeniny, s rokom narodenia pre vek (nájdené automaticky, ak je prázdne)",
   },
   cs: {
     title: "Zítra",
@@ -848,6 +1046,17 @@ const STRINGS = {
     lang_auto: "Automaticky",
     zoom_in: "Zobrazit úplnou kartu",
     zoom_out: "Zobrazit kompaktní kartu",
+    waste_tonight: "{type} dnes večer",
+    waste_title: "Svoz odpadu zítra",
+    birthday_title: "Narozeniny",
+    saint_title: "Svátek",
+    opt_show_waste: "Zobrazit svoz odpadu",
+    opt_show_birthdays: "Zobrazit narozeniny",
+    opt_show_saint: "Zobrazit svátek (světec)",
+    opt_waste: "Kalendáře svozu odpadu",
+    opt_birthdays: "Kalendáře narozenin",
+    help_waste: "Kalendáře svozu odpadu, například z Waste Collection Schedule (nalezeny automaticky, pokud je prázdné)",
+    help_birthdays: "Kalendáře s jednou událostí na narozeniny, s rokem narození pro věk (nalezeny automaticky, pokud je prázdné)",
   },
   sl: {
     title: "Jutri",
@@ -892,6 +1101,17 @@ const STRINGS = {
     lang_auto: "Samodejno",
     zoom_in: "Prikaži polno kartico",
     zoom_out: "Prikaži strnjeno kartico",
+    waste_tonight: "{type} nocoj",
+    waste_title: "Odvoz odpadkov jutri",
+    birthday_title: "Rojstni dan",
+    saint_title: "God",
+    opt_show_waste: "Prikaži odvoz odpadkov",
+    opt_show_birthdays: "Prikaži rojstne dneve",
+    opt_show_saint: "Prikaži god (svetnik)",
+    opt_waste: "Koledarji odvoza odpadkov",
+    opt_birthdays: "Koledarji rojstnih dni",
+    help_waste: "Koledarji odvoza odpadkov, na primer iz Waste Collection Schedule (najdeni samodejno, če je prazno)",
+    help_birthdays: "Koledarji z enim dogodkom na rojstni dan, z letnico rojstva za starost (najdeni samodejno, če je prazno)",
   },
   lv: {
     title: "Rīt",
@@ -936,6 +1156,17 @@ const STRINGS = {
     lang_auto: "Automātiski",
     zoom_in: "Rādīt pilno karti",
     zoom_out: "Rādīt kompakto karti",
+    waste_tonight: "{type} šovakar",
+    waste_title: "Atkritumu izvešana rīt",
+    birthday_title: "Dzimšanas diena",
+    saint_title: "Vārda diena",
+    opt_show_waste: "Rādīt atkritumu izvešanu",
+    opt_show_birthdays: "Rādīt dzimšanas dienas",
+    opt_show_saint: "Rādīt vārda dienu (svētais)",
+    opt_waste: "Atkritumu izvešanas kalendāri",
+    opt_birthdays: "Dzimšanas dienu kalendāri",
+    help_waste: "Atkritumu izvešanas kalendāri, piemēram, no Waste Collection Schedule (atrod automātiski, ja tukšs)",
+    help_birthdays: "Kalendāri ar vienu notikumu katrai dzimšanas dienai, ar dzimšanas gadu vecumam (atrod automātiski, ja tukšs)",
   },
   el: {
     title: "Αύριο",
@@ -980,6 +1211,17 @@ const STRINGS = {
     lang_auto: "Αυτόματα",
     zoom_in: "Εμφάνιση πλήρους κάρτας",
     zoom_out: "Εμφάνιση συμπαγούς κάρτας",
+    waste_tonight: "{type} απόψε",
+    waste_title: "Αποκομιδή απορριμμάτων αύριο",
+    birthday_title: "Γενέθλια",
+    saint_title: "Ονομαστική εορτή",
+    opt_show_waste: "Εμφάνιση αποκομιδής απορριμμάτων",
+    opt_show_birthdays: "Εμφάνιση γενεθλίων",
+    opt_show_saint: "Εμφάνιση ονομαστικής εορτής (άγιος)",
+    opt_waste: "Ημερολόγια αποκομιδής απορριμμάτων",
+    opt_birthdays: "Ημερολόγια γενεθλίων",
+    help_waste: "Ημερολόγια αποκομιδής απορριμμάτων, όπως του Waste Collection Schedule (βρίσκονται αυτόματα αν μείνει κενό)",
+    help_birthdays: "Ημερολόγια με ένα συμβάν ανά γενέθλια, με το έτος γέννησης για την ηλικία (βρίσκονται αυτόματα αν μείνει κενό)",
   },
 };
 
@@ -1000,6 +1242,10 @@ const ICONS = {
   unknown: "M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z",
   calendar_star:
     "M19 19H5V8H19M16 1V3H8V1H6V3H5C3.9 3 3 3.9 3 5V19C3 20.11 3.9 21 5 21H19C20.11 21 21 20.11 21 19V5C21 3.9 20.11 3 19 3H18V1M10.88 12H7.27L10.19 14.11L9.08 17.56L12 15.43L14.92 17.56L13.8 14.12L16.72 12H13.12L12 8.56L10.88 12Z",
+  // mdiTrashCanOutline, mdiCakeVariantOutline, mdiFlowerOutline: the bins, birthdays and name day chips.
+  trash: "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z",
+  cake: "M12 6C13.11 6 14 5.1 14 4C14 3.62 13.9 3.27 13.71 2.97L12 0L10.29 2.97C10.1 3.27 10 3.62 10 4C10 5.1 10.9 6 12 6M18 9H13V7H11V9H6C4.34 9 3 10.34 3 12V21C3 21.55 3.45 22 4 22H20C20.55 22 21 21.55 21 21V12C21 10.34 19.66 9 18 9M19 20H5V17C5.9 17 6.76 16.63 7.4 16L8.5 14.92L9.56 16C10.87 17.3 13.15 17.29 14.45 16L15.53 14.92L16.6 16C17.24 16.63 18.1 17 19 17V20M19 15.5C18.5 15.5 18 15.3 17.65 14.93L15.5 12.8L13.38 14.93C12.64 15.67 11.35 15.67 10.61 14.93L8.5 12.8L6.34 14.93C6 15.29 5.5 15.5 5 15.5V12C5 11.45 5.45 11 6 11H18C18.55 11 19 11.45 19 12V15.5Z",
+  flower: "M8.66,13.07C6.92,13.07 5.5,11.66 5.5,9.93C5.5,9.22 5.76,8.54 6.19,8C5.77,7.46 5.5,6.78 5.5,6.07C5.5,4.34 6.93,2.93 8.66,2.93L9.09,2.96C9.56,1.81 10.69,1 12,1C13.31,1 14.44,1.81 14.91,2.96L15.34,2.93C17.07,2.93 18.5,4.34 18.5,6.07C18.5,6.78 18.24,7.46 17.81,8C18.23,8.54 18.5,9.22 18.5,9.93C18.5,11.66 17.07,13.07 15.34,13.07L14.91,13.04C14.44,14.19 13.31,15 12,15C10.69,15 9.56,14.19 9.09,13.04L8.66,13.07M12,13C12.62,13 13.12,12.5 13.14,11.9L13.03,10.81C12.71,10.93 12.36,11 12,11C11.64,11 11.3,10.93 11,10.81L10.86,11.9C10.88,12.5 11.38,13 12,13M15.34,11.07C15.97,11.07 16.5,10.56 16.5,9.92C16.5,9.5 16.23,9.08 15.83,8.89L14.95,8.47C14.83,9.21 14.44,9.85 13.89,10.3L14.7,10.87C14.88,11 15.1,11.07 15.34,11.07M14.69,5.13L13.87,5.69C14.43,6.14 14.82,6.78 14.94,7.5L15.82,7.1C16.23,6.9 16.5,6.5 16.5,6.07C16.5,5.44 15.97,4.93 15.34,4.93C15.11,4.93 14.89,5 14.69,5.13M12,3C11.38,3 10.88,3.5 10.86,4.1L11,5.19C11.3,5.07 11.64,5 12,5C12.36,5 12.71,5.07 13.03,5.19L13.14,4.1C13.12,3.5 12.62,3 12,3M8.66,4.93C8.03,4.93 7.5,5.44 7.5,6.07C7.5,6.5 7.77,6.9 8.17,7.1L9.05,7.5C9.17,6.78 9.56,6.14 10.11,5.69L9.3,5.13C9.12,5 8.9,4.93 8.66,4.93M8.17,8.9C7.77,9.1 7.5,9.5 7.5,9.92C7.5,10.55 8.03,11.06 8.66,11.06C8.89,11.06 9.11,11 9.31,10.86L10.12,10.31C9.56,9.86 9.17,9.22 9.05,8.5L8.17,8.9M12,22A9,9 0 0,1 3,13A9,9 0 0,1 12,22A9,9 0 0,1 21,13A9,9 0 0,1 12,22M14.44,19.56C16.34,18.85 17.85,17.34 18.56,15.44C16.66,16.14 15.15,17.66 14.44,19.56M5.44,15.44C6.15,17.34 7.66,18.85 9.56,19.56C8.86,17.66 7.34,16.15 5.44,15.44Z",
   expand: "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z",
   collapse: "M19.5,3.09L15,7.59V4H13V11H20V9H16.41L20.91,4.5L19.5,3.09M4,13V15H7.59L3.09,19.5L4.5,20.91L9,16.41V20H11V13H4Z",
 };
@@ -1019,6 +1265,60 @@ const DEFAULT_IGNORE = "enseignant|prérentrée|teacher";
 const PAST_DAYS = 100;
 const AHEAD_DAYS = 400;
 const CALENDAR_REFRESH_MS = 6 * 3600e3;
+
+// Saints of each day, from the open data set "Les saints et fêtes du calendrier" (data.gouv.fr, Licence Ouverte /
+// Open Licence: https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier), one month per entry, days split
+// by "|", the saints of a day by ";". Fixed from the file of 2024-09-07: May and June put back in place (they are
+// swapped there, June with a 31st), broken accents and typos corrected, and on each day the saint of the traditional
+// French calendar of name days moved first when the data set has it (it gives the saints in alphabetical order).
+const SAINTS = [
+  "Jour de l'an;Ste Marie Mère de Dieu;Ste Euphrosine;St Odilon|St Basile le Grand;St Adélard (ou Adalhard);St Grégoire de Nazianze (le Jeune);St Macaire le Jeune|Ste Geneviève;Ste Bertille;St Daniel|Ste Angèle de Foligno;St Grégoire de Langres;St Marcien;St Robert de Reims|Ste Emilienne;St Télesphore|St Melaine de Rennes;St Balthazar;St Gaspard;St Guérin;St Melchior|St Raymond de Penyafort;St Aldric;St Canut Lavard;St Reynold|St Lucien;Ste Gudule|St Adrien de Canterbury;St Julien l'Hospitalier|St Guillaume de Bourges;Ste Séthride|Ste Fidelmie;St Théodose le Cénobiarque|St Arcade;Ste Césarie;Ste Tatienne (ou Tatiana)|St Hilaire de Poitiers;St Léonce de Césarée|St Engelmar;St Félix de Nole;Ste Macrine l'Ancienne|St Paul l'Ermite;Ste Tarcice|St Marcel 1er|St Antoine le Grand;St Sulpice le Pieux|Ste Prisque (ou Prisca);Ste Thècle|St Canut;Ste Messaline;Ste Pia|St Sébastien;St Fabien|Ste Agnès de Rome;St Fructueux|St Vincent Pallotti;St Vincent, Diacre|St Barnard;Ste Erémentienne;St Ildefonse de Tolède;Ste Lufthilde|St François de Sales|Conversion de St Paul|St Timothée;St Tite|Ste Angèle de Mérici;St Julien du Mans|St Callinique;Ste Cannera|St Gildas le Sage;St Valère;St Sulpice|Ste Martine;Ste Aldegonde;Ste Hyacinthe de Mariscotti|Ste Marcelle;St Cyrus;St Eusèbe, ermite;St Jean Bosco;St Zotique",
+  "Ste Brigitte de Kildare;St Jean de la Grille;St Sévère de Ravenne|St Adalbaud;Chandeleur;Ste Hadéloge|St Blaise de Sébaste;St Anschaire|St André Corsini;St Gilbert de Sempringham;Ste Jeanne de Valois|Ste Agathe de Catane|Ste Dorothée;St Paul Miki|Ste Julienne de Bologne;St Chryseuil|St Jean de Matha;St Jérôme Emiliani|Ste Apolline|Ste Scholastique|Notre-Dame de Lourdes;St Adolphe|Ste Eulalie de Barcelone|Ste Béatrice d'Ornacieux;St Polyeucte|St Valentin;St Méthode|St Faustin;St Jovite|Ste Julienne de Nicomédie;St Onésime|St Polychrone;St Théodule|St Claude;St Flavien de Constantinople;St Fructule;Ste Gertrude Comensoli|St Gabin de Rome;St Boniface de Lausanne;St Conrad de Plaisance|Ste Aimée|St Pierre Damien|Chaire St Pierre Apôtre;Ste Marguerite de Cortone|St Lazare;St Polycarpe de Smyrne|St Modeste;Ste Primitive|St Césaire de Nazianze;St Tarasius;Ste Walburge|St Nestor;St Alexandre|Ste Honorine;St Gabriel de l'Addolorata|St Romain de Condat;St Hilaire, pape;St Théophile d'Adana|St Oswald de Worcester",
+  "St Albin d'Anvers;St Charles le bon;St Guénolé;Ste Cunégonde|St Siméon le Juste|Ste Cunégonde|St Casimir|Ste Olive;St Eusèbe de Crémone;St Jean-Joseph de la Croix;St Théophile de Césarée|Ste Colette de Corbie;Ste Agnès de Bohème;St Chrodegang (ou Rotgang);St Fridolin|Ste Félicité;Ste Perpétue;St Révocat;St Saturnin;St Secondule;St Thomas D'Aquin|St Jean de Dieu;St Julien de Tolède|Ste Françoise Romaine;Ste Catherine de Bologne;St Dominique Savio;St Grégoire de Nysse|St Crescent;St Droctovée|St Euloge de Cordoue;St Euthyme de Sardes|St Maximilien de théveste;Ste Séraphine|Ste Euphrasie;St Roderick|Ste Mathilde|Ste Louise de Marillac;St Longin|Ste Eusébie;St Héribert|Ste Gertrude de Nivelle;St Patrick d'Irlande|St Cyrille de Jérusalem|St Joseph|St Herbert;St Rémy de Strasbourg;St Wulfran|St Birillus;St Endée;St Philémon|Ste Léa;St Octavien|St Victorien;St Toribio de Mogrovejo|Ste Catherine de Suède;St Pigmène;St Romule|St Dismas;St Humbert|St Bathuse;St Dizier;St Emmanuel|St Jean d'Egypte;St Rupert de Salzbourg|St Gontran, roi de Bourgogne;Ste Gundelinde|Ste Gladys;St Ludolphe|St Amédée IX;St Jean Climaque|St Benjamin;Ste Balbine",
+  "St Hugues de Grenoble;Ste Catherine Thomas|St François de Paule;Ste Théodosie;St Urbain de Langres|St Richard de Chichester;Ste Agape|St Isidore de Séville;St Benoît Le More|Ste Ethelburge;St Gérard de Sauve-Majeure;St Vincent Ferrier|St Marcellin de Carthage;St Amand;Ste Modérate|St Jean Baptiste de la Salle;St Hégésippe|Ste Julie Billart;St Hérodion|St Gautier;St Marcel;Ste Marie de Cléophas|St Fulbert;St Badème;St Ezéchiel|St Stanislas;Ste Gemma Galgani|St Jules 1er;St Wigbert|St Hermenegild;St Martin 1er|St Maxime;Ste Lidwine;St Valérien|St Paterne;Ste Anastasie;Ste Basilisse|St Benoît-Joseph Labre;Ste Bernadette Soubirous;St Crémence;St Drogon;Ste Encratide|St Anicet;St Hermogène;St Wandon|St Parfait;St Eleuthère|St Expédit;St Ursmer|Ste Agnès de Monte Pulciano;Ste Hildegonde;St Théodore Trichinas;St Théotime le Philosophe|St Anselme de Cantorbéry;St Conrad de Parhzam|St Alexandre;St Caïus;Ste Léonide;St Soter;Ste Tarbula|St Georges de Lydda;St Fortunat;Ste Pusinne|St Fidèle de Sigmaringen;Ste Beuve|St Marc, apôtre;St Phébade|St Clet (ou Anaclet);Ste Exupérance;St Marcellin|Ste Zita;St Anthime|St Pierre Chanel;Ste Prudence;St Vital de Milan|Ste Catherine de Sienne;St Pierre de Vérone|St Pie V;Ste Sophie",
+  "St Joseph;Ste Panacée;St Sigismond|St Athanase d'Alexandrie;St Célestin;Ste Zoé|St Philippe, apôtre;Ste Adalsinde;St Alexandre 1er, pape;St Jacques le Mineur, apôtre;St Juvénal de Narni|St Florian;St Godard;St Silvain|St Ange de Jérusalem;Ste Jutta;St Pérégrin|Ste Bénédicte;St Héliodore|Ste Augustin de Nicomédie;St Sérène;St Villain|St Désiré, évêque de Bourges;St Hellade d'Auxerre;St Wiron|St Béat;St Géronce|Ste Solange;St Antonin;St Isidore le Laboureur|St Gengoul;St Mayeul;St Mamert|St Achilée;St Nérée;St Pancrace;Ste Rictrude|Ste Glycérie;St Mael;St Servais|St Matthias|Ste Denise;Ste Césarie;St Crésiphon|St Honorat d'Amiens;St Jean Népomucène;St Ubald Baldassini|St Pascal Baylon;St Adrion;St Héradius|St Eric;St Félix de Cantalice;St Jean 1er;Ste Juliette d'Ancyre;St Venance|St Yves de Kermartin;St Pierre Célestin;Ste Pudentienne|St Bernardin de Sienne;Ste Plautilla|St Constantin 1er le Grand;St Nicostrate;St Théopompe|St Emile;Ste Julie;Ste Rita de Cascia|St Eutyche;St Mercurial;St Yves de Chartres|St Donatien;St Rogatien|St Bède le Vénérable;St Grégoire VII;St Injurieux;Ste Marie-Madeleine de Pazzi|St Bérenger;St Philippe de Néri|St Augustin de Cantorbéry;St Ranulphe;Ste Restitute|St Germain de Paris;St Chéron|St Conon;St Martyrius;St Maximin de Trèves;St Sisinnius|St Ferdinand III;Ste Emmélie de Césarée;Ste Jeanne D'Arc|Ste Pétronille",
+  "St Justin le Philosophe;St Caprais;St Clair;St Marcellin;St Pierre|Ste Blandine;St Erasme;St Eugène 1er;St Marcellin;St Pothin;St Sadoc|St Kévin;St Charles Lwanga;Ste Clotilde|Ste Burienne;St François de Caracciolo;St Métrophane;St Quirin;St Rutilus|St Boniface;St Dorothée de Tyr;St Dorothée l'Archimandrite;St Dorothée le Jeune;Ste Marcia;Ste Valérie|St Norbert de Xanten;St Bertrand;St Marcellin Champagnat;Ste Pauline|St Mériadec;Ste Potamienne la Jeune|St Médard de Noyon;Ste Eustadiole;Ste Mélanie l'Ancienne|St Cumian;St Ephrem le Syrien;St Félicien;St Prime|St Landry;St Bogomile;St Gétule|St Barnabé, apôtre;St Hérébald|St Guy;St Gaspard Bertoni;St Gerbaud|St Antoine de Padoue;Ste Aquiline;St Fandilas;St Pérégrin;St Triphyllius|St Elisée;St Rufin;St Valère|Ste Germaine Cousin;Ste Bénilde;Ste Eutrope|St Cyr;Ste Lutgarde;St Simplice de Bourges|St Hervé;St Raynier|St Léonce de Tripoli;St Amand de Bordeaux|St Romuald;St Gervais;St Innocent|Ste Florence;Ste Hélène;St Sylvère|St Aloysius de Gonzague (ou Louis);St Démétrie;St Eusèbe de Samosate;St Radulphe|St Jean Fisher;St Paulin de Nole;St Thomas Moore|Ste Etheldrède;St Libert|Jean le Baptiste (naissance de)|St Prosper;St Adalbert d'Egmond;Ste Fébronie;St Gallican;St Guillaume d'Orange, dit le Grand;St Maxime de Turin;St Molock;Sts Salomon Ier et Salomon III|St Anthelme de Chignin;St Baboléin;St Maxence;Ste Persévérande|St Cyrille d'Alexandrie;St Ferdinand d'Aragon;St Ladislas|St Irénée de Lyon|St Pierre, apôtre;St Paul, apôtre|St Martial de Limoges;Ste Clotsende;Ste Erentrude;Premiers martyrs de Rome",
+  "St Domitien;St Gall de Clermont;St Théodoric (ou Thierry)|St Martinien;Ste Monégonde;St Othon de Bamberg;Ste Symphorose|St Thomas, apôtre;St Anatole|Ste Berthe;Ste Elisabeth du Portugal|St Antoine-Marie Zaccaria;St Blanche;St Modivène|Ste Dominique;Ste Lucie;Ste Maria Goretti|St Félix de Nantes;St Prosper d'Aquitaine|St Edgar le Pacifique;Ste Landrade;Ste Priscilla;St Procope;St Withburge|Ste Evrilde;Ste Procule;Ste Véronique Giuliani|Ste Rufine;Ste Seconde|St Benoît de Nursie;St Hidulphe;St Jean de Bergame;Ste Olga de Russie;St Pie 1er;St Savin (ou Sabin)|St Jean Gualbert;Ste Marcienne;St Nabor;Ste Véronique|St Henri II de Germanie;St Joël|St Camille de Lellis|St Donald;St Bonaventure|Ste Marie-Madeleine Postel|St Alexis;St Ennode;St Léon IV;Ste Marcelline|St Frédéric;St Arnoul de Metz|St Arsène le Grand;Ste Macrine la Jeune;Ste Marie d'Espagne|St Joseph Barsabas;Ste Marguerite d'Antioche;Ste Sévère|St Laurent de Brindisi;Ste Praxède|Ste Marie-Madeleine;Ste Wandrille|Ste Brigitte de Suède;St Apollinaire|Ste Christine de Bolsène;St Wulfhad|St Jacques, dit le Majeur;St Christophe;Ste Valentine|Ste Anne;St Joachim|St Désiré;Ste Natalie;St Panthaléon|St Samson;St Botwin;St Nazaire;St Victor 1er|Ste Marthe de Béthanie|Ste Juliette de Césarée;St Pierre Chrysologue|St Ignace de Loyola;St Germain d'Auxerre",
+  "St Alphonse-Marie de Liguori;Ste Almède;St Exupère|St Eusèbe de Verceil|Ste Lydie la Pourpre|St Jean-Marie Baptiste Vianney|St Abel;St Memmius;St Oswald|Transfiguration;St Sixte II|St Gaétan;St Albert;St Donat|St Dominique de Guzman;St Cyriaque|St Amour (ou Amor)|St Laurent De Rome;St Blain;St Deusdedit (ou Dieudonné)|Ste Claire D'Assise;Ste Suzanne|St Euplius;Ste Julienne|Ste Concordia;St Jean Berchmans;Ste Radegonde|St Eusèbe de Rome;St Hippolyte;St Maximien Kolbe;Ste Radegonde|Assomption (Fête de Marie);St Alfred;St Eusèbe;St Tarcisius|St Armagillus;St Etienne de Hongrie;St Frimbaud;St Roch|St Hyacinthe|Ste Hélène;St Agapet|St Jean Eudes|St Bernard de Clairvaux|St Pie X|St Fabrice;St Philibert;St Symphorien|Ste Rose de Lima|St Barthélémy;St Ouen|St Louis IX de France;St Joseph de Calsanz|St Zéphirin|Ste Monique|St Augustin;St Julien de Brioude|Ste Sabine|St Fiacre|St Aristide;St Raymond Nonnat",
+  "St Gilles;Ste Vérène|St Agricole;St Concorde;St Elpide|St Grégoire 1er, dit le Grand;St Siméon stylite le Jeune|Ste Rosalie;St Boniface 1er;St Calétric;St Vitalique|St Bertin;St Laurent Justinien|St Bertrand de Garrigues;St Eustache|Ste Reine;St Cloud|St Adrien;Naissance de Marie|St Gorgon;St Omer;St Pierre Claver;St Tiburce|St Aubert;St Nicolas de Tolentino;Ste Pulchérie Auguste|St Adelphe;St Patient;St Protus|St Autonome;St Curonote;St Théodule|St Aimé;St Israël;St Jean Chrysostome;St Macrobe;St Nectaire|Croix Glorieuse;St Céréal;St Général;St Materne|St Alfred le Grand;St Nicomède|Ste Edith de Wilton;St Corneille;St Cyprien;St Victor III|Ste Hildegarde;St Lambert|St Hygbald;St Joseph de Cupertino;Ste Richarde|Ste Emilie de Rodat;Ste Constancia;St Janvier;St Théodore de Tarse|St André Kim;St Eustache;St Jacques Chastan;St Laurent Imbert;St Pierre Maubant|St Matthieu, apôtre|Ste Salaberge;St Thomas de Villeneuve|St Constance;St Lin|St Cuniald;St Isarne de Toulouse|St Hermann le Boîteux;St Cléophas;St Firmin 1er Damien|St Côme;St Damien|St Vincent de Paul|St Annemond;Ste Eustochium;St Wanceslas|St Michel;St Gabriel;St Gudélie;St Raphael|St Jérôme;St Grégoire l'Illuminateur;St Léopard",
+  "Ste Thérèse de Lisieux|St Léger|St Gérard de Brogne;St Ewald|St François d'Assise;St Aurée|Ste Flavie;St Placide|St Bruno de Cologne|St Serge;N. Dame du Rosaire|Ste Pélagie la Pénitente|St Denis, évêque de Paris;St Dominin;St Eleuthère;St Jean Léonardi;St Rustique|Ste Eulampie;St François de Borgia;St Gédéon|St Firmin d'Uzès;St Anastase 1er;Ste Zénaïde|St Wilfried;St Pantale;St Séraphin du Mont Granario|St Géraud d'Aurillac;St Théophile d'Antioche|St Juste de Lyon;St Calixte 1er|Ste Thérèse d'Avilla;St Agilée|St Bertrand de Comminges;Ste Eremberte;St Gall;St Gérard Magella;Ste Hedwige;Ste Marguerite-Marie Alacoque|St Ignace de Constantinople|St Luc, apôtre;Ste Gwendolène;Ste Tryphonie|St René Goupil;St Isaac Jogues;St Jean de Bréboeuf;St Paul de la croix;St Pierre d'Alcantara|Ste Adeline;Ste Irène|Ste Céline (ou Cilinia);St Hilarion;Ste Ursule|St Philippe;St Vallier|St Jean de Capistran;St Hyacinthe|St Antoine-Marie Claret|St Crépin (ou Crispin);St Chrysanthe;Ste Darie|St Evariste;St Rustique|Ste Antoinette;Ste Frumence|St Simon le Cananéen;St Cyrille;St Jude|St Narcisse|St Alphonse Rodriguez|St Quentin;St Foillan",
+  "Toussaint (tous les saints);St Austremoine;St Floribert;St Mathurin|Défunts;St Anempodiste;St Elpidephore|St Hubert;St Gwénaël;St Martin de Porrès|St Charles Borromée;St Porphyre|Ste Elisabeth (mère de Jean-Baptiste);St Zacharie (père de Jean-Baptiste)|St Léonard de Noblac|Ste Carine;St Ernest;St Florent de Strasbourg;St Willibrord|St Geoffroy (ou Godefroy);St Maur|St Théodore le Tiron|St Léon le Grand;St André Avellin;St Tryphon|St Martin de Tours;St Théodore le Studite|St Christin;St Josaphat|St Brice;St Didace;St Nicolas 1er le Grand|St Saens;St Sérapion|St Albert le Grand|Ste Marguerite d'Ecosse;Ste Gertrude la Grande|Ste Elisabeth de Hongrie;St Aignan;St Grégoire le Thaumaturge|St Hésyque d'Antioche;St Mummole;St Pierre, apôtre;St Tanguy|Ste Ermenburge;St Exupère|St Edmond;St Félix de Valois;St Octave|Ste Amalberge;Présence de Marie|Ste Cécile;Ste Appia;St Philémon|St Clément 1er|Ste Flora;St Chrysogone;Ste Maria;St Romain du Mans|Ste Catherine d'Alexandrie;Ste Joconde;St Moïse|Ste Delphine;St Conrad de Constance;St Gautier d'Aulne|St Séverin;St Maxime de Riez|St Jacques de la Marche;Ste Catherine Labouré;St Sosthène|St Saturnin;St Hilaire;Ste Illuminée|St André, apôtre;Ste Justine",
+  "St Diodore;St Eloi|Ste Viviane (ou Bibiane);Ste Aurélie|St François-Xavier|Ste Barbe;St Jean Damascène|St Gérard;St Nicet;St Sabbas|St Nicolas de Myre|St Ambroise de Milan;St Agathon|Immaculée conception;Ste Gonthilde;St Romaric|St Pierre Fourier;Ste Léocadie|St Miltiade|St Daniel le Stylite;St Damasse 1er|Ste Jeanne-Françoise de Chantal|Ste Lucie de Syracuse;St Josse de Bretagne;Ste Odile|St Jean de la Croix|Ste Ninon;Ste Marie Crucifiée de Rose|Ste Adélaïde;St Adon|St Calanique;St Judicaël;Ste Olympiade|St Gatien;St Zozime|St Urbain IV;St Nemèse|St Théophile;St Ammon|St Pierre Casinius;St Dioscore;St Honorat de Toulouse;St Thémistocle|Ste Françoise-Xavière Cabrini;St Flavien;St Zénon|Ste Anatolie;St Servule;Ste Victoire|Ste Adèle;St Delphin;Ste Irmine;St Métrobe|Noël;Ste Adalsinde;Ste Alburge|St Etienne de Protomartyr;St Denys|St Jean l'Evangéliste, apôtre|Sts Innocents|St David;St Thomas Becket|St Sabin (ou Sabinien)|St Sylvestre;Ste Colombe de Sens;Ste Mélanie la Jeune;St Potentin"
+].map((m) => m.split("|").map((d) => d.split(";")));
+/** The saints of a day ("YYYY-MM-DD"): { name (the first, short: "St Martin de Tours", "Toussaint"), all }, or null. */
+const saintOf = (key) => {
+  const all = SAINTS[Number(key.slice(5, 7)) - 1]?.[Number(key.slice(8, 10)) - 1];
+  if (!all?.length) return null;
+  return { name: all[0].replace(/\s*\(.*\)\s*$/, "").replace(/,.*$/, "").trim(), all };
+};
+
+// Bin collection calendars and birthday calendars, by integration or by name (any language the card speaks).
+const WASTE_RE = /poubelle|d[ée]chet|ordure|collecte|encombrant|waste|trash|garbage|rubbish|recycl|m[üu]ll|abfall|basura|residuo|rifiut|afval|vuilnis|odpad|śmieci|smieci|gunoi|affald|sopor|soph[äa]mt|мусор|смітт|отпад|отпадъ|szemét|hulladék|atkritum|απορρ/i;
+const BIRTHDAY_RE = /anniversaire|birthday|geburtstag|cumplea|compleann|verjaardag|anivers|urodzin|zi de na|f[øo]dselsdag|f[öo]delsedag|рожден|народжен|рођендан|rođendan|születésnap|narodenin|narozenin|rojstn|dzimšan|γενέθλ/i;
+// The colour of a bin, from the words of its type: yellow (packaging), blue (paper), brown (food, garden), green
+// (glass), grey (household waste), else the card's amber.
+const BIN_COLORS = [
+  ["yellow", /jaune|yellow|gelb|amarill|giall|geel|żółt|emballage|packag|verpack|recycl|plasti/i],
+  ["blue", /bleu|blue|blau|azul|\bblu\b|blauw|papier|paper|papel|carta|carton|cardboard|karton/i],
+  ["brown", /\bbio|compost|marron|brown|braun|marr[oó]n|organi|végétaux|vegetaux|garden|jardin|gft|food|alimentaire/i],
+  ["green", /verre|glass|\bverts?\b|green|grün|gr[uü]n|verde|groen|glas|szkło|vidrio|vetro/i],
+  ["gray", /ordure|household|ménag|menag|gris|grey|gray|noir|black|schwarz|restm|residu|general|rest\b/i],
+];
+const binColor = (type) => BIN_COLORS.find(([, re]) => re.test(type))?.[0] || "default";
+// "Anniversaire de Léa", "Léa's birthday", "🎂 Léa (2017)" → "Léa".
+const birthdayName = (summary) =>
+  String(summary || "")
+    .replace(/^[\p{Extended_Pictographic}\s]+/u, "")
+    .replace(/^(anniversaire|birthday|geburtstag|cumpleaños|compleanno|verjaardag|aniversário|urodziny)\s*(de\s+|d['’]\s*|du\s+|of\s+|von\s+|van\s+|di\s+)?[:\-–]?\s*/iu, "")
+    .replace(/(['’]s)?\s+(birthday|geburtstag)$/iu, "")
+    .replace(/\s*\(?\b(19|20)\d{2}\)?\s*$/u, "")
+    .trim() || String(summary || "").trim();
+// The age on a birthday, from a birth year in the event (its title or description), or null.
+const birthdayAge = (ev) => {
+  const m = `${ev.summary} ${ev.description || ""}`.match(/\b(19|20)\d{2}\b/);
+  const age = m ? Number(ev.start.slice(0, 4)) - Number(m[0]) : Number.NaN;
+  return age > 0 && age < 130 ? age : null;
+};
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -1097,7 +1397,7 @@ const eventSpan = (ev, tz) => {
   if (isKey(e)) end = e;
   else if (e && Number.isFinite(Date.parse(e))) end = addDays(dayKey(Date.parse(e) - 1, tz), 1);
   if (!end || end <= start) end = addDays(start, 1);
-  return { start, end, summary: String(ev.summary ?? "").trim() };
+  return { start, end, summary: String(ev.summary ?? "").trim(), description: String(ev.description ?? "").trim() };
 };
 
 const parseEvents = (list, tz, ignore) => {
@@ -1204,6 +1504,12 @@ const discover = (hass) => {
       !["holiday", "workday"].includes(e.platform) &&
       /vacances|scolaire|school|ferien|vacaciones|vacanze|vakantie|ferie|lov/i.test(`${e.entity_id} ${name(e)}`),
   )?.entity_id;
+  // Bin collections: the calendars of Waste Collection Schedule, or named after the bins; birthdays: by their name.
+  const calendars = list.filter((e) => e.entity_id.startsWith("calendar.") && e.entity_id !== pub && e.entity_id !== school && !e.hidden);
+  const birthdays = calendars.filter((e) => BIRTHDAY_RE.test(`${e.entity_id} ${name(e)}`)).map((e) => e.entity_id);
+  const waste = calendars
+    .filter((e) => !birthdays.includes(e.entity_id) && (e.platform === "waste_collection_schedule" || WASTE_RE.test(`${e.entity_id} ${name(e)}`)))
+    .map((e) => e.entity_id);
   // Pronote: the timetables of each child (one device per child).
   const byDevice = new Map();
   for (const e of list) {
@@ -1214,7 +1520,7 @@ const discover = (hass) => {
     byDevice.get(e.device_id)[slot] = e.entity_id;
   }
   const children = [...byDevice.entries()].map(([dev, ents]) => ({ name: childName(hass.devices?.[dev]), ...ents }));
-  const out = { workday, public_holidays: pub, school_holidays: school, children };
+  const out = { workday, public_holidays: pub, school_holidays: school, children, waste, birthdays };
   _discovery.set(hass.entities, out);
   return out;
 };
@@ -1306,6 +1612,16 @@ const BASE_STYLE = `
           background: color-mix(in srgb, var(--c) 15%, transparent); color: color-mix(in srgb, var(--c) 50%, var(--primary-text-color));
           flex: 0 1 auto; min-width: 0; max-width: 50%; overflow: hidden; box-sizing: border-box; transition: background-color .4s ease, color .4s ease; }
   .chip-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* Chips of the bins, birthdays and name day: under the answer (full card), under the header (mini card). */
+  .extras { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 8px 52px; min-width: 0; }
+  .extras.mini { margin: 8px 0 0 62px; padding-right: 12px; }
+  .xchip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px 2px 6px; border-radius: 12px; font-size: 12px; font-weight: 500;
+           max-width: 100%; min-width: 0; box-sizing: border-box;
+           background: color-mix(in srgb, var(--c) 15%, transparent); color: color-mix(in srgb, var(--c) 45%, var(--primary-text-color)); }
+  .xchip .icon { width: 14px; height: 14px; color: color-mix(in srgb, var(--c) 75%, var(--primary-text-color)); }
+  .xchip > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .x-birthday { --c: var(--fd-accent); } .x-saint { --c: #7e57c2; } .w-default { --c: var(--fd-holidays); }
+  .w-yellow { --c: #f9a825; } .w-blue { --c: #1e88e5; } .w-brown { --c: #8d6e63; } .w-green { --c: #43a047; } .w-gray { --c: #78909c; }
   .bar { height: 6px; border-radius: 3px; background: var(--divider-color, rgba(127,127,127,.25)); overflow: hidden; }
   .bar > div { height: 100%; border-radius: 3px; background: var(--c); transition: width .8s ease; }
   /* Title row: badge, titles, status pill (aligned on the title line) and the mini card's detail button. */
@@ -1328,6 +1644,10 @@ const BASE_STYLE = `
   .zoom:hover { background: color-mix(in srgb, var(--fd-idle) 18%, transparent); color: var(--primary-text-color); }
   .zoom[aria-pressed="true"] { color: var(--fd-accent); border-color: color-mix(in srgb, var(--fd-accent) 45%, transparent); }
   .zoom:focus-visible { outline: 2px solid var(--primary-color, var(--fd-accent)); outline-offset: 1px; }
+  @container (max-width: 300px) {
+    .extras { margin-left: 0; }
+    .extras.mini { margin-left: 12px; }
+  }
   @container (max-width: 230px) {
     .chip { padding: 4px; flex: none; }
     .chip-text { display: none; }
@@ -1568,7 +1888,7 @@ class FamilyDayBase extends HTMLElement {
     const h = this._hass;
     if (!h || !this._config) return null;
     const src = this._sources();
-    const ids = [src.workday, src.school_holidays, src.public_holidays, ...src.children.flatMap((c) => [c.today, c.tomorrow, c.next_day])];
+    const ids = [src.workday, src.school_holidays, src.public_holidays, ...src.waste, ...src.birthdays, ...src.children.flatMap((c) => [c.today, c.tomorrow, c.next_day])];
     return [h.entities, h.devices, h.language, h.locale, this._loaded, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
@@ -1622,7 +1942,21 @@ class FamilyDayBase extends HTMLElement {
     const children = (c.children ?? found.children ?? [])
       .filter((ch) => ch && typeof ch === "object")
       .map((ch, i) => ({ name: String(ch.name ?? `#${i + 1}`), today: ch.today, tomorrow: ch.tomorrow ?? ch.entity, next_day: ch.next_day }));
-    return { workday: pick("workday"), school_holidays: pick("school_holidays"), public_holidays: pick("public_holidays"), children };
+    // Bins and birthdays: one calendar or a list; false turns them off.
+    const many = (k) => {
+      const v = c[k];
+      if (v === false || v === null) return [];
+      if (v) return (Array.isArray(v) ? v : [v]).filter((id) => typeof id === "string" && id.startsWith("calendar."));
+      return found[k] || [];
+    };
+    return {
+      workday: pick("workday"),
+      school_holidays: pick("school_holidays"),
+      public_holidays: pick("public_holidays"),
+      children,
+      waste: c.show_waste === false ? [] : many("waste"),
+      birthdays: c.show_birthdays === false ? [] : many("birthdays"),
+    };
   }
 
   _update() {
@@ -1683,7 +2017,54 @@ class FamilyDayBase extends HTMLElement {
     const loading = Object.values(pending).some(Boolean);
     const day = loading ? { key: tomorrow, kind: "unknown", loading: true } : this._status(tomorrow, school, pub, src);
     const children = src.children.map((ch) => ({ name: ch.name, id: ch.tomorrow || ch.next_day || ch.today, day: this._childDay(ch, tomorrow, tz) }));
-    return { today, tomorrow, day, school, pub, children, src, pending };
+    return { today, tomorrow, day, school, pub, children, src, pending, extras: this._extrasOf(today, tomorrow, src, tz) };
+  }
+
+  // The chips under the answer: tomorrow's bin collections ("Recycling tonight"), today's and tomorrow's birthdays,
+  // today's name day. A calendar still loading shows nothing yet (it is never what tomorrow is).
+  _extrasOf(today, tomorrow, src, tz) {
+    const h = this._hass;
+    const read = (id) => {
+      const c = calendarData(h, id, today, this._reload);
+      return c?.list ? parseEvents(c.list, tz, "") : [];
+    };
+    const waste = [];
+    for (const id of src.waste) {
+      for (const e of read(id)) {
+        if (e.start === tomorrow && e.summary && !waste.some((w) => w.type === e.summary)) waste.push({ id, type: e.summary, color: binColor(e.summary) });
+      }
+    }
+    const birthdays = [];
+    for (const id of src.birthdays) {
+      for (const e of read(id)) {
+        if (e.start !== today && e.start !== tomorrow) continue;
+        const name = birthdayName(e.summary);
+        if (name && !birthdays.some((b) => b.name === name)) birthdays.push({ id, name, age: birthdayAge(e), tomorrow: e.start === tomorrow });
+      }
+    }
+    birthdays.sort((a, b) => a.tomorrow - b.tomorrow);
+    const c = this._config;
+    const saint = (c.show_saint ?? lang(h, c) === "fr") ? saintOf(today) : null;
+    return { waste, birthdays, saint };
+  }
+
+  // The chips' HTML (none: empty), under the answer on the full card and under the header on the mini card.
+  _extrasHtml(m, cls = "") {
+    const x = m.extras;
+    const L = this._locale();
+    const chip = (kind, icon, text, title, entity) => {
+      const attrs = entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(entity)}"` : '"';
+      return `<span class="xchip ${kind}${attrs} title="${esc(title)}">${svgIcon(icon)}<span>${esc(text)}</span></span>`;
+    };
+    const years = (n) => new Intl.NumberFormat(L, { style: "unit", unit: "year", unitDisplay: "long" }).format(n);
+    const chips = [
+      ...x.waste.map((w) => chip(`w-${w.color}`, ICONS.trash, this._t("waste_tonight", { type: w.type }), this._t("waste_title"), w.id)),
+      ...x.birthdays.map((b) =>
+        chip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : "", b.tomorrow ? fmtRel(1, L) : ""].filter(Boolean).join(" · "), this._t("birthday_title"), b.id),
+      ),
+      ...(x.saint ? [chip("x-saint", ICONS.flower, x.saint.name, `${this._t("saint_title")} : ${x.saint.all.join(", ")}`)] : []),
+    ];
+    return chips.length ? `<div class="extras${cls}">${chips.join("")}</div>` : "";
   }
 
   // What a day is: a public holiday, school holidays, a day without school (weekend), a day off for Workday, else
@@ -1827,7 +2208,7 @@ class FamilyDayCard extends FamilyDayBase {
     return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${this._extraStyle()}</style>
       <ha-card>
         ${this._header({ name: c.title || this._t("title"), sub: upperFirst(fmtDay(m.tomorrow, L), L), day: d })}
-        <div class="content">${this._headline(m)}${kids}${this._footer(m)}</div>
+        <div class="content">${this._headline(m)}${this._extrasHtml(m)}${kids}${this._footer(m)}</div>
       </ha-card>`;
   }
 
@@ -1994,6 +2375,7 @@ class FamilyDayMiniCard extends FamilyDayCard {
     return `<style>${BASE_STYLE}${MINI_STYLE}</style>
       <ha-card class="compact">
         ${this._header({ name: this._miniAnswer(m), nameCls: " answer", sub, subCls: " countdown wrap", day: m.day })}
+        ${this._extrasHtml(m, " mini")}
       </ha-card>`;
   }
 }
@@ -2045,6 +2427,10 @@ class FamilyDayCardEditor extends HTMLElement {
       ["show_children", true],
       ["show_holidays", true],
       ["show_public_holidays", true],
+      ["show_waste", true],
+      ["show_birthdays", true],
+      // On by default in French only: the name days are those of the French calendar.
+      ["show_saint", (hass, config) => lang(hass, config) === "fr"],
     ];
   }
 
@@ -2066,6 +2452,8 @@ class FamilyDayCardEditor extends HTMLElement {
       { name: "workday", selector: { entity: { domain: "binary_sensor", integration: "workday" } } },
       { name: "school_holidays", selector: { entity: { domain: "calendar" } } },
       { name: "public_holidays", selector: { entity: { domain: "calendar" } } },
+      { name: "waste", selector: { entity: { domain: "calendar", multiple: true } } },
+      { name: "birthdays", selector: { entity: { domain: "calendar", multiple: true } } },
       {
         name: "school_days",
         selector: { select: { multiple: true, mode: "list", options: [...WEEKDAYS.slice(1), "sun"].map((value) => ({ value, label: upperFirst(weekdayName(value, L), L) })) } },
@@ -2078,6 +2466,11 @@ class FamilyDayCardEditor extends HTMLElement {
     ];
   }
 
+  // The toggles' defaults for a config (a default may depend on the card's language).
+  _defaults(config) {
+    return Object.fromEntries(this.constructor.toggles.map(([name, def]) => [name, typeof def === "function" ? def(this._hass, config) : def]));
+  }
+
   _render() {
     if (!this._hass || !this._config) return;
     const toggles = this.constructor.toggles;
@@ -2085,16 +2478,17 @@ class FamilyDayCardEditor extends HTMLElement {
     if (!this._form) {
       this._form = document.createElement("ha-form");
       this._form.computeLabel = (s) => tr(`opt_${s.name}`);
-      this._form.computeHelper = (s) => (["workday", "school_holidays", "public_holidays", "zoom", "school_days"].includes(s.name) ? tr(`help_${s.name}`) : undefined);
+      this._form.computeHelper = (s) => (["workday", "school_holidays", "public_holidays", "waste", "birthdays", "zoom", "school_days"].includes(s.name) ? tr(`help_${s.name}`) : undefined);
       this._form.addEventListener("value-changed", (ev) => {
         ev.stopPropagation();
-        this._config = cleanConfig(ev.detail.value, Object.fromEntries(toggles));
+        this._config = cleanConfig(ev.detail.value, this._defaults(ev.detail.value));
         this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: this._config }, bubbles: true, composed: true }));
       });
       this.appendChild(this._form);
     }
     const data = { ...this._config };
-    for (const [name, def] of toggles) if (data[name] === undefined) data[name] = def;
+    const defaults = this._defaults(this._config);
+    for (const [name] of toggles) if (data[name] === undefined) data[name] = defaults[name];
     this._form.hass = this._hass;
     if (!sameDeps(this._dataDeps, [this._config])) {
       this._dataDeps = [this._config];

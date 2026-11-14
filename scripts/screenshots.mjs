@@ -66,7 +66,7 @@ const pageHtml = (theme, width) => `<!doctype html><html lang="en"><head><meta c
 </style></head><body><div id="root"></div></body></html>`;
 
 // The calendars and Workday answers of the mock, for the page (a year around every scenario).
-const CALENDARS = Object.fromEntries([IDS.school, IDS.pub].map((id) => [id, calendarEvents(id, "2026-01-01T00:00:00Z", "2028-12-31T00:00:00Z")]));
+const CALENDARS = Object.fromEntries([IDS.school, IDS.pub, IDS.birthdays, IDS.waste].map((id) => [id, calendarEvents(id, "2026-01-01T00:00:00Z", "2028-12-31T00:00:00Z")]));
 const WORKDAYS = {};
 for (let d = Date.UTC(2026, 0, 1); d < Date.UTC(2028, 0, 1); d += 86400e3) WORKDAYS[new Date(d).toISOString().slice(0, 10)] = isWorkday(new Date(d).toISOString().slice(0, 10));
 

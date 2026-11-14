@@ -26,6 +26,8 @@ export const IDS = {
   workday: "binary_sensor.jour_ouvre",
   school: "calendar.vacances_scolaires",
   pub: "calendar.jours_feries",
+  birthdays: "calendar.anniversaires",
+  waste: "calendar.collecte_dechets",
 };
 
 // School holidays (Zone B, 2026–2027), as the ministry's ICS gives them: the end is the day back at school.
@@ -57,6 +59,28 @@ export const PUBLIC_EVENTS = [
   ["2027-07-14", "Bastille Day"],
 ].map(([d, name]) => [d, addDays(d, 1), name]);
 
+// Birthdays, one event a year (as a local calendar repeats them), the birth year in the description for the age.
+const BIRTHDAYS = [
+  ["11-15", "Emma's birthday", 2017],
+  ["11-16", "Lucas", null],
+  ["12-28", "Grandma's birthday", 1956],
+];
+export const BIRTHDAY_EVENTS = [2026, 2027].flatMap((y) =>
+  BIRTHDAYS.map(([md, summary, born]) => [`${y}-${md}`, addDays(`${y}-${md}`, 1), summary, born ? `Born in ${born}` : ""]),
+);
+
+// Bin collections, as Waste Collection Schedule's calendar gives them: recycling on Mondays, household waste on
+// Thursdays.
+export const WASTE_EVENTS = (() => {
+  const out = [];
+  for (let key = "2026-07-01"; key < "2028-01-01"; key = addDays(key, 1)) {
+    const wd = new Date(`${key}T12:00:00Z`).getUTCDay();
+    if (wd === 1) out.push([key, addDays(key, 1), "Recycling", ""]);
+    if (wd === 4) out.push([key, addDays(key, 1), "Household waste", ""]);
+  }
+  return out;
+})();
+
 function addDays(key, n) {
   const [y, m, d] = key.split("-").map(Number);
   return new Date(Date.UTC(y, m - 1, d) + n * 86400e3).toISOString().slice(0, 10);
@@ -71,12 +95,12 @@ const isSchoolDay = (key) => isWorkday(key) && !inside(SCHOOL_EVENTS, key);
 
 // The REST answer of `calendars/<id>?start=…&end=…` (all-day events: { date }).
 export const calendarEvents = (id, start, end) => {
-  const list = id === IDS.school ? SCHOOL_EVENTS : id === IDS.pub ? PUBLIC_EVENTS : [];
+  const list = { [IDS.school]: SCHOOL_EVENTS, [IDS.pub]: PUBLIC_EVENTS, [IDS.birthdays]: BIRTHDAY_EVENTS, [IDS.waste]: WASTE_EVENTS }[id] || [];
   const from = keyOf(Date.parse(start));
   const to = keyOf(Date.parse(end));
   return list
     .filter(([s, e]) => e > from && s < to)
-    .map(([s, e, summary]) => ({ start: { date: s }, end: { date: e }, summary, description: `${summary} - Zone B`, location: null, uid: null, recurrence_id: null, rrule: null }));
+    .map(([s, e, summary, description = `${summary} - Zone B`]) => ({ start: { date: s }, end: { date: e }, summary, description, location: null, uid: null, recurrence_id: null, rrule: null }));
 };
 
 // Pronote lessons of a child on a school day: [start hour, end hour, subject, canceled].
@@ -178,8 +202,9 @@ export const scenario = (now) => {
     // Another Pronote sensor, skipped by the cards.
     put(id("moyenne_generale"), "pronote", child, "overall_average", "14.2", {});
   }
-  // A device of another integration, skipped by the cards.
-  put("calendar.anniversaires", "local_calendar", null, null, "off", { friendly_name: "Birthdays" });
+  // Birthdays (a local calendar, found by its name) and bin collections (Waste Collection Schedule).
+  put(IDS.birthdays, "local_calendar", null, null, "off", { friendly_name: "Birthdays" });
+  put(IDS.waste, "waste_collection_schedule", null, null, "off", { friendly_name: "Waste collection" });
   return { states, entities, devices };
 };
 
