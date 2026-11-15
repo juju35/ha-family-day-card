@@ -16,6 +16,8 @@ export const shots = [
   // Sunday evening: school tomorrow, each child's first lesson, the Christmas holidays and Christmas Day ahead.
   ...pair("card", "family-day-card", 420, "sunday", { show_saint: true }),
   ...pair("mini-card", "family-day-mini-card", 380, "sunday"),
+  // The same Sunday evening with the two-day layout: today (no school) above tomorrow (school at 8:00).
+  ...pair("card-today", "family-day-card", 420, "sunday", { show_today: true, show_saint: true }),
   // Friday evening: the weekend tomorrow.
   ...pair("card-weekend", "family-day-card", 420, "friday", {}, {}, "dark"),
   // The eve of a public holiday.
