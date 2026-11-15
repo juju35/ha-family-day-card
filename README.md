@@ -176,6 +176,7 @@ language: fr
 | `show_waste` | both | `true` | Chip of each bin collected tomorrow (to put out tonight) |
 | `show_birthdays` | both | `true` | Chip of each birthday of today and tomorrow |
 | `show_saint` | both | `true` in French, else `false` | Chips of today's and tomorrow's name days, from the French calendar of saints |
+| `show_today` | full | `false` | Split the full card into two sections — **Today** and **Tomorrow** — each with its short date, picture, answer, status pill and chips (bins under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's rows |
 | `extras` | both | `both` | Which day's chips to show: `both`, `today` or `tomorrow`. On the full card the two days are split into labelled **Today** / **Tomorrow** groups; the mini card keeps them in one row with a *· tomorrow* cue |
 | `show_countdown` | mini | `true` | School holidays countdown under the mini card's answer |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card (with the same options, so `show_children`, `show_holidays`… can be set on the mini card too, in YAML or in its visual editor) and switches back; a click outside the card also brings the compact view back. `false` removes the button |
@@ -289,6 +290,10 @@ The chips sit under the answer on the full card and under the header on the mini
 - **Name day**: today's and tomorrow's name days of the traditional French calendar (the *fêtes à souhaiter*), built into the card: **St Albert**, **Ste Marguerite**, or the feast (**Toussaint**). Its tooltip lists the saints of the day from the open data set [Les saints et fêtes du calendrier](https://www.data.gouv.fr/datasets/les-saints-et-fetes-du-calendrier) of data.gouv.fr (the liturgical saints, where the name day is often missing). It is on by default when the card speaks French.
 
 On the full card the chips are split into a **Today** group and a **Tomorrow** group, each under its own label, so today's and tomorrow's information no longer mix. Set `extras: today` or `extras: tomorrow` to keep only one day (`both` by default). The bins are tomorrow's, so they only show when tomorrow is kept. The mini card keeps its chips in a single row, with a *· tomorrow* cue on tomorrow's.
+
+### Today and tomorrow, side by side
+
+Set `show_today: true` to give **today** its own block above **tomorrow**, instead of a single answer about tomorrow. Each section shows its short date, its picture, its *school / no school* answer with a status pill, and its chips: the bins to put out tonight sit under **Today**, while birthdays and name days stay on their own day. **Tomorrow** keeps each child's first lesson, and the school-holidays and public-holiday lines stay at the bottom of the card. The mini card is unchanged.
 
 ## Development
 

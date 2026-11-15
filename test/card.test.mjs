@@ -156,6 +156,21 @@ test("Sunday evening: school tomorrow at the earliest first lesson, a row per ch
   );
 });
 
+test("show_today splits the card into a Today section and a Tomorrow section", async () => {
+  const { fd, hass } = setup(SCENARIOS.sunday);
+  const card = await mount(fd, hass, { show_today: true });
+  const out = text(card);
+  // The two-day title, and each section with its own short date, answer and status pill.
+  assert.match(out, /Today and tomorrow/);
+  assert.match(out, /Today · Sun, Nov 15 No school — Weekend Weekend/);
+  assert.match(out, /Tomorrow · Mon, Nov 16 School at 8:00 AM School/);
+  // Tomorrow keeps the children's first lessons; the holidays footer stays.
+  assert.match(out, /Alex 8:00 AM · French/);
+  assert.match(out, /Christmas holidays · in 34 days/);
+  assert.match(html(card), /class="daysec k-weekend/);
+  assert.match(html(card), /class="daysec k-school/);
+});
+
 test("the calendars are read once for every card of the page and not again on each update", async () => {
   const { fd, hass, calls } = setup(SCENARIOS.friday);
   const a = await mount(fd, hass);
