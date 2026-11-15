@@ -295,6 +295,10 @@ On the full card the chips are split into a **Today** group and a **Tomorrow** g
 
 Set `show_today: true` to give **today** its own block above **tomorrow**, instead of a single answer about tomorrow. Each section shows its short date, its picture, its *school / no school* answer with a status pill, and its chips: the bins to put out tonight sit under **Today**, while birthdays and name days stay on their own day. **Tomorrow** keeps each child's first lesson, and the school-holidays and public-holiday lines stay at the bottom of the card. The mini card is unchanged.
 
+| Light | Dark |
+| --- | --- |
+| <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/screenshots/card-today.png" alt="card with today and tomorrow" width="400"> | <img src="https://raw.githubusercontent.com/juju35/ha-family-day-card/main/screenshots/card-today-dark.png" alt="card with today and tomorrow, dark" width="400"> |
+
 ## Development
 
 ```bash
