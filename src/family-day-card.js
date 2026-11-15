@@ -62,6 +62,8 @@ const STRINGS = {
     saint_title: "Name day",
     opt_show_waste: "Show bin collection",
     opt_show_birthdays: "Show birthdays",
+    opt_extras: "Chips (today / tomorrow)",
+    extras_both: "Both days",
     opt_show_saint: "Show name day (saint)",
     opt_waste: "Bin collection calendars",
     opt_birthdays: "Birthday calendars",
@@ -117,6 +119,8 @@ const STRINGS = {
     saint_title: "Fête du jour",
     opt_show_waste: "Afficher la collecte des déchets",
     opt_show_birthdays: "Afficher les anniversaires",
+    opt_extras: "Pastilles (aujourd'hui / demain)",
+    extras_both: "Les deux jours",
     opt_show_saint: "Afficher la fête du jour (saint)",
     opt_waste: "Calendriers de collecte des déchets",
     opt_birthdays: "Calendriers des anniversaires",
@@ -172,6 +176,8 @@ const STRINGS = {
     saint_title: "Namenstag",
     opt_show_waste: "Müllabfuhr anzeigen",
     opt_show_birthdays: "Geburtstage anzeigen",
+    opt_extras: "Chips (heute / morgen)",
+    extras_both: "Beide Tage",
     opt_show_saint: "Namenstag anzeigen (Heiliger)",
     opt_waste: "Kalender der Müllabfuhr",
     opt_birthdays: "Geburtstagskalender",
@@ -227,6 +233,8 @@ const STRINGS = {
     saint_title: "Santo del día",
     opt_show_waste: "Mostrar la recogida de basura",
     opt_show_birthdays: "Mostrar los cumpleaños",
+    opt_extras: "Fichas (hoy / mañana)",
+    extras_both: "Ambos días",
     opt_show_saint: "Mostrar el santo del día",
     opt_waste: "Calendarios de recogida de basura",
     opt_birthdays: "Calendarios de cumpleaños",
@@ -282,6 +290,8 @@ const STRINGS = {
     saint_title: "Onomastico",
     opt_show_waste: "Mostra la raccolta rifiuti",
     opt_show_birthdays: "Mostra i compleanni",
+    opt_extras: "Chip (oggi / domani)",
+    extras_both: "Entrambi i giorni",
     opt_show_saint: "Mostra l’onomastico (santo)",
     opt_waste: "Calendari della raccolta rifiuti",
     opt_birthdays: "Calendari dei compleanni",
@@ -337,6 +347,8 @@ const STRINGS = {
     saint_title: "Naamdag",
     opt_show_waste: "Afvalophaling tonen",
     opt_show_birthdays: "Verjaardagen tonen",
+    opt_extras: "Chips (vandaag / morgen)",
+    extras_both: "Beide dagen",
     opt_show_saint: "Naamdag tonen (heilige)",
     opt_waste: "Agenda’s van de afvalophaling",
     opt_birthdays: "Verjaardagsagenda’s",
@@ -392,6 +404,8 @@ const STRINGS = {
     saint_title: "Dia do santo",
     opt_show_waste: "Mostrar a recolha do lixo",
     opt_show_birthdays: "Mostrar os aniversários",
+    opt_extras: "Chips (hoje / amanhã)",
+    extras_both: "Ambos os dias",
     opt_show_saint: "Mostrar o dia do santo",
     opt_waste: "Calendários da recolha do lixo",
     opt_birthdays: "Calendários de aniversários",
@@ -447,6 +461,8 @@ const STRINGS = {
     saint_title: "Imieniny",
     opt_show_waste: "Pokaż wywóz śmieci",
     opt_show_birthdays: "Pokaż urodziny",
+    opt_extras: "Plakietki (dziś / jutro)",
+    extras_both: "Oba dni",
     opt_show_saint: "Pokaż imieniny (święty)",
     opt_waste: "Kalendarze wywozu śmieci",
     opt_birthdays: "Kalendarze urodzin",
@@ -502,6 +518,8 @@ const STRINGS = {
     saint_title: "Имендан",
     opt_show_waste: "Прикажи одвоз отпада",
     opt_show_birthdays: "Прикажи рођендане",
+    opt_extras: "Ознаке (данас / сутра)",
+    extras_both: "Оба дана",
     opt_show_saint: "Прикажи имендан (светац)",
     opt_waste: "Календари одвоза отпада",
     opt_birthdays: "Календари рођендана",
@@ -557,6 +575,8 @@ const STRINGS = {
     saint_title: "Imendan",
     opt_show_waste: "Prikaži odvoz otpada",
     opt_show_birthdays: "Prikaži rođendane",
+    opt_extras: "Oznake (danas / sutra)",
+    extras_both: "Oba dana",
     opt_show_saint: "Prikaži imendan (svetac)",
     opt_waste: "Kalendari odvoza otpada",
     opt_birthdays: "Kalendari rođendana",
@@ -612,6 +632,8 @@ const STRINGS = {
     saint_title: "Onomastică",
     opt_show_waste: "Afișează colectarea gunoiului",
     opt_show_birthdays: "Afișează zilele de naștere",
+    opt_extras: "Etichete (azi / mâine)",
+    extras_both: "Ambele zile",
     opt_show_saint: "Afișează onomastica (sfântul)",
     opt_waste: "Calendare de colectare a gunoiului",
     opt_birthdays: "Calendare cu zile de naștere",
@@ -667,6 +689,8 @@ const STRINGS = {
     saint_title: "Navnedag",
     opt_show_waste: "Vis affaldsafhentning",
     opt_show_birthdays: "Vis fødselsdage",
+    opt_extras: "Chips (i dag / i morgen)",
+    extras_both: "Begge dage",
     opt_show_saint: "Vis navnedag (helgen)",
     opt_waste: "Kalendere for affaldsafhentning",
     opt_birthdays: "Fødselsdagskalendere",
@@ -722,6 +746,8 @@ const STRINGS = {
     saint_title: "Namnsdag",
     opt_show_waste: "Visa sophämtning",
     opt_show_birthdays: "Visa födelsedagar",
+    opt_extras: "Chips (idag / imorgon)",
+    extras_both: "Båda dagarna",
     opt_show_saint: "Visa namnsdag (helgon)",
     opt_waste: "Kalendrar för sophämtning",
     opt_birthdays: "Födelsedagskalendrar",
@@ -777,6 +803,8 @@ const STRINGS = {
     saint_title: "Имен ден",
     opt_show_waste: "Показване на извозването на отпадъци",
     opt_show_birthdays: "Показване на рождените дни",
+    opt_extras: "Етикети (днес / утре)",
+    extras_both: "И двата дни",
     opt_show_saint: "Показване на имения ден (светец)",
     opt_waste: "Календари за извозване на отпадъци",
     opt_birthdays: "Календари с рождени дни",
@@ -832,6 +860,8 @@ const STRINGS = {
     saint_title: "Именины",
     opt_show_waste: "Показывать вывоз мусора",
     opt_show_birthdays: "Показывать дни рождения",
+    opt_extras: "Метки (сегодня / завтра)",
+    extras_both: "Оба дня",
     opt_show_saint: "Показывать именины (святой)",
     opt_waste: "Календари вывоза мусора",
     opt_birthdays: "Календари дней рождения",
@@ -887,6 +917,8 @@ const STRINGS = {
     saint_title: "Іменини",
     opt_show_waste: "Показувати вивезення сміття",
     opt_show_birthdays: "Показувати дні народження",
+    opt_extras: "Мітки (сьогодні / завтра)",
+    extras_both: "Обидва дні",
     opt_show_saint: "Показувати іменини (святий)",
     opt_waste: "Календарі вивезення сміття",
     opt_birthdays: "Календарі днів народження",
@@ -942,6 +974,8 @@ const STRINGS = {
     saint_title: "Névnap",
     opt_show_waste: "Szemétszállítás megjelenítése",
     opt_show_birthdays: "Születésnapok megjelenítése",
+    opt_extras: "Címkék (ma / holnap)",
+    extras_both: "Mindkét nap",
     opt_show_saint: "Névnap megjelenítése (szent)",
     opt_waste: "Szemétszállítási naptárak",
     opt_birthdays: "Születésnapi naptárak",
@@ -997,6 +1031,8 @@ const STRINGS = {
     saint_title: "Meniny",
     opt_show_waste: "Zobraziť odvoz odpadu",
     opt_show_birthdays: "Zobraziť narodeniny",
+    opt_extras: "Štítky (dnes / zajtra)",
+    extras_both: "Oba dni",
     opt_show_saint: "Zobraziť meniny (svätý)",
     opt_waste: "Kalendáre odvozu odpadu",
     opt_birthdays: "Kalendáre narodenín",
@@ -1052,6 +1088,8 @@ const STRINGS = {
     saint_title: "Svátek",
     opt_show_waste: "Zobrazit svoz odpadu",
     opt_show_birthdays: "Zobrazit narozeniny",
+    opt_extras: "Štítky (dnes / zítra)",
+    extras_both: "Oba dny",
     opt_show_saint: "Zobrazit svátek (světec)",
     opt_waste: "Kalendáře svozu odpadu",
     opt_birthdays: "Kalendáře narozenin",
@@ -1107,6 +1145,8 @@ const STRINGS = {
     saint_title: "God",
     opt_show_waste: "Prikaži odvoz odpadkov",
     opt_show_birthdays: "Prikaži rojstne dneve",
+    opt_extras: "Oznake (danes / jutri)",
+    extras_both: "Oba dneva",
     opt_show_saint: "Prikaži god (svetnik)",
     opt_waste: "Koledarji odvoza odpadkov",
     opt_birthdays: "Koledarji rojstnih dni",
@@ -1162,6 +1202,8 @@ const STRINGS = {
     saint_title: "Vārda diena",
     opt_show_waste: "Rādīt atkritumu izvešanu",
     opt_show_birthdays: "Rādīt dzimšanas dienas",
+    opt_extras: "Atzīmes (šodien / rīt)",
+    extras_both: "Abas dienas",
     opt_show_saint: "Rādīt vārda dienu (svētais)",
     opt_waste: "Atkritumu izvešanas kalendāri",
     opt_birthdays: "Dzimšanas dienu kalendāri",
@@ -1217,6 +1259,8 @@ const STRINGS = {
     saint_title: "Ονομαστική εορτή",
     opt_show_waste: "Εμφάνιση αποκομιδής απορριμμάτων",
     opt_show_birthdays: "Εμφάνιση γενεθλίων",
+    opt_extras: "Ετικέτες (σήμερα / αύριο)",
+    extras_both: "Και τις δύο ημέρες",
     opt_show_saint: "Εμφάνιση ονομαστικής εορτής (άγιος)",
     opt_waste: "Ημερολόγια αποκομιδής απορριμμάτων",
     opt_birthdays: "Ημερολόγια γενεθλίων",
@@ -1637,6 +1681,11 @@ const BASE_STYLE = `
   /* Chips of the bins, birthdays and name day: under the answer (full card), under the header (mini card). */
   .extras { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 8px 52px; min-width: 0; }
   .extras.mini { margin: 8px 0 0 62px; padding-right: 12px; }
+  /* Today / tomorrow groups (full card): the day indent moves to the wrapper, each group gets a small label. */
+  .xgroups { display: flex; flex-direction: column; gap: 8px; margin: -2px 0 8px 52px; min-width: 0; }
+  .xgroups .extras { margin: 0; }
+  .xgroup { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .xday { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--secondary-text-color); }
   .xchip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px 2px 6px; border-radius: 12px; font-size: 12px; font-weight: 500;
            max-width: 100%; min-width: 0; box-sizing: border-box;
            background: color-mix(in srgb, var(--c) 15%, transparent); color: color-mix(in srgb, var(--c) 45%, var(--primary-text-color)); }
@@ -1669,6 +1718,7 @@ const BASE_STYLE = `
   @container (max-width: 300px) {
     .extras { margin-left: 0; }
     .extras.mini { margin-left: 12px; }
+    .xgroups { margin-left: 0; }
   }
   @container (max-width: 230px) {
     .chip { padding: 4px; flex: none; }
@@ -2076,24 +2126,42 @@ class FamilyDayBase extends HTMLElement {
   }
 
   // The chips' HTML (none: empty), under the answer on the full card and under the header on the mini card.
-  _extrasHtml(m, cls = "") {
+  // `extras` (both / today / tomorrow) picks the days to show; on the full card (grouped) the two days are
+  // split into labelled groups, on the mini card they stay in one row with a "· tomorrow" cue on the chips.
+  _extrasHtml(m, cls = "", grouped = false) {
     const x = m.extras;
     const L = this._locale();
+    const raw = this._config.extras;
+    const mode = raw === "today" || raw === "tomorrow" ? raw : "both";
     const chip = (kind, icon, text, title, entity) => {
       const attrs = entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(entity)}"` : '"';
       return `<span class="xchip ${kind}${attrs} title="${esc(title)}">${svgIcon(icon)}<span>${esc(text)}</span></span>`;
     };
     const years = (n) => new Intl.NumberFormat(L, { style: "unit", unit: "year", unitDisplay: "long" }).format(n);
-    const chips = [
-      ...x.waste.map((w) => chip(`w-${w.color}`, ICONS.trash, this._t("waste_tonight", { type: w.type }), this._t("waste_title"), w.id)),
-      ...x.birthdays.map((b) =>
-        chip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : "", b.tomorrow ? fmtRel(1, L) : ""].filter(Boolean).join(" · "), this._t("birthday_title"), b.id),
-      ),
-      ...x.saints.map((n) =>
-        chip("x-saint", ICONS.flower, n.tomorrow ? `${n.name} · ${fmtRel(1, L)}` : n.name, [this._t("saint_title"), n.all.join(", ")].filter(Boolean).join(" : ")),
-      ),
-    ];
-    return chips.length ? `<div class="extras${cls}">${chips.join("")}</div>` : "";
+    // The "· tomorrow" cue only makes sense when both days share one row (the mini card); the labelled
+    // groups of the full card carry the day themselves.
+    const suf = (tomorrow) => (!grouped && tomorrow ? ` · ${fmtRel(1, L)}` : "");
+    const dayChips = (day) => {
+      const out = [];
+      if (day === 1) out.push(...x.waste.map((w) => chip(`w-${w.color}`, ICONS.trash, this._t("waste_tonight", { type: w.type }), this._t("waste_title"), w.id)));
+      out.push(...x.birthdays.filter((b) => !!b.tomorrow === (day === 1)).map((b) =>
+        chip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : ""].filter(Boolean).join(" · ") + suf(b.tomorrow), this._t("birthday_title"), b.id),
+      ));
+      out.push(...x.saints.filter((n) => !!n.tomorrow === (day === 1)).map((n) =>
+        chip("x-saint", ICONS.flower, n.name + suf(n.tomorrow), [this._t("saint_title"), n.all.join(", ")].filter(Boolean).join(" : ")),
+      ));
+      return out;
+    };
+    const groups = [];
+    if (mode !== "tomorrow") { const g = dayChips(0); if (g.length) groups.push({ day: 0, chips: g }); }
+    if (mode !== "today") { const g = dayChips(1); if (g.length) groups.push({ day: 1, chips: g }); }
+    if (!groups.length) return "";
+    if (!grouped) return `<div class="extras${cls}">${groups.flatMap((g) => g.chips).join("")}</div>`;
+    // Label a group when both days are shown, or when a lone group is today's (so it is not read as tomorrow).
+    const showLabel = (g) => groups.length > 1 || g.day === 0;
+    return `<div class="xgroups">${groups.map((g) =>
+      `<div class="xgroup">${showLabel(g) ? `<div class="xday">${esc(upperFirst(fmtRel(g.day, L), L))}</div>` : ""}<div class="extras${cls}">${g.chips.join("")}</div></div>`,
+    ).join("")}</div>`;
   }
 
   // What a day is: a public holiday, school holidays, a day without school (weekend), a day off for Workday, else
@@ -2237,7 +2305,7 @@ class FamilyDayCard extends FamilyDayBase {
     return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${this._extraStyle()}</style>
       <ha-card>
         ${this._header({ name: c.title || this._t("title"), sub: upperFirst(fmtDay(m.tomorrow, L), L), day: d })}
-        <div class="content">${this._headline(m)}${this._extrasHtml(m)}${kids}${this._footer(m)}</div>
+        <div class="content">${this._headline(m)}${this._extrasHtml(m, "", true)}${kids}${this._footer(m)}</div>
       </ha-card>`;
   }
 
@@ -2489,15 +2557,23 @@ class FamilyDayCardEditor extends HTMLElement {
       },
       { type: "grid", name: "", schema: this.constructor.toggles.map(([name]) => ({ name, selector: { boolean: {} } })) },
       {
+        name: "extras",
+        selector: { select: { mode: "dropdown", options: [
+          { value: "both", label: tr("extras_both") },
+          { value: "today", label: upperFirst(fmtRel(0, L), L) },
+          { value: "tomorrow", label: upperFirst(fmtRel(1, L), L) },
+        ] } },
+      },
+      {
         name: "language",
         selector: { select: { mode: "dropdown", options: [{ value: "", label: tr("lang_auto") }, ...LANGUAGES.map(([value, label]) => ({ value, label }))] } },
       },
     ];
   }
 
-  // The toggles' defaults for a config (a default may depend on the card's language).
+  // The toggles' defaults for a config (a default may depend on the card's language), plus the select defaults.
   _defaults(config) {
-    return Object.fromEntries(this.constructor.toggles.map(([name, def]) => [name, typeof def === "function" ? def(this._hass, config) : def]));
+    return { ...Object.fromEntries(this.constructor.toggles.map(([name, def]) => [name, typeof def === "function" ? def(this._hass, config) : def])), extras: "both" };
   }
 
   _render() {
@@ -2518,6 +2594,7 @@ class FamilyDayCardEditor extends HTMLElement {
     const data = { ...this._config };
     const defaults = this._defaults(this._config);
     for (const [name] of toggles) if (data[name] === undefined) data[name] = defaults[name];
+    if (data.extras === undefined) data.extras = defaults.extras;
     this._form.hass = this._hass;
     if (!sameDeps(this._dataDeps, [this._config])) {
       this._dataDeps = [this._config];
