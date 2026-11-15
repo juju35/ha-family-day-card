@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2026-11-15
+
+### Features
+- **Split the whole card into Today and Tomorrow** (`show_today`, off by default, in the visual editor too): the full card can show two symmetrical sections — **Today** and **Tomorrow** — each with its short date, its own picture, its *school / no school* answer and status pill, and its chips (the bins to put out tonight under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's first lessons, and the school-holidays and public-holiday lines stay at the bottom ([#11](https://github.com/juju35/ha-family-day-card/issues/11), suggested by @mielikki33).
+
 ## 1.2.0 - 2026-11-15
 
 ### Features

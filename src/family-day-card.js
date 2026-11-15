@@ -15,6 +15,7 @@ const VERSION = "__VERSION__";
 const STRINGS = {
   en: {
     title: "Tomorrow",
+    title_two: "Today and tomorrow",
     school_day: "School day",
     kind_school: "School",
     kind_weekend: "Weekend",
@@ -62,6 +63,7 @@ const STRINGS = {
     saint_title: "Name day",
     opt_show_waste: "Show bin collection",
     opt_show_birthdays: "Show birthdays",
+    opt_show_today: "Split today / tomorrow",
     opt_extras: "Chips (today / tomorrow)",
     extras_both: "Both days",
     opt_show_saint: "Show name day (saint)",
@@ -72,6 +74,7 @@ const STRINGS = {
   },
   fr: {
     title: "Demain",
+    title_two: "Aujourd'hui et demain",
     school_day: "Jour d'école",
     kind_school: "École",
     kind_weekend: "Week-end",
@@ -119,6 +122,7 @@ const STRINGS = {
     saint_title: "Fête du jour",
     opt_show_waste: "Afficher la collecte des déchets",
     opt_show_birthdays: "Afficher les anniversaires",
+    opt_show_today: "Séparer aujourd'hui / demain",
     opt_extras: "Pastilles (aujourd'hui / demain)",
     extras_both: "Les deux jours",
     opt_show_saint: "Afficher la fête du jour (saint)",
@@ -129,6 +133,7 @@ const STRINGS = {
   },
   de: {
     title: "Morgen",
+    title_two: "Heute und morgen",
     school_day: "Schultag",
     kind_school: "Schule",
     kind_weekend: "Wochenende",
@@ -176,6 +181,7 @@ const STRINGS = {
     saint_title: "Namenstag",
     opt_show_waste: "Müllabfuhr anzeigen",
     opt_show_birthdays: "Geburtstage anzeigen",
+    opt_show_today: "Heute / morgen trennen",
     opt_extras: "Chips (heute / morgen)",
     extras_both: "Beide Tage",
     opt_show_saint: "Namenstag anzeigen (Heiliger)",
@@ -186,6 +192,7 @@ const STRINGS = {
   },
   es: {
     title: "Mañana",
+    title_two: "Hoy y mañana",
     school_day: "Día de colegio",
     kind_school: "Colegio",
     kind_weekend: "Fin de semana",
@@ -233,6 +240,7 @@ const STRINGS = {
     saint_title: "Santo del día",
     opt_show_waste: "Mostrar la recogida de basura",
     opt_show_birthdays: "Mostrar los cumpleaños",
+    opt_show_today: "Separar hoy / mañana",
     opt_extras: "Fichas (hoy / mañana)",
     extras_both: "Ambos días",
     opt_show_saint: "Mostrar el santo del día",
@@ -243,6 +251,7 @@ const STRINGS = {
   },
   it: {
     title: "Domani",
+    title_two: "Oggi e domani",
     school_day: "Giorno di scuola",
     kind_school: "Scuola",
     kind_weekend: "Fine settimana",
@@ -290,6 +299,7 @@ const STRINGS = {
     saint_title: "Onomastico",
     opt_show_waste: "Mostra la raccolta rifiuti",
     opt_show_birthdays: "Mostra i compleanni",
+    opt_show_today: "Separa oggi / domani",
     opt_extras: "Chip (oggi / domani)",
     extras_both: "Entrambi i giorni",
     opt_show_saint: "Mostra l’onomastico (santo)",
@@ -300,6 +310,7 @@ const STRINGS = {
   },
   nl: {
     title: "Morgen",
+    title_two: "Vandaag en morgen",
     school_day: "Schooldag",
     kind_school: "School",
     kind_weekend: "Weekend",
@@ -347,6 +358,7 @@ const STRINGS = {
     saint_title: "Naamdag",
     opt_show_waste: "Afvalophaling tonen",
     opt_show_birthdays: "Verjaardagen tonen",
+    opt_show_today: "Vandaag / morgen splitsen",
     opt_extras: "Chips (vandaag / morgen)",
     extras_both: "Beide dagen",
     opt_show_saint: "Naamdag tonen (heilige)",
@@ -357,6 +369,7 @@ const STRINGS = {
   },
   pt: {
     title: "Amanhã",
+    title_two: "Hoje e amanhã",
     school_day: "Dia de escola",
     kind_school: "Escola",
     kind_weekend: "Fim de semana",
@@ -404,6 +417,7 @@ const STRINGS = {
     saint_title: "Dia do santo",
     opt_show_waste: "Mostrar a recolha do lixo",
     opt_show_birthdays: "Mostrar os aniversários",
+    opt_show_today: "Separar hoje / amanhã",
     opt_extras: "Chips (hoje / amanhã)",
     extras_both: "Ambos os dias",
     opt_show_saint: "Mostrar o dia do santo",
@@ -414,6 +428,7 @@ const STRINGS = {
   },
   pl: {
     title: "Jutro",
+    title_two: "Dziś i jutro",
     school_day: "Dzień szkolny",
     kind_school: "Szkoła",
     kind_weekend: "Weekend",
@@ -461,6 +476,7 @@ const STRINGS = {
     saint_title: "Imieniny",
     opt_show_waste: "Pokaż wywóz śmieci",
     opt_show_birthdays: "Pokaż urodziny",
+    opt_show_today: "Rozdziel dziś / jutro",
     opt_extras: "Plakietki (dziś / jutro)",
     extras_both: "Oba dni",
     opt_show_saint: "Pokaż imieniny (święty)",
@@ -471,6 +487,7 @@ const STRINGS = {
   },
   sr: {
     title: "Сутра",
+    title_two: "Данас и сутра",
     school_day: "Школски дан",
     kind_school: "Школа",
     kind_weekend: "Викенд",
@@ -518,6 +535,7 @@ const STRINGS = {
     saint_title: "Имендан",
     opt_show_waste: "Прикажи одвоз отпада",
     opt_show_birthdays: "Прикажи рођендане",
+    opt_show_today: "Раздвоји данас / сутра",
     opt_extras: "Ознаке (данас / сутра)",
     extras_both: "Оба дана",
     opt_show_saint: "Прикажи имендан (светац)",
@@ -528,6 +546,7 @@ const STRINGS = {
   },
   "sr-Latn": {
     title: "Sutra",
+    title_two: "Данас и сутра",
     school_day: "Školski dan",
     kind_school: "Škola",
     kind_weekend: "Vikend",
@@ -575,6 +594,7 @@ const STRINGS = {
     saint_title: "Imendan",
     opt_show_waste: "Prikaži odvoz otpada",
     opt_show_birthdays: "Prikaži rođendane",
+    opt_show_today: "Раздвоји данас / сутра",
     opt_extras: "Oznake (danas / sutra)",
     extras_both: "Oba dana",
     opt_show_saint: "Prikaži imendan (svetac)",
@@ -585,6 +605,7 @@ const STRINGS = {
   },
   ro: {
     title: "Mâine",
+    title_two: "Azi și mâine",
     school_day: "Zi de școală",
     kind_school: "Școală",
     kind_weekend: "Weekend",
@@ -632,6 +653,7 @@ const STRINGS = {
     saint_title: "Onomastică",
     opt_show_waste: "Afișează colectarea gunoiului",
     opt_show_birthdays: "Afișează zilele de naștere",
+    opt_show_today: "Separă azi / mâine",
     opt_extras: "Etichete (azi / mâine)",
     extras_both: "Ambele zile",
     opt_show_saint: "Afișează onomastica (sfântul)",
@@ -642,6 +664,7 @@ const STRINGS = {
   },
   da: {
     title: "I morgen",
+    title_two: "I dag og i morgen",
     school_day: "Skoledag",
     kind_school: "Skole",
     kind_weekend: "Weekend",
@@ -689,6 +712,7 @@ const STRINGS = {
     saint_title: "Navnedag",
     opt_show_waste: "Vis affaldsafhentning",
     opt_show_birthdays: "Vis fødselsdage",
+    opt_show_today: "Opdel i dag / i morgen",
     opt_extras: "Chips (i dag / i morgen)",
     extras_both: "Begge dage",
     opt_show_saint: "Vis navnedag (helgen)",
@@ -699,6 +723,7 @@ const STRINGS = {
   },
   sv: {
     title: "I morgon",
+    title_two: "Idag och imorgon",
     school_day: "Skoldag",
     kind_school: "Skola",
     kind_weekend: "Helg",
@@ -746,6 +771,7 @@ const STRINGS = {
     saint_title: "Namnsdag",
     opt_show_waste: "Visa sophämtning",
     opt_show_birthdays: "Visa födelsedagar",
+    opt_show_today: "Dela upp idag / imorgon",
     opt_extras: "Chips (idag / imorgon)",
     extras_both: "Båda dagarna",
     opt_show_saint: "Visa namnsdag (helgon)",
@@ -756,6 +782,7 @@ const STRINGS = {
   },
   bg: {
     title: "Утре",
+    title_two: "Днес и утре",
     school_day: "Учебен ден",
     kind_school: "Училище",
     kind_weekend: "Почивни дни",
@@ -803,6 +830,7 @@ const STRINGS = {
     saint_title: "Имен ден",
     opt_show_waste: "Показване на извозването на отпадъци",
     opt_show_birthdays: "Показване на рождените дни",
+    opt_show_today: "Раздели днес / утре",
     opt_extras: "Етикети (днес / утре)",
     extras_both: "И двата дни",
     opt_show_saint: "Показване на имения ден (светец)",
@@ -813,6 +841,7 @@ const STRINGS = {
   },
   ru: {
     title: "Завтра",
+    title_two: "Сегодня и завтра",
     school_day: "Учебный день",
     kind_school: "Школа",
     kind_weekend: "Выходные",
@@ -860,6 +889,7 @@ const STRINGS = {
     saint_title: "Именины",
     opt_show_waste: "Показывать вывоз мусора",
     opt_show_birthdays: "Показывать дни рождения",
+    opt_show_today: "Разделить сегодня / завтра",
     opt_extras: "Метки (сегодня / завтра)",
     extras_both: "Оба дня",
     opt_show_saint: "Показывать именины (святой)",
@@ -870,6 +900,7 @@ const STRINGS = {
   },
   uk: {
     title: "Завтра",
+    title_two: "Сьогодні і завтра",
     school_day: "Навчальний день",
     kind_school: "Школа",
     kind_weekend: "Вихідні",
@@ -917,6 +948,7 @@ const STRINGS = {
     saint_title: "Іменини",
     opt_show_waste: "Показувати вивезення сміття",
     opt_show_birthdays: "Показувати дні народження",
+    opt_show_today: "Розділити сьогодні / завтра",
     opt_extras: "Мітки (сьогодні / завтра)",
     extras_both: "Обидва дні",
     opt_show_saint: "Показувати іменини (святий)",
@@ -927,6 +959,7 @@ const STRINGS = {
   },
   hu: {
     title: "Holnap",
+    title_two: "Ma és holnap",
     school_day: "Iskolanap",
     kind_school: "Iskola",
     kind_weekend: "Hétvége",
@@ -974,6 +1007,7 @@ const STRINGS = {
     saint_title: "Névnap",
     opt_show_waste: "Szemétszállítás megjelenítése",
     opt_show_birthdays: "Születésnapok megjelenítése",
+    opt_show_today: "Ma / holnap szétválasztása",
     opt_extras: "Címkék (ma / holnap)",
     extras_both: "Mindkét nap",
     opt_show_saint: "Névnap megjelenítése (szent)",
@@ -984,6 +1018,7 @@ const STRINGS = {
   },
   sk: {
     title: "Zajtra",
+    title_two: "Dnes a zajtra",
     school_day: "Školský deň",
     kind_school: "Škola",
     kind_weekend: "Víkend",
@@ -1031,6 +1066,7 @@ const STRINGS = {
     saint_title: "Meniny",
     opt_show_waste: "Zobraziť odvoz odpadu",
     opt_show_birthdays: "Zobraziť narodeniny",
+    opt_show_today: "Rozdeliť dnes / zajtra",
     opt_extras: "Štítky (dnes / zajtra)",
     extras_both: "Oba dni",
     opt_show_saint: "Zobraziť meniny (svätý)",
@@ -1041,6 +1077,7 @@ const STRINGS = {
   },
   cs: {
     title: "Zítra",
+    title_two: "Dnes a zítra",
     school_day: "Školní den",
     kind_school: "Škola",
     kind_weekend: "Víkend",
@@ -1088,6 +1125,7 @@ const STRINGS = {
     saint_title: "Svátek",
     opt_show_waste: "Zobrazit svoz odpadu",
     opt_show_birthdays: "Zobrazit narozeniny",
+    opt_show_today: "Rozdělit dnes / zítra",
     opt_extras: "Štítky (dnes / zítra)",
     extras_both: "Oba dny",
     opt_show_saint: "Zobrazit svátek (světec)",
@@ -1098,6 +1136,7 @@ const STRINGS = {
   },
   sl: {
     title: "Jutri",
+    title_two: "Danes in jutri",
     school_day: "Šolski dan",
     kind_school: "Šola",
     kind_weekend: "Vikend",
@@ -1145,6 +1184,7 @@ const STRINGS = {
     saint_title: "God",
     opt_show_waste: "Prikaži odvoz odpadkov",
     opt_show_birthdays: "Prikaži rojstne dneve",
+    opt_show_today: "Loči danes / jutri",
     opt_extras: "Oznake (danes / jutri)",
     extras_both: "Oba dneva",
     opt_show_saint: "Prikaži god (svetnik)",
@@ -1155,6 +1195,7 @@ const STRINGS = {
   },
   lv: {
     title: "Rīt",
+    title_two: "Šodien un rīt",
     school_day: "Skolas diena",
     kind_school: "Skola",
     kind_weekend: "Nedēļas nogale",
@@ -1202,6 +1243,7 @@ const STRINGS = {
     saint_title: "Vārda diena",
     opt_show_waste: "Rādīt atkritumu izvešanu",
     opt_show_birthdays: "Rādīt dzimšanas dienas",
+    opt_show_today: "Atdalīt šodien / rīt",
     opt_extras: "Atzīmes (šodien / rīt)",
     extras_both: "Abas dienas",
     opt_show_saint: "Rādīt vārda dienu (svētais)",
@@ -1212,6 +1254,7 @@ const STRINGS = {
   },
   el: {
     title: "Αύριο",
+    title_two: "Σήμερα και αύριο",
     school_day: "Σχολική μέρα",
     kind_school: "Σχολείο",
     kind_weekend: "Σαββατοκύριακο",
@@ -1259,6 +1302,7 @@ const STRINGS = {
     saint_title: "Ονομαστική εορτή",
     opt_show_waste: "Εμφάνιση αποκομιδής απορριμμάτων",
     opt_show_birthdays: "Εμφάνιση γενεθλίων",
+    opt_show_today: "Διαχωρισμός σήμερα / αύριο",
     opt_extras: "Ετικέτες (σήμερα / αύριο)",
     extras_both: "Και τις δύο ημέρες",
     opt_show_saint: "Εμφάνιση ονομαστικής εορτής (άγιος)",
@@ -1797,6 +1841,33 @@ const FULL_STYLE = `
   }
 `;
 
+const TWODAY_STYLE = `
+  .content.twoday { padding-top: 0; }
+  /* One day block, stacked: Today above Tomorrow, split by a hairline. */
+  .daysec { padding: 11px 2px; display: flex; flex-direction: column; gap: 9px; }
+  .daysec + .daysec { border-top: 1px solid var(--divider-color, rgba(127,127,127,.2)); }
+  .dayhead { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .dayhead .art { position: relative; display: grid; flex: none; width: 40px; height: 40px; }
+  .dayhead .glyph { grid-area: 1 / 1; width: 100%; height: 100%; }
+  .daylabel { flex: 1 1 auto; min-width: 0; }
+  .daylabel .lab { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .daylabel .lab .date { text-transform: none; font-weight: 500; }
+  .daylabel .ans { font-size: 17px; font-weight: 500; line-height: 1.2; overflow-wrap: anywhere;
+                   color: color-mix(in srgb, var(--c) 40%, var(--primary-text-color)); transition: color .4s ease; }
+  .daysec .indent { padding-left: 52px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+  .daysec .indent .extras { margin: 0; }
+  .daysec .indent .kids { margin: 0; }
+  @container (max-width: 300px) {
+    .daysec .indent { padding-left: 0; }
+    .dayhead { gap: 10px; }
+    .dayhead .art { width: 32px; height: 32px; }
+    .daylabel .ans { font-size: 15px; }
+  }
+  @container (max-width: 230px) {
+    .daylabel .lab .date { display: none; }
+  }
+`;
+
 const MINI_STYLE = `
   :host { --fd-natural-width: 300px; }
   ha-card.compact { padding-bottom: 12px; }
@@ -2090,8 +2161,9 @@ class FamilyDayBase extends HTMLElement {
     const pub = events(src.public_holidays, "");
     const loading = Object.values(pending).some(Boolean);
     const day = loading ? { key: tomorrow, kind: "unknown", loading: true } : this._status(tomorrow, school, pub, src);
+    const dayToday = loading ? { key: today, kind: "unknown", loading: true } : this._status(today, school, pub, src);
     const children = src.children.map((ch) => ({ name: ch.name, id: ch.tomorrow || ch.next_day || ch.today, day: this._childDay(ch, tomorrow, tz) }));
-    return { today, tomorrow, day, school, pub, children, src, pending, extras: this._extrasOf(today, tomorrow, src, tz) };
+    return { today, tomorrow, day, dayToday, school, pub, children, src, pending, extras: this._extrasOf(today, tomorrow, src, tz) };
   }
 
   // The chips under the answer: tomorrow's bin collections ("Recycling tonight"), today's and tomorrow's birthdays,
@@ -2128,15 +2200,18 @@ class FamilyDayBase extends HTMLElement {
   // The chips' HTML (none: empty), under the answer on the full card and under the header on the mini card.
   // `extras` (both / today / tomorrow) picks the days to show; on the full card (grouped) the two days are
   // split into labelled groups, on the mini card they stay in one row with a "· tomorrow" cue on the chips.
+  // One bin / birthday / name-day chip.
+  _xchip(kind, icon, text, title, entity) {
+    const attrs = entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(entity)}"` : '"';
+    return `<span class="xchip ${kind}${attrs} title="${esc(title)}">${svgIcon(icon)}<span>${esc(text)}</span></span>`;
+  }
+
   _extrasHtml(m, cls = "", grouped = false) {
     const x = m.extras;
     const L = this._locale();
     const raw = this._config.extras;
     const mode = raw === "today" || raw === "tomorrow" ? raw : "both";
-    const chip = (kind, icon, text, title, entity) => {
-      const attrs = entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(entity)}"` : '"';
-      return `<span class="xchip ${kind}${attrs} title="${esc(title)}">${svgIcon(icon)}<span>${esc(text)}</span></span>`;
-    };
+    const chip = (kind, icon, text, title, entity) => this._xchip(kind, icon, text, title, entity);
     const years = (n) => new Intl.NumberFormat(L, { style: "unit", unit: "year", unitDisplay: "long" }).format(n);
     // The "· tomorrow" cue only makes sense when both days share one row (the mini card); the labelled
     // groups of the full card carry the day themselves.
@@ -2162,6 +2237,60 @@ class FamilyDayBase extends HTMLElement {
     return `<div class="xgroups">${groups.map((g) =>
       `<div class="xgroup">${showLabel(g) ? `<div class="xday">${esc(upperFirst(fmtRel(g.day, L), L))}</div>` : ""}<div class="extras${cls}">${g.chips.join("")}</div></div>`,
     ).join("")}</div>`;
+  }
+
+  // ---- Two-day layout (show_today) ---------------------------------------
+
+  // The chips of one section: the bins go to today (put out tonight), birthdays and name day to their own day.
+  _sectionChips(m, which) {
+    const x = m.extras;
+    const L = this._locale();
+    const isTom = which === "tomorrow";
+    const years = (n) => new Intl.NumberFormat(L, { style: "unit", unit: "year", unitDisplay: "long" }).format(n);
+    const out = [];
+    if (!isTom) out.push(...x.waste.map((w) => this._xchip(`w-${w.color}`, ICONS.trash, this._t("waste_tonight", { type: w.type }), this._t("waste_title"), w.id)));
+    out.push(...x.birthdays.filter((b) => !!b.tomorrow === isTom).map((b) =>
+      this._xchip("x-birthday", ICONS.cake, [b.name, b.age !== null ? years(b.age) : ""].filter(Boolean).join(" · "), this._t("birthday_title"), b.id),
+    ));
+    out.push(...x.saints.filter((n) => !!n.tomorrow === isTom).map((n) =>
+      this._xchip("x-saint", ICONS.flower, n.name, [this._t("saint_title"), n.all.join(", ")].filter(Boolean).join(" : ")),
+    ));
+    return out.length ? `<div class="extras">${out.join("")}</div>` : "";
+  }
+
+  // One day block: its picture, its label and date, the answer, the status pill, then its chips (and, for tomorrow,
+  // the children's first lessons).
+  _daySection(m, which) {
+    const L = this._locale();
+    const isTom = which === "tomorrow";
+    const d = isTom ? m.day : m.dayToday;
+    const first = isTom ? this._firstLesson(m) : null;
+    const attrs = d.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(d.entity)}"` : '"';
+    const pill = esc(this._kindLabel(d.kind));
+    const chips = this._sectionChips(m, which);
+    const kids = isTom && this._config.show_children !== false && d.kind === "school" ? this._kidsHtml(m) : "";
+    const indent = chips || kids ? `<div class="indent">${chips}${kids}</div>` : "";
+    return `<div class="daysec k-${d.kind}">
+        <div class="dayhead${attrs}>
+          <span class="art">${this._glyph(which, d.kind, art)}</span>
+          <div class="daylabel">
+            <div class="lab">${esc(upperFirst(fmtRel(isTom ? 1 : 0, L), L))} <span class="date">· ${esc(fmtWeekday(d.key, L))}</span></div>
+            <div class="ans">${esc(this._answerFor(d, first))}</div>
+          </div>
+          <span class="chip k-${d.kind}" title="${pill}" aria-label="${pill}"><span class="dot"></span><span class="chip-text">${pill}</span></span>
+        </div>
+        ${indent}
+      </div>`;
+  }
+
+  // The header of the two-day card: badge and title only (each day carries its own date and status).
+  _headerTwo(m) {
+    const c = this._config;
+    return `
+      <div class="header">
+        <span class="badge">${svgIcon(ICONS.bag)}</span>
+        <div class="titles"><div class="name">${esc(c.title || this._t("title_two"))}</div></div>
+      </div>`;
   }
 
   // What a day is: a public holiday, school holidays, a day without school (weekend), a day off for Workday, else
@@ -2300,6 +2429,13 @@ class FamilyDayCard extends FamilyDayBase {
     const m = this._model();
     if (this._noSource(m)) return this._errorCard(this._t("no_source"));
     const L = this._locale();
+    if (c.show_today) {
+      return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${TWODAY_STYLE}${this._extraStyle()}</style>
+        <ha-card>
+          ${this._headerTwo(m)}
+          <div class="content twoday">${this._daySection(m, "today")}${this._daySection(m, "tomorrow")}${this._footer(m)}</div>
+        </ha-card>`;
+    }
     const d = m.day;
     const kids = c.show_children !== false && d.kind === "school" ? this._kidsHtml(m) : "";
     return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${this._extraStyle()}</style>
@@ -2311,12 +2447,14 @@ class FamilyDayCard extends FamilyDayBase {
 
   // "School at 8:00" (the earliest first lesson), "School day" without Pronote, "No school — Weekend".
   _answer(m) {
-    const d = m.day;
+    return this._answerFor(m.day, this._firstLesson(m));
+  }
+
+  // The answer for a given day: "School at 8:00" when a first lesson is known, else "School day"; "No school —
+  // Weekend" otherwise. `first` is null for today (its first lesson is of little use once the day is under way).
+  _answerFor(d, first) {
     if (d.loading) return this._t("loading");
-    if (d.kind === "school") {
-      const first = this._firstLesson(m);
-      return first !== null ? this._t("school_at", { time: this._time(first) }) : this._t("school_day");
-    }
+    if (d.kind === "school") return first !== null ? this._t("school_at", { time: this._time(first) }) : this._t("school_day");
     return this._t("no_school", { reason: d.name || this._kindLabel(d.kind) });
   }
 
@@ -2522,6 +2660,7 @@ class FamilyDayCardEditor extends HTMLElement {
       ["show_title", true],
       ["show_subtitle", true],
       ["show_children", true],
+      ["show_today", false],
       ["show_holidays", true],
       ["show_public_holidays", true],
       ["show_waste", true],
