@@ -339,7 +339,7 @@ test("the language follows Home Assistant, or the `language` option, and the tim
   const { fd, hass } = setup(SCENARIOS.sunday);
   const fr = text(await mount(fd, { ...hass, language: "fr", locale: { language: "fr", time_zone: "server" } }));
   assert.match(fr, /Demain Lundi 16 novembre École/);
-  assert.match(fr, /École à 8:00 Recycling ce soir Emma · 9 ans Lucas · demain St Albert Ste Marguerite · demain Alex 8:00 · French/);
+  assert.match(fr, /École à 8:00 Aujourd.hui Emma · 9 ans St Albert Demain Recycling ce soir Lucas Ste Marguerite Alex 8:00 · French/);
   assert.match(fr, /Christmas holidays · dans 34 jours Sam\. 19 déc\./);
   const de = text(await mount(fd, hass, { language: "de" }));
   assert.match(de, /Morgen Montag, 16. November Schule/);
@@ -443,14 +443,22 @@ test("chips: tomorrow's bins, today's and tomorrow's birthdays, today's name day
   const { fd, hass } = setup(SCENARIOS.sunday);
   const card = await mount(fd, hass);
   const out = text(card);
-  assert.match(out, /School at 8:00 AM Recycling tonight Emma · 9 years Lucas · tomorrow Alex/);
+  // The full card splits the chips into labelled Today / Tomorrow groups (#8).
+  assert.match(out, /School at 8:00 AM Today Emma · 9 years Tomorrow Recycling tonight Lucas Alex/);
   // The name days are French: off by default in another language, on with show_saint.
   assert.doesNotMatch(out, /St Albert/);
   assert.match(html(card), /class="xchip w-yellow clickable" role="button" tabindex="0" data-entity="calendar.collecte_dechets"/);
   const saint = await mount(fd, hass, { show_saint: true });
-  // Today's name day, then tomorrow's (Monday, November 16).
-  assert.match(text(saint), /Lucas · tomorrow St Albert Ste Marguerite · tomorrow/);
+  // Today's chips, then tomorrow's (Monday, November 16), each under its day label.
+  assert.match(text(saint), /Today Emma · 9 years St Albert Tomorrow Recycling tonight Lucas Ste Marguerite/);
   assert.match(html(saint), /title="Name day : St Albert le Grand"/);
+  // `extras` restricts the chips to one day (#8): today only keeps its label, tomorrow only drops it.
+  const todayOnly = text(await mount(fd, hass, { show_saint: true, extras: "today" }));
+  assert.match(todayOnly, /Today Emma · 9 years St Albert/);
+  assert.doesNotMatch(todayOnly, /Recycling tonight|Lucas|Ste Marguerite/);
+  const tomorrowOnly = text(await mount(fd, hass, { show_saint: true, extras: "tomorrow" }));
+  assert.match(tomorrowOnly, /Recycling tonight Lucas Ste Marguerite/);
+  assert.doesNotMatch(tomorrowOnly, /Emma|St Albert/);
   const off = text(await mount(fd, hass, { show_waste: false, show_birthdays: false }));
   assert.doesNotMatch(off, /Recycling|Emma/);
   // A calendar set in the options replaces the ones found; false turns them off.

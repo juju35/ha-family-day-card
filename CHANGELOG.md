@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 - 2026-11-15
+
+### Features
+- **Separate today and tomorrow** (`extras`, in the visual editor too): the full card now splits the chips (bins, birthdays, name days) into labelled **Today** and **Tomorrow** groups, so the two days no longer mix under the answer about tomorrow. `extras: today` or `extras: tomorrow` keeps only one day (`both` by default); the mini card keeps its chips in one row with a *· tomorrow* cue ([#8](https://github.com/juju35/ha-family-day-card/issues/8), suggested by @mielikki33).
+
 ## 1.1.2 - 2026-11-14
 
 ### Fixes
