@@ -49,6 +49,11 @@ const STRINGS = {
     opt_show_countdown: "Show holidays countdown",
     opt_language: "Language",
     opt_zoom: "Detail button",
+    opt_illustration: "Animated illustration",
+    opt_illustration_theme: "Illustration theme",
+    theme_auto: "Automatic (sun or dark theme)",
+    theme_day: "Day",
+    theme_night: "Night",
     help_workday: "Binary sensor of the Workday integration (found automatically when left empty)",
     help_school_holidays: "Calendar of the school holidays, such as the French education ministry's ICS in Remote calendar (found automatically when left empty)",
     help_public_holidays: "Calendar of the Holiday integration (found automatically when left empty)",
@@ -108,6 +113,11 @@ const STRINGS = {
     opt_show_countdown: "Afficher le compte à rebours des vacances",
     opt_language: "Langue",
     opt_zoom: "Bouton détail",
+    opt_illustration: "Illustration animée",
+    opt_illustration_theme: "Thème de l’illustration",
+    theme_auto: "Automatique (soleil ou thème sombre)",
+    theme_day: "Jour",
+    theme_night: "Nuit",
     help_workday: "Capteur binaire de l'intégration Workday (trouvé automatiquement si vide)",
     help_school_holidays: "Calendrier des vacances scolaires, comme l'ICS du ministère de l'Éducation nationale dans Remote calendar (trouvé automatiquement si vide)",
     help_public_holidays: "Calendrier de l'intégration Holiday (trouvé automatiquement si vide)",
@@ -167,6 +177,11 @@ const STRINGS = {
     opt_show_countdown: "Ferien-Countdown anzeigen",
     opt_language: "Sprache",
     opt_zoom: "Detail-Schaltfläche",
+    opt_illustration: "Animierte Illustration",
+    opt_illustration_theme: "Thema der Illustration",
+    theme_auto: "Automatisch (Sonne oder dunkles Design)",
+    theme_day: "Tag",
+    theme_night: "Nacht",
     help_workday: "Binärsensor der Workday-Integration (leer: automatisch gefunden)",
     help_school_holidays: "Kalender der Schulferien, z. B. die ICS-Datei des französischen Bildungsministeriums in Remote calendar (leer: automatisch gefunden)",
     help_public_holidays: "Kalender der Holiday-Integration (leer: automatisch gefunden)",
@@ -226,6 +241,11 @@ const STRINGS = {
     opt_show_countdown: "Mostrar cuenta atrás de vacaciones",
     opt_language: "Idioma",
     opt_zoom: "Botón de detalle",
+    opt_illustration: "Ilustración animada",
+    opt_illustration_theme: "Tema de la ilustración",
+    theme_auto: "Automático (sol o tema oscuro)",
+    theme_day: "Día",
+    theme_night: "Noche",
     help_workday: "Sensor binario de la integración Workday (se encuentra automáticamente si está vacío)",
     help_school_holidays: "Calendario de vacaciones escolares, como el ICS del ministerio de Educación francés en Remote calendar (se encuentra automáticamente si está vacío)",
     help_public_holidays: "Calendario de la integración Holiday (se encuentra automáticamente si está vacío)",
@@ -285,6 +305,11 @@ const STRINGS = {
     opt_show_countdown: "Mostra conto alla rovescia delle vacanze",
     opt_language: "Lingua",
     opt_zoom: "Pulsante dettaglio",
+    opt_illustration: "Illustrazione animata",
+    opt_illustration_theme: "Tema dell’illustrazione",
+    theme_auto: "Automatico (sole o tema scuro)",
+    theme_day: "Giorno",
+    theme_night: "Notte",
     help_workday: "Sensore binario dell'integrazione Workday (trovato automaticamente se vuoto)",
     help_school_holidays: "Calendario delle vacanze scolastiche, come l'ICS del ministero dell'Istruzione francese in Remote calendar (trovato automaticamente se vuoto)",
     help_public_holidays: "Calendario dell'integrazione Holiday (trovato automaticamente se vuoto)",
@@ -344,6 +369,11 @@ const STRINGS = {
     opt_show_countdown: "Aftellen naar de vakantie tonen",
     opt_language: "Taal",
     opt_zoom: "Detailknop",
+    opt_illustration: "Geanimeerde illustratie",
+    opt_illustration_theme: "Thema van de illustratie",
+    theme_auto: "Automatisch (zon of donker thema)",
+    theme_day: "Dag",
+    theme_night: "Nacht",
     help_workday: "Binaire sensor van de Workday-integratie (leeg: automatisch gevonden)",
     help_school_holidays: "Kalender van de schoolvakanties, zoals de ICS van het Franse ministerie van Onderwijs in Remote calendar (leeg: automatisch gevonden)",
     help_public_holidays: "Kalender van de Holiday-integratie (leeg: automatisch gevonden)",
@@ -403,6 +433,11 @@ const STRINGS = {
     opt_show_countdown: "Mostrar contagem decrescente das férias",
     opt_language: "Idioma",
     opt_zoom: "Botão de detalhe",
+    opt_illustration: "Ilustração animada",
+    opt_illustration_theme: "Tema da ilustração",
+    theme_auto: "Automático (sol ou tema escuro)",
+    theme_day: "Dia",
+    theme_night: "Noite",
     help_workday: "Sensor binário da integração Workday (encontrado automaticamente se vazio)",
     help_school_holidays: "Calendário das férias escolares, como o ICS do ministério da Educação francês no Remote calendar (encontrado automaticamente se vazio)",
     help_public_holidays: "Calendário da integração Holiday (encontrado automaticamente se vazio)",
@@ -462,6 +497,11 @@ const STRINGS = {
     opt_show_countdown: "Pokaż odliczanie do ferii",
     opt_language: "Język",
     opt_zoom: "Przycisk szczegółów",
+    opt_illustration: "Animowana ilustracja",
+    opt_illustration_theme: "Motyw ilustracji",
+    theme_auto: "Automatycznie (słońce lub ciemny motyw)",
+    theme_day: "Dzień",
+    theme_night: "Noc",
     help_workday: "Czujnik binarny integracji Workday (pusty: wyszukiwany automatycznie)",
     help_school_holidays: "Kalendarz ferii szkolnych, np. plik ICS francuskiego ministerstwa edukacji w Remote calendar (pusty: wyszukiwany automatycznie)",
     help_public_holidays: "Kalendarz integracji Holiday (pusty: wyszukiwany automatycznie)",
@@ -521,6 +561,11 @@ const STRINGS = {
     opt_show_countdown: "Прикажи одбројавање до распуста",
     opt_language: "Језик",
     opt_zoom: "Дугме за детаље",
+    opt_illustration: "Анимирана илустрација",
+    opt_illustration_theme: "Тема илустрације",
+    theme_auto: "Аутоматски (сунце или тамна тема)",
+    theme_day: "Дан",
+    theme_night: "Ноћ",
     help_workday: "Бинарни сензор интеграције Workday (ако је празно, проналази се аутоматски)",
     help_school_holidays: "Календар школских распуста, нпр. ICS француског министарства просвете у Remote calendar (ако је празно, проналази се аутоматски)",
     help_public_holidays: "Календар интеграције Holiday (ако је празно, проналази се аутоматски)",
@@ -580,6 +625,11 @@ const STRINGS = {
     opt_show_countdown: "Prikaži odbrojavanje do raspusta",
     opt_language: "Jezik",
     opt_zoom: "Dugme za detalje",
+    opt_illustration: "Animirana ilustracija",
+    opt_illustration_theme: "Tema ilustracije",
+    theme_auto: "Automatski (sunce ili tamna tema)",
+    theme_day: "Dan",
+    theme_night: "Noć",
     help_workday: "Binarni senzor integracije Workday (ako je prazno, pronalazi se automatski)",
     help_school_holidays: "Kalendar školskih raspusta, npr. ICS francuskog ministarstva prosvete u Remote calendar (ako je prazno, pronalazi se automatski)",
     help_public_holidays: "Kalendar integracije Holiday (ako je prazno, pronalazi se automatski)",
@@ -639,6 +689,11 @@ const STRINGS = {
     opt_show_countdown: "Afișează numărătoarea inversă până la vacanță",
     opt_language: "Limbă",
     opt_zoom: "Buton de detalii",
+    opt_illustration: "Ilustrație animată",
+    opt_illustration_theme: "Tema ilustrației",
+    theme_auto: "Automat (soare sau temă întunecată)",
+    theme_day: "Zi",
+    theme_night: "Noapte",
     help_workday: "Senzorul binar al integrării Workday (găsit automat dacă e gol)",
     help_school_holidays: "Calendarul vacanțelor școlare, de exemplu ICS-ul ministerului francez al educației în Remote calendar (găsit automat dacă e gol)",
     help_public_holidays: "Calendarul integrării Holiday (găsit automat dacă e gol)",
@@ -698,6 +753,11 @@ const STRINGS = {
     opt_show_countdown: "Vis nedtælling til ferien",
     opt_language: "Sprog",
     opt_zoom: "Detaljeknap",
+    opt_illustration: "Animeret illustration",
+    opt_illustration_theme: "Illustrationens tema",
+    theme_auto: "Automatisk (sol eller mørkt tema)",
+    theme_day: "Dag",
+    theme_night: "Nat",
     help_workday: "Binær sensor fra Workday-integrationen (findes automatisk, hvis tom)",
     help_school_holidays: "Kalender over skoleferier, f.eks. det franske undervisningsministeriums ICS i Remote calendar (findes automatisk, hvis tom)",
     help_public_holidays: "Kalender fra Holiday-integrationen (findes automatisk, hvis tom)",
@@ -757,6 +817,11 @@ const STRINGS = {
     opt_show_countdown: "Visa nedräkning till lovet",
     opt_language: "Språk",
     opt_zoom: "Detaljknapp",
+    opt_illustration: "Animerad illustration",
+    opt_illustration_theme: "Illustrationens tema",
+    theme_auto: "Automatiskt (sol eller mörkt tema)",
+    theme_day: "Dag",
+    theme_night: "Natt",
     help_workday: "Binär sensor från Workday-integrationen (hittas automatiskt om tom)",
     help_school_holidays: "Kalender för skollov, t.ex. det franska utbildningsdepartementets ICS i Remote calendar (hittas automatiskt om tom)",
     help_public_holidays: "Kalender från Holiday-integrationen (hittas automatiskt om tom)",
@@ -816,6 +881,11 @@ const STRINGS = {
     opt_show_countdown: "Показване на обратното броене до ваканцията",
     opt_language: "Език",
     opt_zoom: "Бутон за подробности",
+    opt_illustration: "Анимирана илюстрация",
+    opt_illustration_theme: "Тема на илюстрацията",
+    theme_auto: "Автоматично (слънце или тъмна тема)",
+    theme_day: "Ден",
+    theme_night: "Нощ",
     help_workday: "Двоичен сензор на интеграцията Workday (намира се автоматично, ако е празно)",
     help_school_holidays: "Календар на ученическите ваканции, напр. ICS на френското министерство на образованието в Remote calendar (намира се автоматично, ако е празно)",
     help_public_holidays: "Календар на интеграцията Holiday (намира се автоматично, ако е празно)",
@@ -875,6 +945,11 @@ const STRINGS = {
     opt_show_countdown: "Показывать обратный отсчёт до каникул",
     opt_language: "Язык",
     opt_zoom: "Кнопка подробностей",
+    opt_illustration: "Анимированная иллюстрация",
+    opt_illustration_theme: "Тема иллюстрации",
+    theme_auto: "Автоматически (солнце или тёмная тема)",
+    theme_day: "День",
+    theme_night: "Ночь",
     help_workday: "Бинарный датчик интеграции Workday (если пусто, находится автоматически)",
     help_school_holidays: "Календарь школьных каникул, например ICS министерства образования Франции в Remote calendar (если пусто, находится автоматически)",
     help_public_holidays: "Календарь интеграции Holiday (если пусто, находится автоматически)",
@@ -934,6 +1009,11 @@ const STRINGS = {
     opt_show_countdown: "Показувати зворотний відлік до канікул",
     opt_language: "Мова",
     opt_zoom: "Кнопка подробиць",
+    opt_illustration: "Анімована ілюстрація",
+    opt_illustration_theme: "Тема ілюстрації",
+    theme_auto: "Автоматично (сонце або темна тема)",
+    theme_day: "День",
+    theme_night: "Ніч",
     help_workday: "Бінарний датчик інтеграції Workday (якщо порожньо, знаходиться автоматично)",
     help_school_holidays: "Календар шкільних канікул, наприклад ICS міністерства освіти Франції в Remote calendar (якщо порожньо, знаходиться автоматично)",
     help_public_holidays: "Календар інтеграції Holiday (якщо порожньо, знаходиться автоматично)",
@@ -993,6 +1073,11 @@ const STRINGS = {
     opt_show_countdown: "Visszaszámlálás a szünetig",
     opt_language: "Nyelv",
     opt_zoom: "Részletek gomb",
+    opt_illustration: "Animált illusztráció",
+    opt_illustration_theme: "Az illusztráció témája",
+    theme_auto: "Automatikus (nap vagy sötét téma)",
+    theme_day: "Nappal",
+    theme_night: "Éjszaka",
     help_workday: "A Workday integráció bináris érzékelője (üresen automatikusan megtalálja)",
     help_school_holidays: "Az iskolai szünetek naptára, pl. a francia oktatási minisztérium ICS-e a Remote calendarban (üresen automatikusan megtalálja)",
     help_public_holidays: "A Holiday integráció naptára (üresen automatikusan megtalálja)",
@@ -1052,6 +1137,11 @@ const STRINGS = {
     opt_show_countdown: "Zobraziť odpočítavanie do prázdnin",
     opt_language: "Jazyk",
     opt_zoom: "Tlačidlo podrobností",
+    opt_illustration: "Animovaná ilustrácia",
+    opt_illustration_theme: "Téma ilustrácie",
+    theme_auto: "Automaticky (slnko alebo tmavá téma)",
+    theme_day: "Deň",
+    theme_night: "Noc",
     help_workday: "Binárny senzor integrácie Workday (ak je prázdne, nájde sa automaticky)",
     help_school_holidays: "Kalendár školských prázdnin, napr. ICS francúzskeho ministerstva školstva v Remote calendar (ak je prázdne, nájde sa automaticky)",
     help_public_holidays: "Kalendár integrácie Holiday (ak je prázdne, nájde sa automaticky)",
@@ -1111,6 +1201,11 @@ const STRINGS = {
     opt_show_countdown: "Zobrazit odpočet do prázdnin",
     opt_language: "Jazyk",
     opt_zoom: "Tlačítko podrobností",
+    opt_illustration: "Animovaná ilustrace",
+    opt_illustration_theme: "Motiv ilustrace",
+    theme_auto: "Automaticky (slunce nebo tmavý motiv)",
+    theme_day: "Den",
+    theme_night: "Noc",
     help_workday: "Binární senzor integrace Workday (pokud je prázdné, najde se automaticky)",
     help_school_holidays: "Kalendář školních prázdnin, např. ICS francouzského ministerstva školství v Remote calendar (pokud je prázdné, najde se automaticky)",
     help_public_holidays: "Kalendář integrace Holiday (pokud je prázdné, najde se automaticky)",
@@ -1170,6 +1265,11 @@ const STRINGS = {
     opt_show_countdown: "Prikaži odštevanje do počitnic",
     opt_language: "Jezik",
     opt_zoom: "Gumb za podrobnosti",
+    opt_illustration: "Animirana ilustracija",
+    opt_illustration_theme: "Tema ilustracije",
+    theme_auto: "Samodejno (sonce ali temna tema)",
+    theme_day: "Dan",
+    theme_night: "Noč",
     help_workday: "Binarni senzor integracije Workday (če je prazno, se najde samodejno)",
     help_school_holidays: "Koledar šolskih počitnic, npr. ICS francoskega ministrstva za šolstvo v Remote calendar (če je prazno, se najde samodejno)",
     help_public_holidays: "Koledar integracije Holiday (če je prazno, se najde samodejno)",
@@ -1229,6 +1329,11 @@ const STRINGS = {
     opt_show_countdown: "Rādīt atpakaļskaitīšanu līdz brīvdienām",
     opt_language: "Valoda",
     opt_zoom: "Detaļu poga",
+    opt_illustration: "Animēta ilustrācija",
+    opt_illustration_theme: "Ilustrācijas motīvs",
+    theme_auto: "Automātiski (saule vai tumšais motīvs)",
+    theme_day: "Diena",
+    theme_night: "Nakts",
     help_workday: "Workday integrācijas binārais sensors (ja tukšs, tiek atrasts automātiski)",
     help_school_holidays: "Skolas brīvdienu kalendārs, piem., Francijas izglītības ministrijas ICS Remote calendar (ja tukšs, tiek atrasts automātiski)",
     help_public_holidays: "Holiday integrācijas kalendārs (ja tukšs, tiek atrasts automātiski)",
@@ -1288,6 +1393,11 @@ const STRINGS = {
     opt_show_countdown: "Εμφάνιση αντίστροφης μέτρησης διακοπών",
     opt_language: "Γλώσσα",
     opt_zoom: "Κουμπί λεπτομερειών",
+    opt_illustration: "Κινούμενη εικονογράφηση",
+    opt_illustration_theme: "Θέμα εικονογράφησης",
+    theme_auto: "Αυτόματο (ήλιος ή σκούρο θέμα)",
+    theme_day: "Ημέρα",
+    theme_night: "Νύχτα",
     help_workday: "Δυαδικός αισθητήρας της ενσωμάτωσης Workday (αν είναι κενό, βρίσκεται αυτόματα)",
     help_school_holidays: "Ημερολόγιο σχολικών διακοπών, π.χ. το ICS του γαλλικού υπουργείου Παιδείας στο Remote calendar (αν είναι κενό, βρίσκεται αυτόματα)",
     help_public_holidays: "Ημερολόγιο της ενσωμάτωσης Holiday (αν είναι κενό, βρίσκεται αυτόματα)",
@@ -1701,13 +1811,262 @@ const ART = {
 const art = (kind) => `<svg class="art-svg" viewBox="0 0 24 24" aria-hidden="true">${ART[KINDS.includes(kind) ? kind : "unknown"]}</svg>`;
 
 // ---------------------------------------------------------------------------
+// The illustrated header: a 200 × 80 scene of what tomorrow is, at the right of a 90 px banner, over a 10 px ground
+// strip under the whole banner (a lawn, or sand for the holidays). The left of the banner is open sky: the title,
+// the subtitle and the round icon sit there. Drawn in the card's own colours, day and night.
+// ---------------------------------------------------------------------------
+
+// mdiSchool: the round icon of the illustrated header.
+const SCHOOL_ICON = "M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z";
+
+// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme (dark mode alone without a valid sun.sun).
+const isNight = (hass, config) => {
+  const theme = config?.illustration_theme;
+  if (theme === "night") return true;
+  if (theme === "day") return false;
+  const sun = hass?.states?.["sun.sun"];
+  if (valid(sun)) return sun.state === "below_horizon" || !!hass?.themes?.darkMode;
+  return !!hass?.themes?.darkMode;
+};
+
+// The ground strip of each kind of day: sand for the holidays, a lawn otherwise.
+const GROUND = { holidays: "sand" };
+
+const FD_STARS = [
+  [8, 8, 0.6],
+  [30, 20, 0.5],
+  [52, 6, 0.7],
+  [78, 26, 0.45],
+  [104, 10, 0.6],
+  [128, 4, 0.5],
+  [146, 22, 0.55],
+  [172, 8, 0.7],
+  [192, 28, 0.45],
+];
+
+// Sky: the sun and two clouds by day, the stars and the moon by night; the sun / moon at (x, y).
+const fdSky = (n, x, y, uid) =>
+  n
+    ? `<g class="fds-stars">${FD_STARS.map(([sx, sy, r], i) => `<circle class="fds-star${i % 3 ? "" : " tw"}" cx="${sx}" cy="${sy}" r="${r}"/>`).join("")}</g>` +
+      `<circle cx="${x}" cy="${y}" r="10" fill="url(#fd-glow-${uid})"/><path class="fds-moon" d="M${x} ${y - 6}a6 6 0 1 0 5.4 8.6a4.8 4.8 0 1 1 -5.4 -8.6Z"/>`
+    : `<circle cx="${x}" cy="${y}" r="10" fill="url(#fd-glow-${uid})"/><circle class="fds-sun" cx="${x}" cy="${y}" r="6"/>` +
+      `<path class="fds-cloud" d="M${x - 34} 20a4 4 0 0 1 6-3.4 5 5 0 0 1 9.4 1.4 3 3 0 0 1 .6 6H${x - 32}a3 3 0 0 1-2-4Z"/>` +
+      `<path class="fds-cloud c2" d="M${x + 22} 12a3.4 3.4 0 0 1 5-2.8 4.2 4.2 0 0 1 8 1.2 2.6 2.6 0 0 1 .4 5H${x + 24}a2.6 2.6 0 0 1-2-3.4Z"/>`;
+
+const fdHills = () =>
+  `<path class="fds-hill far" d="M0 80C30 68 60 62 100 64C140 66 170 58 200 60V80Z"/><path class="fds-hill" d="M0 80C40 72 90 73 200 70V80Z"/>`;
+
+const fdTree = (x, s = 1) =>
+  `<g transform="translate(${x} 80) scale(${s})"><rect class="fds-trunk" x="-1" y="-12" width="2" height="12"/><circle class="fds-leaves" cx="0" cy="-14" r="7"/></g>`;
+
+const fdWin = (x, y, w, h) => `<rect class="fds-win" x="${x}" y="${y}" width="${w}" height="${h}" rx=".6"/>`;
+
+const FD_SCENES = {
+  // A school day: the school, its clock and flag, the school bus driving up.
+  school: (n, uid) =>
+    `${fdSky(n, 38, 16, uid)}${fdHills()}
+    <g transform="translate(110 36)">
+      <rect class="fds-pole" x="38.5" y="-30" width="1" height="13"/><path class="fds-flag" d="M39.5 -30h8l-2 3 2 3h-8Z"/>
+      <rect class="fds-wall" width="78" height="44"/>
+      <path class="fds-roof" d="M-6 1L39 -18L84 1Z"/>
+      <circle class="fds-clock" cx="39" cy="-6" r="4.5"/><path class="fds-hand" d="M39 -6V-9M39 -6H41"/>
+      ${[6, 20, 50, 64].map((x) => fdWin(x, 10, 9, 9)).join("")}
+      <rect class="fds-door" x="33" y="24" width="12" height="20"/>
+    </g>
+    <g class="fds-bus"><g transform="translate(24 80)">
+      <rect class="fds-bus-body" y="-22" width="46" height="18" rx="3"/>
+      ${[4, 14, 24, 34].map((x) => `<rect class="fds-glass" x="${x}" y="-18.5" width="7" height="6" rx="1"/>`).join("")}
+      <rect class="fds-bus-band" y="-8.5" width="46" height="1.6"/><rect class="fds-light" x="43.4" y="-7" width="2.6" height="2" rx=".6"/>
+      <circle class="fds-wheel" cx="10" cy="-3.4" r="3.4"/><circle class="fds-wheel" cx="36" cy="-3.4" r="3.4"/>
+    </g></g>`,
+  // The weekend: the park, its trees and the swings.
+  weekend: (n, uid) =>
+    `${fdSky(n, 44, 16, uid)}${fdHills()}${fdTree(84, 1.3)}${fdTree(184, 1.5)}
+    <path class="fds-frame" d="M112 80L123 46H153L164 80"/>
+    <g class="fds-swing"><path class="fds-rope" d="M129 46V68M137 46V68"/><rect class="fds-seat a" x="127" y="67" width="12" height="2.4" rx="1"/></g>
+    <g class="fds-swing b"><path class="fds-rope" d="M143 46V66M151 46V66"/><rect class="fds-seat b" x="141" y="65" width="12" height="2.4" rx="1"/></g>
+    <circle class="fds-ball" cx="100" cy="77" r="3"/>`,
+  // The school holidays: the sea, the beach, a parasol and a palm tree.
+  holidays: (n, uid) =>
+    `${fdSky(n, 150, 18, uid)}
+    <linearGradient id="fd-fade-${uid}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="36" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <mask id="fd-mask-${uid}" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="80"><rect width="200" height="80" fill="url(#fd-fade-${uid})"/></mask>
+    <g mask="url(#fd-mask-${uid})"><rect class="fds-sea" y="52" width="200" height="20"/>
+    <clipPath id="fd-sea-${uid}"><rect y="50" width="200" height="22"/></clipPath>
+    <g clip-path="url(#fd-sea-${uid})"><path class="fds-wave" d="M-10 56${"q5 -2 10 0t10 0".repeat(12)}"/><path class="fds-wave w2" d="M-6 62${"q5 -2 10 0t10 0".repeat(12)}"/></g>
+    <path class="fds-sand" d="M0 70Q100 63 200 68V80H0Z"/></g>
+    <g transform="translate(116 80)"><path class="fds-stick" d="M0 0V-30"/><path class="fds-parasol" d="M-16 -28Q0 -40 16 -28Z"/><path class="fds-parasol-band" d="M-8 -30.5Q0 -40 8 -30.5"/></g>
+    <rect class="fds-towel" x="128" y="76" width="20" height="3" rx="1"/>
+    <g transform="translate(178 80)"><path class="fds-palm" d="M0 0Q-2 -16 4 -30"/><g class="fds-fronds"><path d="M4 -30q-10 -2 -14 4q8 -6 14 -4z"/><path d="M4 -30q10 -2 14 4q-8 -6 -14 -4z"/><path d="M4 -30q-2 -8 -10 -10q8 4 10 10z"/><path d="M4 -30q4 -8 12 -8q-8 3 -12 8z"/></g></g>`,
+  // A public holiday: the town hall with its flags and bunting, fireworks.
+  public_holiday: (n, uid) =>
+    `${n ? fdSky(n, 26, 14, uid) : `<path class="fds-cloud" d="M20 20a4 4 0 0 1 6-3.4 5 5 0 0 1 9.4 1.4 3 3 0 0 1 .6 6H22a3 3 0 0 1-2-4Z"/>`}${fdHills()}
+    ${[
+      [52, 18, "a", 0],
+      [190, 14, "b", 1],
+      [78, 30, "c", 2],
+    ]
+      .map(
+        ([x, y, c, i]) =>
+          `<g class="fds-burst d${i} ${c}" transform="translate(${x} ${y})"><g>${[0, 45, 90, 135, 180, 225, 270, 315].map((r) => `<path d="M0 -3V-8" transform="rotate(${r})"/>`).join("")}</g></g>`,
+      )
+      .join("")}
+    <g transform="translate(108 44)">
+      <path class="fds-pole" d="M10 -14V-30M42 -18V-34M74 -14V-30"/>
+      <path class="fds-pennant a" d="M10.5 -30h9l-1.5 3 1.5 3h-9Z"/><path class="fds-pennant b" d="M42.5 -34h9l-1.5 3 1.5 3h-9Z"/><path class="fds-pennant c" d="M74.5 -30h9l-1.5 3 1.5 3h-9Z"/>
+      <rect class="fds-wall" x="2" y="-4" width="80" height="40"/>
+      <path class="fds-roof" d="M-2 -3L42 -19L86 -3Z"/>
+      ${[10, 24, 54, 68].map((x) => fdWin(x, 4, 7, 10)).join("")}
+      ${[8, 22, 56, 70].map((x) => `<rect class="fds-column" x="${x}" y="18" width="3" height="18"/>`).join("")}
+      <path class="fds-door" d="M35 36V22a7 7 0 0 1 14 0V36Z"/>
+    </g>
+    <path class="fds-garland" d="M4 42Q52 54 100 42"/>
+    <g class="fds-bunting">${[14, 26, 38, 50, 62, 74, 86]
+      .map((x, i) => {
+        const t = (x - 4) / 96;
+        const y = 42 + 24 * t * (1 - t);
+        return `<path class="fds-pennant ${"abc"[i % 3]}" d="M${x - 3} ${y.toFixed(1)}h6l-3 5Z"/>`;
+      })
+      .join("")}</g>`,
+  // A day off (Workday): the house, a hammock between two trees, "z z".
+  day_off: (n, uid) =>
+    `${fdSky(n, 40, 16, uid)}${fdHills()}
+    <g transform="translate(18 50)"><rect class="fds-wall" width="40" height="30"/><path class="fds-roof" d="M-4 1L20 -14L44 1Z"/>${fdWin(6, 8, 8, 8)}${fdWin(26, 8, 8, 8)}<rect class="fds-door" x="16" y="16" width="8" height="14"/></g>
+    ${fdTree(112, 1.6)}${fdTree(182, 1.6)}
+    <path class="fds-rope" d="M113 62L122 67M181 62L172 67"/>
+    <path class="fds-hammock" d="M120 66Q147 84 174 66Q147 77 120 66Z"/>
+    <ellipse class="fds-pillow" cx="128" cy="68.6" rx="4.4" ry="2.2"/>
+    <g class="fds-z"><text class="z1" x="146" y="60">z</text><text class="z2" x="155" y="52">z</text></g>`,
+  // Not known yet (loading): the hills alone.
+  unknown: (n, uid) => `${fdSky(n, 100, 18, uid)}${fdHills()}${fdTree(130, 1.4)}${fdTree(170, 1.1)}`,
+};
+
+// The banner's picture for a kind of day. `uid` keeps the ids of each card apart on a page with several cards.
+const fdSceneSvg = (kind, night, uid) => {
+  const draw = FD_SCENES[kind] || FD_SCENES.unknown;
+  return `<svg class="fd-scene" viewBox="0 0 200 80" preserveAspectRatio="xMaxYMax meet" aria-hidden="true" focusable="false">
+    <defs><radialGradient id="fd-glow-${uid}"><stop offset="0" stop-color="${night ? "#f3eed2" : "#ffd65a"}" stop-opacity=".45"/><stop offset="1" stop-color="${night ? "#f3eed2" : "#ffd65a"}" stop-opacity="0"/></radialGradient></defs>
+    ${draw(night, uid)}
+  </svg><div class="fd-ground g-${GROUND[kind] || "lawn"}"></div>`;
+};
+
+const SCENE_STYLE = `
+  .banner { position: relative; overflow: hidden; height: 90px; color: #0d2a45;
+            background: linear-gradient(90deg, #f1f8ff 0%, #e2f1fd 34%, #b9def8 70%, #9fd0f3 100%); }
+  .banner.night { color: #fff; background: linear-gradient(90deg, #1b2f52 0%, #15284a 36%, #0f1f3d 72%, #0a1830 100%); }
+  .fd-scene { position: absolute; right: 0; bottom: 10px; height: 80px; width: min(200px, 56%); overflow: hidden; }
+  .fd-ground { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; }
+  .g-lawn { background: repeating-linear-gradient(90deg, #5aa83d 0 22px, #6cbb4c 22px 44px); }
+  .night .g-lawn { background: repeating-linear-gradient(90deg, #1f4a2a 0 22px, #245433 22px 44px); }
+  .g-sand { background: #f0d9a6 radial-gradient(#d9b979 .8px, transparent 1px) 0 0 / 7px 5px; box-shadow: inset 0 2px 0 #f8e8c4; }
+  .night .g-sand { background-color: #4a3f2c; background-image: radial-gradient(#5c4f38 .8px, transparent 1px); box-shadow: inset 0 2px 0 #5a4d36; }
+  /* The round icon, the title and the subtitle on the sky at the left. */
+  .htext { position: absolute; left: 12px; top: 6px; bottom: 12px; right: calc(min(200px, 56%) + 4px);
+           display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .htext .titles { display: flex; flex-direction: column; gap: 2px; }
+  /* Up to two lines each, so a long title or answer is not cut short next to the scene. */
+  .banner .name { font-weight: 500; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .banner .sub { color: #3b5b78; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; line-height: 1.3; }
+  .banner.night .sub { color: rgba(255,255,255,.78); }
+  /* The icon's colour is the colour of tomorrow's kind of day (grey while not known). */
+  .banner .badge { position: relative; color: var(--c); background: rgba(255,255,255,.62); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 22%, transparent); }
+  .banner .badge .icon { fill: currentColor; }
+  .banner.night .badge { color: color-mix(in srgb, var(--c) 55%, #fff); background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+  .banner .chip { background: color-mix(in srgb, var(--c) 18%, rgba(255,255,255,.78)); color: color-mix(in srgb, var(--c) 45%, #0d2a45); }
+  .banner.night .chip { background: color-mix(in srgb, var(--c) 30%, rgba(8,18,38,.55)); color: color-mix(in srgb, var(--c) 35%, #ffffff); }
+  .banner .zoom { color: #33506b; background: rgba(255,255,255,.55); box-shadow: inset 0 0 0 1px rgba(255,255,255,.7);
+                  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .banner.night .zoom { color: #fff; background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+  .banner .zoom:hover { background: rgba(255,255,255,.75); color: #33506b; }
+  .banner.night .zoom:hover { background: rgba(255,255,255,.22); color: #fff; }
+  /* Narrow card: a smaller scene, then the sky alone. */
+  .compact .fd-scene { width: min(176px, 46%); } .compact .htext { right: calc(min(176px, 46%) + 4px); }
+  .compact .banner .name { font-size: 15px; line-height: 1.2; }
+  @container fd-card (max-width: 300px) { .fd-scene, .compact .fd-scene { width: 38%; } .htext, .compact .htext { right: calc(38% + 4px); } }
+  /* The mini card's answer and its pill take more of a narrow banner: a smaller scene. */
+  @container fd-card (max-width: 280px) { .compact .fd-scene { width: 30%; } .compact .htext { right: calc(30% + 4px); } }
+  @container fd-card (max-width: 250px) { .compact .fd-scene { width: 25%; } .compact .htext { right: calc(25% + 2px); } }
+  @container fd-card (max-width: 230px) { .fd-scene, .compact .fd-scene { display: none; } .htext, .compact .htext { right: 8px; }
+    .compact .banner .name { font-size: 13px; line-height: 1.2; -webkit-line-clamp: 3; overflow-wrap: normal; }
+    .compact .banner .sub { -webkit-line-clamp: 1; } .banner:has(.zoom) .htext { right: 36px; } }
+  /* Scene colours, day and night. */
+  .fds-sun { fill: #ffd65a; } .fds-moon { fill: #f3eed2; } .fds-star { fill: #fff; opacity: .85; }
+  .fds-cloud { fill: #fff; opacity: .92; }
+  .fds-hill { fill: #86c27f; } .fds-hill.far { fill: #a7d39f; }
+  .night .fds-hill { fill: #17303d; } .night .fds-hill.far { fill: #1d3a4a; }
+  .fds-trunk { fill: #6b4a2a; } .fds-leaves { fill: #5aa83d; } .night .fds-leaves { fill: #1a3a2a; } .night .fds-trunk { fill: #4a3422; }
+  .fds-wall { fill: #faeeda; } .night .fds-wall { fill: #2a3646; }
+  .fds-roof { fill: #d85a30; } .night .fds-roof { fill: #5a3030; }
+  .fds-win { fill: #86b9de; } .night .fds-win { fill: #ffcf6e; filter: drop-shadow(0 0 1.4px #ffb347); }
+  .fds-door { fill: #854f0b; } .night .fds-door { fill: #5a3a14; }
+  .fds-clock { fill: #fff; stroke: #5f5e5a; stroke-width: .8; } .night .fds-clock { fill: #fff6dc; }
+  .fds-hand { stroke: #5f5e5a; stroke-width: .7; fill: none; stroke-linecap: round; }
+  .fds-pole { fill: #5f5e5a; stroke: #5f5e5a; stroke-width: 1; } .night .fds-pole { fill: #8a939c; stroke: #8a939c; }
+  .fds-flag { fill: var(--fd-school); }
+  .fds-bus-body { fill: #f5b400; } .night .fds-bus-body { fill: #c99200; }
+  .fds-glass { fill: #cfe6f7; } .night .fds-glass { fill: #ffe9a8; }
+  .fds-bus-band, .fds-wheel { fill: #22262b; }
+  .fds-light { fill: #fff2c2; } .night .fds-light { fill: #fffbe6; filter: drop-shadow(0 0 1.6px #fff3b0); }
+  .fds-frame { stroke: #5f6b7a; stroke-width: 1.6; fill: none; } .night .fds-frame { stroke: #7d8793; }
+  .fds-rope { stroke: #8a939c; stroke-width: .8; fill: none; } .night .fds-rope { stroke: #7d8793; }
+  .fds-seat.a { fill: #d85a30; } .fds-seat.b { fill: #2f80ed; }
+  .fds-ball { fill: #e5484d; }
+  .fds-sea { fill: #4fb3e8; } .night .fds-sea { fill: #173a5e; }
+  .fds-wave { stroke: #b5e2fa; stroke-width: 1.2; fill: none; } .night .fds-wave { stroke: #2b5a86; }
+  .fds-sand { fill: #f0d9a6; } .night .fds-sand { fill: #4a3f2c; }
+  .fds-stick { stroke: #8a5a3a; stroke-width: 1.4; } .fds-parasol { fill: #e5484d; } .fds-parasol-band { fill: #fff; opacity: .9; }
+  .night .fds-parasol { fill: #9c3034; } .night .fds-parasol-band { opacity: .5; }
+  .fds-towel { fill: #2f80ed; } .night .fds-towel { fill: #24508f; }
+  .fds-palm { stroke: #8a5a3a; stroke-width: 2; fill: none; } .fds-fronds { fill: #3b8a3b; } .night .fds-fronds { fill: #1f4a2a; }
+  .fds-column { fill: #e7d6b8; } .night .fds-column { fill: #3a4656; }
+  .fds-garland { stroke: #8a939c; stroke-width: .6; fill: none; }
+  .fds-pennant.a { fill: var(--fd-school); } .fds-pennant.b { fill: #fff; stroke: #cfd6dd; stroke-width: .3; } .fds-pennant.c { fill: #e5484d; }
+  .night .fds-pennant.b { fill: #e3e8ee; stroke: none; }
+  .fds-burst path { stroke-width: 1.2; stroke-linecap: round; }
+  .fds-burst.a path { stroke: var(--fd-public); } .fds-burst.b path { stroke: var(--fd-holidays); } .fds-burst.c path { stroke: #e5484d; }
+  .night .fds-burst.a path { stroke: #c9a7ff; } .night .fds-burst.b path { stroke: #ffd27a; } .night .fds-burst.c path { stroke: #ff8a8e; }
+  .fds-hammock { fill: var(--fd-off); } .night .fds-hammock { fill: #0e6a60; }
+  .fds-pillow { fill: #fff; } .night .fds-pillow { fill: #c9d3df; }
+  .fds-z { fill: #3b5b78; font: 700 11px sans-serif; } .night .fds-z { fill: #cfe0ff; }
+  /* Animations: drifting clouds, twinkling stars, the bus driving up, the flag, the swings, the waves, the
+     fireworks, "z z" rising. Still under prefers-reduced-motion (see BASE_STYLE). */
+  .fd-scene g, .fd-scene path, .fd-scene text { transform-box: fill-box; }
+  .fds-cloud { animation: fds-drift 6s ease-in-out infinite alternate; } .fds-cloud.c2 { animation-duration: 8s; }
+  .fds-star.tw { animation: fds-twinkle 3.2s ease-in-out infinite alternate; }
+  .fds-bus { animation: fds-drive 8s linear infinite; }
+  .fds-flag, .fds-pennant { transform-origin: 0 50%; animation: fds-flutter 1.6s ease-in-out infinite; }
+  .fds-bunting .fds-pennant { transform-origin: 50% 0; }
+  .fds-swing { transform-origin: 50% 0; animation: fds-swing 2.2s ease-in-out infinite; }
+  .fds-swing.b { animation-direction: reverse; }
+  .fds-wave { animation: fds-wave 3s ease-in-out infinite; } .fds-wave.w2 { animation-delay: -1.5s; }
+  .fds-parasol, .fds-parasol-band { transform-origin: 50% 100%; animation: fds-sway 4s ease-in-out infinite; }
+  .fds-fronds { transform-origin: 50% 100%; animation: fds-sway 3s ease-in-out infinite; }
+  .fds-burst > g { transform-origin: 50% 50%; animation: fds-burst 2.4s ease-out infinite; opacity: 0; }
+  .fds-burst.d0 > g { animation-delay: -1.2s; } .fds-burst.d1 > g { animation-delay: -.4s; } .fds-burst.d2 > g { animation-delay: -2s; }
+  .fds-hammock { transform-origin: 50% 0; animation: fds-rock 4s ease-in-out infinite; }
+  .fds-z text { opacity: 0; animation: fds-z 3s ease-out infinite; } .fds-z .z2 { animation-delay: -1.5s; font-size: 8px; }
+  @keyframes fds-drift { to { transform: translateX(5px); } }
+  @keyframes fds-twinkle { from { opacity: .3; } to { opacity: 1; } }
+  /* The bus waits at the school (the first frame, kept by still screenshots), leaves, then drives up again. */
+  @keyframes fds-drive { 0%, 30% { transform: translateX(14px); opacity: 1; } 38% { transform: translateX(14px); opacity: 0; } 39% { transform: translateX(-70px); opacity: 0; }
+    48% { opacity: 1; } 85%, 100% { transform: translateX(14px); opacity: 1; animation-timing-function: ease-out; } }
+  @keyframes fds-flutter { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.8) skewY(4deg); } }
+  @keyframes fds-swing { 0%, 100% { transform: rotate(-14deg); } 50% { transform: rotate(14deg); } }
+  @keyframes fds-wave { 50% { transform: translateX(-6px); } }
+  @keyframes fds-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+  @keyframes fds-burst { 0% { transform: scale(.2); opacity: 0; } 10% { opacity: 1; } 60% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.15); opacity: 0; } }
+  @keyframes fds-rock { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+  @keyframes fds-z { 0% { transform: translate(0, 3px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(3px, -6px); opacity: 0; } }
+`;
+
+// ---------------------------------------------------------------------------
 // Styles
 // ---------------------------------------------------------------------------
 
 const BASE_STYLE = `
   :host { --fd-accent: #d81b60; --fd-school: #1e88e5; --fd-weekend: var(--success-color, #43a047); --fd-holidays: #fb8c00;
           --fd-public: #5e35b1; --fd-off: #00897b; --fd-idle: var(--disabled-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
-  ha-card { overflow: hidden; container-type: inline-size; }
+  ha-card { overflow: hidden; container: fd-card / inline-size; }
   /* A size container has no width of its own: this zero-height grid gives the card a natural width without a minimum. */
   :host { display: block; min-width: 0; --fd-natural-width: 380px; }
   :host::before { content: ""; display: grid; grid-template-columns: minmax(0, var(--fd-natural-width)); height: 0; }
@@ -1741,10 +2100,28 @@ const BASE_STYLE = `
   .bar > div { height: 100%; border-radius: 3px; background: var(--c); transition: width .8s ease; }
   /* Title row: badge, titles, status pill (aligned on the title line) and the mini card's detail button. */
   .header { display: flex; align-items: center; gap: 10px; padding: 12px 12px 0; }
-  .header:has(.sub) > .chip { margin-bottom: 14.4px; }
-  .header:has(.sub.wrap) > .chip { align-self: flex-start; margin: 1px 0 0; }
+  .header { position: relative; }
+  .header:has(> .zoom) { padding-right: 34px; }
   .titles { flex: 1 1 0; min-width: 5ch; }
-  :host([hide-title]) .titles > .name:not(.answer), :host([hide-subtitle]) .titles > .sub:not(.countdown) { display: none; }
+  /* The title line: the title, then the status pill when the whole title (on one line) and the pill's whole label fit
+     there (measured, see _fitPill). Otherwise the pill takes a line of its own under the subtitle (its copy in
+     .pill-line), the subtitle on one line and the mini card's answer tighter; when that does not fit in the banner
+     above the ground, or on a card of 200 px or less, only its dot stays. */
+  .title-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .title-row > .name { flex: 0 1 auto; min-width: 0; }
+  .title-row > .chip { flex: none; max-width: none; }
+  .pill-line { display: none; }
+  .titles.below .title-row > .chip { display: none; }
+  .titles.below .pill-line { display: flex; min-width: 0; margin-top: 2px; }
+  .pill-line > .chip { max-width: 100%; }
+  .banner .htext .titles.below .sub { -webkit-line-clamp: 1; }
+  .compact .banner .htext .titles.below .name { font-size: 14px; line-height: 1.15; }
+  .titles.dot-only .chip { padding: 4px; } .titles.dot-only .chip-text { display: none; }
+  /* Still no room under the lines (a long answer on the narrowest mini card): the answer one line shorter (whole in
+     its tooltip). */
+  .banner .htext .titles.tight .name { -webkit-line-clamp: 2; }
+  @container fd-card (max-width: 200px) { .titles .chip { padding: 4px; } .titles .chip-text { display: none; } }
+  :host([hide-title]) .title-row > .name:not(.answer), :host([hide-subtitle]) .titles > .sub:not(.countdown) { display: none; }
   .name { font-size: 16px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sub { font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sub.wrap { white-space: normal; }
@@ -1752,21 +2129,20 @@ const BASE_STYLE = `
            background: color-mix(in srgb, var(--fd-accent) 16%, transparent); }
   .badge .icon { width: 24px; height: 24px; fill: var(--fd-accent); }
   .warning { padding: 16px; color: color-mix(in srgb, var(--fd-warn) 50%, var(--primary-text-color)); }
-  .zoom { all: unset; flex: none; cursor: pointer; width: 24px; height: 24px; margin: -2px -4px 0 0; border-radius: 50%;
-          display: grid; place-items: center; color: var(--secondary-text-color);
-          background: color-mix(in srgb, var(--fd-idle) 10%, transparent); border: 1px solid color-mix(in srgb, var(--fd-idle) 25%, transparent); }
-  .zoom .icon { width: 14px; height: 14px; }
+  /* The mini card's detail button: 24 px round, in the top right corner. */
+  .zoom { all: unset; position: absolute; z-index: 2; top: 5px; right: 5px; cursor: pointer; width: 24px; height: 24px; border-radius: 50%;
+          display: grid; place-items: center; color: var(--secondary-text-color); box-sizing: border-box;
+          box-shadow: inset 0 0 0 1px var(--divider-color, rgba(127,127,127,.3)); }
+  .zoom .icon { width: 16px; height: 16px; }
   .zoom:hover { background: color-mix(in srgb, var(--fd-idle) 18%, transparent); color: var(--primary-text-color); }
   .zoom[aria-pressed="true"] { color: var(--fd-accent); border-color: color-mix(in srgb, var(--fd-accent) 45%, transparent); }
   .zoom:focus-visible { outline: 2px solid var(--primary-color, var(--fd-accent)); outline-offset: 1px; }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .extras { margin-left: 0; }
     .extras.mini { margin-left: 12px; }
     .xgroups { margin-left: 0; }
   }
-  @container (max-width: 230px) {
-    .chip { padding: 4px; flex: none; }
-    .chip-text { display: none; }
+  @container fd-card (max-width: 230px) {
     .header { gap: 6px; }
   }
 `;
@@ -1832,7 +2208,7 @@ const FULL_STYLE = `
   .line .end { flex: none; font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; }
   .line .bar { margin-left: 24px; }
   .muted { color: var(--secondary-text-color); }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .headline .answer { font-size: 16px; }
     .headline { gap: 10px; }
     .headline .art { width: 32px; height: 32px; }
@@ -1857,13 +2233,13 @@ const TWODAY_STYLE = `
   .daysec .indent { padding-left: 52px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
   .daysec .indent .extras { margin: 0; }
   .daysec .indent .kids { margin: 0; }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .daysec .indent { padding-left: 0; }
     .dayhead { gap: 10px; }
     .dayhead .art { width: 32px; height: 32px; }
     .daylabel .ans { font-size: 15px; }
   }
-  @container (max-width: 230px) {
+  @container fd-card (max-width: 230px) {
     .daylabel .lab .date { display: none; }
   }
 `;
@@ -1871,13 +2247,14 @@ const TWODAY_STYLE = `
 const MINI_STYLE = `
   :host { --fd-natural-width: 300px; }
   ha-card.compact { padding-bottom: 12px; }
+  /* Illustrated: the banner ends the card, the chips (if any) sit under it. */
+  ha-card.compact.ill { padding-bottom: 0; }
+  .ill .extras.mini { margin-bottom: 10px; }
   /* The answer wraps rather than being cut: it is the whole point of the mini card. */
   .compact .name.answer { white-space: normal; overflow-wrap: break-word; }
-  @container (max-width: 230px) {
+  @container fd-card (max-width: 230px) {
     .compact .name.answer { font-size: 13px; }
     .compact .sub { font-size: 11px; }
-    /* The answer says it already: the pill gives way to it. */
-    .compact .chip { display: none; }
   }
 `;
 
@@ -1987,10 +2364,24 @@ const sameDeps = (a, b) => !!a && a.length === b.length && a.every((d, i) => d =
 // Cards
 // ---------------------------------------------------------------------------
 
+let fdUid = 0;
+
+// The width of an element's whole text in its own font, in fractional pixels (scrollWidth is rounded).
+let fdTextCtx;
+const fdTextWidth = (el) => {
+  const cs = getComputedStyle(el);
+  fdTextCtx ??= document.createElement("canvas").getContext?.("2d");
+  if (!fdTextCtx) return el.scrollWidth;
+  fdTextCtx.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  const pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+  return Math.max(el.scrollWidth, fdTextCtx.measureText(el.textContent.trim()).width + pad);
+};
+
 class FamilyDayBase extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this._uid = ++fdUid;
     this._html = "";
     this._kinds = {};
     this._ghosts = {};
@@ -2034,11 +2425,14 @@ class FamilyDayBase extends HTMLElement {
     if (!h || !this._config) return null;
     const src = this._sources();
     const ids = [src.workday, src.school_holidays, src.public_holidays, ...src.waste, ...src.birthdays, ...src.children.flatMap((c) => [c.today, c.tomorrow, c.next_day])];
-    return [h.entities, h.devices, h.language, h.locale, this._loaded, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
+    return [h.entities, h.devices, h.language, h.locale, this._loaded, this._minute, h.states?.["sun.sun"]?.state, h.themes?.darkMode, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
   connectedCallback() {
     if (this._hass && this._config) this._update();
+    if (!this._fitObserver && typeof ResizeObserver === "function") this._fitObserver = new ResizeObserver(() => this._fitPill());
+    this._fitObserver?.observe(this);
+    document.fonts?.ready?.then(() => this._fitPill());
     // "Tomorrow" moves at midnight: checked every minute while the card is on the page.
     clearInterval(this._tick);
     this._tick = setInterval(() => {
@@ -2050,6 +2444,7 @@ class FamilyDayBase extends HTMLElement {
   disconnectedCallback() {
     clearInterval(this._tick);
     this._tick = null;
+    this._fitObserver?.disconnect();
     this._dropPress();
   }
 
@@ -2115,13 +2510,45 @@ class FamilyDayBase extends HTMLElement {
     if (html === this._html) return;
     this._html = html;
     const root = this.shadowRoot;
-    if (!root.firstChild) {
-      root.innerHTML = html;
-      return;
+    if (!root.firstChild) root.innerHTML = html;
+    else {
+      const tpl = document.createElement("template");
+      tpl.innerHTML = html;
+      morph(root, tpl.content);
     }
-    const tpl = document.createElement("template");
-    tpl.innerHTML = html;
-    morph(root, tpl.content);
+    this._fitPill();
+  }
+
+  // Tomorrow's status pill, measured after each render and on a new width (in every language): it sits on the title's
+  // row, right after the title, only when the whole title (on one line) and the pill's whole label fit there;
+  // otherwise it takes a line of its own under the subtitle (.below). When the lines do not fit in the banner above
+  // the ground, or the label does not fit its line, the pill shows its dot alone (.dot-only): beside the title when
+  // the whole title leaves it room, else under the subtitle, the answer then one line shorter if need be (.tight).
+  _fitPill() {
+    for (const t of this.shadowRoot?.querySelectorAll?.(".titles") || []) {
+      const row = t.querySelector(".title-row");
+      const pill = row?.querySelector(":scope > .chip");
+      if (!pill?.getBoundingClientRect) continue;
+      t.classList.remove("below", "dot-only", "tight");
+      const name = row.querySelector(".name");
+      const shown = getComputedStyle(name).display !== "none";
+      const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+      const room = row.getBoundingClientRect().width;
+      const title = shown ? fdTextWidth(name) + gap : 0;
+      if (title + pill.getBoundingClientRect().width <= room) continue;
+      t.classList.add("below");
+      const line = t.querySelector(".pill-line > .chip");
+      const banner = t.closest(".banner");
+      const floor = banner ? banner.querySelector(".fd-ground").getBoundingClientRect().top : Infinity;
+      const box = t.getBoundingClientRect();
+      const tx = line?.querySelector(".chip-text");
+      const whole = !tx || (tx.scrollWidth <= tx.clientWidth + 0.5 && line.getBoundingClientRect().right <= box.right + 0.5);
+      if (whole && box.bottom <= floor + 0.5 && (!banner || box.top >= banner.getBoundingClientRect().top - 0.5)) continue;
+      t.classList.add("dot-only");
+      if (title + (line || pill).getBoundingClientRect().width <= room) t.classList.remove("below");
+      // Still into the ground (a long answer on the narrowest mini card): the answer one line shorter.
+      else if (banner && t.querySelector(":scope > .sub") && t.getBoundingClientRect().bottom > floor + 0.5) t.classList.add("tight");
+    }
   }
 
   _onClick(ev) {
@@ -2286,6 +2713,7 @@ class FamilyDayBase extends HTMLElement {
   // The header of the two-day card: badge and title only (each day carries its own date and status).
   _headerTwo(m) {
     const c = this._config;
+    if (this._illustrated()) return this._banner({ name: c.title || this._t("title_two"), day: m.day });
     return `
       <div class="header">
         <span class="badge">${svgIcon(ICONS.bag)}</span>
@@ -2375,22 +2803,57 @@ class FamilyDayBase extends HTMLElement {
 
   // Badge, title and subtitle, status pill of tomorrow and the mini card's detail button.
   _header({ name, nameCls = "", sub, subCls = "", day }) {
-    const pill = esc(this._kindLabel(day.kind));
-    const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
+    if (this._illustrated()) return this._banner({ name, nameCls, sub, subCls, day });
     return `
       <div class="header">
         <span class="badge">${svgIcon(ICONS.bag)}</span>
-        <div class="titles">
-          <div class="name${nameCls}">${esc(name)}</div>
-          ${sub ? `<div class="sub${subCls}">${esc(sub)}</div>` : ""}
-        </div>
-        <span class="chip k-${day.kind}${attrs} title="${pill}" aria-label="${pill}"><span class="dot"></span><span class="chip-text">${pill}</span></span>
+        ${this._titles({ name, nameCls, sub, subCls, day })}
         ${this._zoomButton()}
       </div>`;
   }
 
+  // The title, then tomorrow's status pill right after it (in the colour of the round icon). Where the pill goes is
+  // measured (_fitPill): beside the whole title, else on a line of its own under the subtitle (the copy in
+  // .pill-line), else only its dot (its text stays in its title and aria-label).
+  _titles({ name, nameCls = "", sub, subCls = "", day }) {
+    const label = esc(this._kindLabel(day.kind));
+    const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
+    const pill = `<span class="chip k-${day.kind}${attrs} title="${label}" aria-label="${label}"><span class="dot"></span><span class="chip-text">${label}</span></span>`;
+    return `<div class="titles">
+          <div class="title-row"><div class="name${nameCls}" title="${esc(name)}">${esc(name)}</div>${pill}</div>
+          ${sub ? `<div class="sub${subCls}" title="${esc(sub)}">${esc(sub)}</div>` : ""}
+          <div class="pill-line">${pill}</div>
+        </div>`;
+  }
+
   _zoomButton() {
     return "";
+  }
+
+  // The illustrated header is on unless `illustration: false` (then the classic header with its pill).
+  _illustrated() {
+    return this._config.illustration !== false;
+  }
+
+  // The illustrated header: tomorrow's scene at the right, the round icon (coloured by tomorrow's kind of day),
+  // the title and the subtitle on the sky at the left, the detail button of the mini card at the top right.
+  _banner({ name, nameCls = "", sub, subCls = "", day }) {
+    const night = isNight(this._hass, this._config);
+    const pill = esc(this._kindLabel(day.kind));
+    return `
+      <div class="banner k-${day.kind}${night ? " night" : ""}">
+        ${fdSceneSvg(day.kind, night, this._uid)}
+        <div class="htext">
+          <span class="badge" role="img" title="${pill}" aria-label="${pill}">${svgIcon(SCHOOL_ICON)}</span>
+          ${this._titles({ name, nameCls, sub, subCls, day })}
+        </div>
+        ${this._zoomButton()}
+      </div>`;
+  }
+
+  // The illustration's styles, only when it is shown.
+  _sceneStyle() {
+    return this._illustrated() ? SCENE_STYLE : "";
   }
 
   _errorCard(text) {
@@ -2430,7 +2893,7 @@ class FamilyDayCard extends FamilyDayBase {
     if (this._noSource(m)) return this._errorCard(this._t("no_source"));
     const L = this._locale();
     if (c.show_today) {
-      return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${TWODAY_STYLE}${this._extraStyle()}</style>
+      return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${TWODAY_STYLE}${this._extraStyle()}${this._sceneStyle()}</style>
         <ha-card>
           ${this._headerTwo(m)}
           <div class="content twoday">${this._daySection(m, "today")}${this._daySection(m, "tomorrow")}${this._footer(m)}</div>
@@ -2438,7 +2901,7 @@ class FamilyDayCard extends FamilyDayBase {
     }
     const d = m.day;
     const kids = c.show_children !== false && d.kind === "school" ? this._kidsHtml(m) : "";
-    return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${this._extraStyle()}</style>
+    return `<style>${BASE_STYLE}${ART_STYLE}${FULL_STYLE}${this._extraStyle()}${this._sceneStyle()}</style>
       <ha-card>
         ${this._header({ name: c.title || this._t("title"), sub: upperFirst(fmtDay(m.tomorrow, L), L), day: d })}
         <div class="content">${this._headline(m)}${this._extrasHtml(m, "", true)}${kids}${this._footer(m)}</div>
@@ -2607,8 +3070,8 @@ class FamilyDayMiniCard extends FamilyDayCard {
     const m = this._model();
     if (this._noSource(m)) return this._errorCard(this._t("no_source"));
     const sub = this._config.show_countdown === false ? "" : this._countdown(m);
-    return `<style>${BASE_STYLE}${MINI_STYLE}</style>
-      <ha-card class="compact">
+    return `<style>${BASE_STYLE}${MINI_STYLE}${this._sceneStyle()}</style>
+      <ha-card class="compact${this._illustrated() ? " ill" : ""}">
         ${this._header({ name: this._miniAnswer(m), nameCls: " answer", sub, subCls: " countdown wrap", day: m.day })}
         ${this._extrasHtml(m, " mini")}
       </ha-card>`;
@@ -2657,6 +3120,7 @@ const cleanConfig = (value, defaults) => {
 class FamilyDayCardEditor extends HTMLElement {
   static get toggles() {
     return [
+      ["illustration", true],
       ["show_title", true],
       ["show_subtitle", true],
       ["show_children", true],
@@ -2704,6 +3168,14 @@ class FamilyDayCardEditor extends HTMLElement {
         ] } },
       },
       {
+        name: "illustration_theme",
+        selector: { select: { mode: "dropdown", options: [
+          { value: "auto", label: tr("theme_auto") },
+          { value: "day", label: tr("theme_day") },
+          { value: "night", label: tr("theme_night") },
+        ] } },
+      },
+      {
         name: "language",
         selector: { select: { mode: "dropdown", options: [{ value: "", label: tr("lang_auto") }, ...LANGUAGES.map(([value, label]) => ({ value, label }))] } },
       },
@@ -2712,7 +3184,7 @@ class FamilyDayCardEditor extends HTMLElement {
 
   // The toggles' defaults for a config (a default may depend on the card's language), plus the select defaults.
   _defaults(config) {
-    return { ...Object.fromEntries(this.constructor.toggles.map(([name, def]) => [name, typeof def === "function" ? def(this._hass, config) : def])), extras: "both" };
+    return { ...Object.fromEntries(this.constructor.toggles.map(([name, def]) => [name, typeof def === "function" ? def(this._hass, config) : def])), extras: "both", illustration_theme: "auto" };
   }
 
   _render() {
@@ -2734,6 +3206,7 @@ class FamilyDayCardEditor extends HTMLElement {
     const defaults = this._defaults(this._config);
     for (const [name] of toggles) if (data[name] === undefined) data[name] = defaults[name];
     if (data.extras === undefined) data.extras = defaults.extras;
+    if (data.illustration_theme === undefined) data.illustration_theme = defaults.illustration_theme;
     this._form.hass = this._hass;
     if (!sameDeps(this._dataDeps, [this._config])) {
       this._dataDeps = [this._config];
