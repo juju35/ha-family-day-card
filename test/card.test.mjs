@@ -43,6 +43,8 @@ const html = (card) => card.shadowRoot.innerHTML;
 const text = (card) =>
   html(card)
     .replace(/<style>[\s\S]*?<\/style>/g, "")
+    // The pill's copy for a narrow card (under the subtitle) is hidden at this width.
+    .replace(/<div class="pill-line">[\s\S]*?<\/span><\/span><\/div>/g, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ");
@@ -138,7 +140,7 @@ test("Sunday evening: school tomorrow at the earliest first lesson, a row per ch
   const card = await mount(fd, hass);
   const out = text(card);
   // Header: title, tomorrow's date, pill.
-  assert.match(out, /Tomorrow Monday, November 16 School/);
+  assert.match(out, /Tomorrow School Monday, November 16/);
   assert.match(out, /School at 8:00 AM/);
   assert.match(out, /Alex 8:00 AM · French/);
   // Sam's first lesson is cancelled: the next one.
@@ -182,10 +184,10 @@ test("the calendars are read once for every card of the page and not again on ea
 
 test("no school tomorrow: weekend, public holiday, day off, holidays — without the children's rows", async () => {
   const cases = [
-    [SCENARIOS.friday, /Tomorrow Saturday, November 14 Weekend No school — Weekend/, "weekend"],
-    [SCENARIOS.armistice_eve, /Tomorrow Wednesday, November 11 Public holiday No school — Armistice Day/, "public_holiday"],
-    [SCENARIOS.day_off, /Tomorrow Friday, November 20 Day off (z z )?No school — Day off/, "day_off"],
-    [SCENARIOS.holidays_eve, /Tomorrow Saturday, December 19 Holidays No school — Christmas holidays/, "holidays"],
+    [SCENARIOS.friday, /Tomorrow Weekend Saturday, November 14 No school — Weekend/, "weekend"],
+    [SCENARIOS.armistice_eve, /Tomorrow Public holiday Wednesday, November 11 No school — Armistice Day/, "public_holiday"],
+    [SCENARIOS.day_off, /Tomorrow Day off Friday, November 20 (z z )?No school — Day off/, "day_off"],
+    [SCENARIOS.holidays_eve, /Tomorrow Holidays Saturday, December 19 No school — Christmas holidays/, "holidays"],
   ];
   for (const [now, re, kind] of cases) {
     const { fd, hass } = setup(now);
@@ -216,7 +218,7 @@ test("the options hide the children, the holidays and the public holidays", asyn
   const { fd, hass } = setup(SCENARIOS.sunday);
   const out = text(await mount(fd, hass, { show_children: false, show_holidays: false, title: "Kids" }));
   assert.doesNotMatch(out, /Alex|Christmas holidays/);
-  assert.match(out, /Kids Monday, November 16/);
+  assert.match(out, /Kids School Monday, November 16/);
   assert.match(out, /Christmas Day/);
   const card = await mount(fd, hass, { show_holidays: false, show_public_holidays: false, show_title: false });
   assert.doesNotMatch(html(card), /class="footer"/);
@@ -227,18 +229,18 @@ test("the mini card answers for tomorrow in one line, with the holidays countdow
   {
     const { fd, hass } = setup(SCENARIOS.sunday);
     const card = await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard);
-    assert.match(text(card), /Tomorrow: school 8:00 AM Holidays in 34 days School/);
+    assert.match(text(card), /Tomorrow: school 8:00 AM School Holidays in 34 days/);
     assert.doesNotMatch(html(card), /class="headline/);
     // The badge keeps the full size: the same header as the full card.
     assert.match(html(card), /class="badge"/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.friday);
-    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Holidays in 36 days Weekend/);
+    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Weekend Holidays in 36 days/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.holidays);
-    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Back to school in 7 days Holidays/);
+    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Holidays Back to school in 7 days/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.sunday);
@@ -340,7 +342,7 @@ test("a calendar still loading leaves tomorrow unknown; one that fails is left o
   {
     const { fd, hass } = setup(SCENARIOS.friday, { callApi: () => new Promise(() => {}) });
     const card = await mount(fd, hass, { illustration: false });
-    assert.match(text(card), /Unknown Loading…/);
+    assert.match(text(card), /Tomorrow Unknown Saturday, November 14 Loading…/);
     assert.match(html(card), /class="headline k-unknown/);
     // Illustrated: the neutral scene and a grey icon while tomorrow is not known.
     assert.match(html(await mount(fd, hass)), /class="banner k-unknown/);
@@ -356,11 +358,11 @@ test("a calendar still loading leaves tomorrow unknown; one that fails is left o
 test("the language follows Home Assistant, or the `language` option, and the time format", async () => {
   const { fd, hass } = setup(SCENARIOS.sunday);
   const fr = text(await mount(fd, { ...hass, language: "fr", locale: { language: "fr", time_zone: "server" } }));
-  assert.match(fr, /Demain Lundi 16 novembre École/);
+  assert.match(fr, /Demain École Lundi 16 novembre/);
   assert.match(fr, /École à 8:00 Aujourd.hui Emma · 9 ans St Albert Demain Recycling ce soir Lucas Ste Marguerite Alex 8:00 · French/);
   assert.match(fr, /Christmas holidays · dans 34 jours Sam\. 19 déc\./);
   const de = text(await mount(fd, hass, { language: "de" }));
-  assert.match(de, /Morgen Montag, 16. November Schule/);
+  assert.match(de, /Morgen Schule Montag, 16. November/);
   const h24 = text(await mount(fd, { ...hass, locale: { language: "en", time_zone: "server", time_format: "24" } }));
   assert.match(h24, /School at 08:00/);
   assert.equal(fd.lang({ language: "pt-BR" }, {}), "pt");
@@ -539,8 +541,8 @@ test("the illustrated header: tomorrow's scene and ground, the icon coloured by 
     assert.match(out, new RegExp(`class="banner k-${kind}"`));
     assert.match(out, new RegExp(`class="fd-ground g-${ground}"`));
     assert.match(out, part);
-    // The status pill gives way to the scene; the icon carries the kind (its colour and its label).
-    assert.doesNotMatch(out, /class="chip /);
+    // The status pill right after the title, in the icon's colour (its kind); the icon carries the kind too.
+    assert.match(out, new RegExp(`class="title-row"><div class="name">[^<]*</div><span class="chip k-${kind}`));
     assert.match(out, new RegExp(`class="badge" role="img" title="${fd.STRINGS.en[`kind_${kind}`]}"`));
   }
   const { fd, hass } = setup(SCENARIOS.sunday);

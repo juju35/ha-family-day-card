@@ -1961,7 +1961,7 @@ const SCENE_STYLE = `
   .g-sand { background: #f0d9a6 radial-gradient(#d9b979 .8px, transparent 1px) 0 0 / 7px 5px; box-shadow: inset 0 2px 0 #f8e8c4; }
   .night .g-sand { background-color: #4a3f2c; background-image: radial-gradient(#5c4f38 .8px, transparent 1px); box-shadow: inset 0 2px 0 #5a4d36; }
   /* The round icon, the title and the subtitle on the sky at the left. */
-  .htext { position: absolute; left: 12px; top: 6px; bottom: 16px; right: calc(min(200px, 56%) + 4px);
+  .htext { position: absolute; left: 12px; top: 6px; bottom: 12px; right: calc(min(200px, 56%) + 4px);
            display: flex; align-items: center; gap: 10px; min-width: 0; }
   .htext .titles { display: flex; flex-direction: column; gap: 2px; }
   /* Up to two lines each, so a long title or answer is not cut short next to the scene. */
@@ -1972,13 +1972,21 @@ const SCENE_STYLE = `
   .banner .badge { position: relative; color: var(--c); background: rgba(255,255,255,.62); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 22%, transparent); }
   .banner .badge .icon { fill: currentColor; }
   .banner.night .badge { color: color-mix(in srgb, var(--c) 55%, #fff); background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
-  .banner .zoom { position: absolute; top: 6px; right: 6px; margin: 0; color: #0d2a45; background: rgba(255,255,255,.55); border-color: rgba(13,42,69,.12); }
-  .banner.night .zoom { color: #fff; background: rgba(10,20,40,.45); border-color: rgba(255,255,255,.16); }
+  .banner .chip { background: color-mix(in srgb, var(--c) 18%, rgba(255,255,255,.78)); color: color-mix(in srgb, var(--c) 45%, #0d2a45); }
+  .banner.night .chip { background: color-mix(in srgb, var(--c) 30%, rgba(8,18,38,.55)); color: color-mix(in srgb, var(--c) 35%, #ffffff); }
+  .banner .zoom { color: #33506b; background: rgba(255,255,255,.55); box-shadow: inset 0 0 0 1px rgba(255,255,255,.7);
+                  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .banner.night .zoom { color: #fff; background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+  .banner .zoom:hover { background: rgba(255,255,255,.75); color: #33506b; }
+  .banner.night .zoom:hover { background: rgba(255,255,255,.22); color: #fff; }
   /* Narrow card: a smaller scene, then the sky alone. */
   .compact .fd-scene { width: min(176px, 46%); } .compact .htext { right: calc(min(176px, 46%) + 4px); }
   .compact .banner .name { font-size: 15px; line-height: 1.2; }
-  @container (max-width: 300px) { .fd-scene, .compact .fd-scene { width: 38%; } .htext, .compact .htext { right: calc(38% + 4px); } }
-  @container (max-width: 230px) { .fd-scene, .compact .fd-scene { display: none; } .htext, .compact .htext { right: 8px; }
+  @container fd-card (max-width: 300px) { .fd-scene, .compact .fd-scene { width: 38%; } .htext, .compact .htext { right: calc(38% + 4px); } }
+  /* The mini card's answer and its pill take more of a narrow banner: a smaller scene. */
+  @container fd-card (max-width: 280px) { .compact .fd-scene { width: 30%; } .compact .htext { right: calc(30% + 4px); } }
+  @container fd-card (max-width: 250px) { .compact .fd-scene { width: 25%; } .compact .htext { right: calc(25% + 2px); } }
+  @container fd-card (max-width: 230px) { .fd-scene, .compact .fd-scene { display: none; } .htext, .compact .htext { right: 8px; }
     .compact .banner .name { font-size: 13px; line-height: 1.2; -webkit-line-clamp: 3; overflow-wrap: normal; }
     .compact .banner .sub { -webkit-line-clamp: 1; } .banner:has(.zoom) .htext { right: 36px; } }
   /* Scene colours, day and night. */
@@ -2058,7 +2066,7 @@ const SCENE_STYLE = `
 const BASE_STYLE = `
   :host { --fd-accent: #d81b60; --fd-school: #1e88e5; --fd-weekend: var(--success-color, #43a047); --fd-holidays: #fb8c00;
           --fd-public: #5e35b1; --fd-off: #00897b; --fd-idle: var(--disabled-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
-  ha-card { overflow: hidden; container-type: inline-size; }
+  ha-card { overflow: hidden; container: fd-card / inline-size; }
   /* A size container has no width of its own: this zero-height grid gives the card a natural width without a minimum. */
   :host { display: block; min-width: 0; --fd-natural-width: 380px; }
   :host::before { content: ""; display: grid; grid-template-columns: minmax(0, var(--fd-natural-width)); height: 0; }
@@ -2092,10 +2100,32 @@ const BASE_STYLE = `
   .bar > div { height: 100%; border-radius: 3px; background: var(--c); transition: width .8s ease; }
   /* Title row: badge, titles, status pill (aligned on the title line) and the mini card's detail button. */
   .header { display: flex; align-items: center; gap: 10px; padding: 12px 12px 0; }
-  .header:has(.sub) > .chip { margin-bottom: 14.4px; }
-  .header:has(.sub.wrap) > .chip { align-self: flex-start; margin: 1px 0 0; }
-  .titles { flex: 1 1 0; min-width: 5ch; }
-  :host([hide-title]) .titles > .name:not(.answer), :host([hide-subtitle]) .titles > .sub:not(.countdown) { display: none; }
+  .header { position: relative; }
+  .header:has(> .zoom) { padding-right: 34px; }
+  .titles { flex: 1 1 0; min-width: 5ch; container: fd-titles / inline-size; }
+  /* The title line: the title, then the status pill, which keeps its whole label (the title gives way first). */
+  .title-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .title-row > .name { flex: 0 1 auto; min-width: 4ch; }
+  .title-row > .chip { flex: none; max-width: 51%; }
+  .pill-line { display: none; }
+  @container fd-titles (max-width: 205px) {
+    .title-row > .chip { display: none; }
+    .pill-line { display: flex; min-width: 0; margin-top: 2px; }
+    .pill-line > .chip { max-width: 100%; }
+    /* Room for the pill's line in the 90 px banner: one line of subtitle, a tighter answer. */
+    .banner .htext .titles .sub { -webkit-line-clamp: 1; }
+    .compact .banner .htext .titles .name { font-size: 14px; line-height: 1.15; }
+  }
+  @container fd-card (max-width: 260px) {
+    .title-row > .chip { display: none; }
+    .pill-line { display: flex; min-width: 0; margin-top: 2px; }
+    .pill-line > .chip { max-width: 100%; }
+  }
+  @container fd-card (max-width: 200px) {
+    .title-row > .chip { display: inline-flex; padding: 4px; }
+    .title-row .chip-text, .pill-line { display: none; }
+  }
+  :host([hide-title]) .title-row > .name:not(.answer), :host([hide-subtitle]) .titles > .sub:not(.countdown) { display: none; }
   .name { font-size: 16px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sub { font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sub.wrap { white-space: normal; }
@@ -2103,21 +2133,20 @@ const BASE_STYLE = `
            background: color-mix(in srgb, var(--fd-accent) 16%, transparent); }
   .badge .icon { width: 24px; height: 24px; fill: var(--fd-accent); }
   .warning { padding: 16px; color: color-mix(in srgb, var(--fd-warn) 50%, var(--primary-text-color)); }
-  .zoom { all: unset; flex: none; cursor: pointer; width: 24px; height: 24px; margin: -2px -4px 0 0; border-radius: 50%;
-          display: grid; place-items: center; color: var(--secondary-text-color);
-          background: color-mix(in srgb, var(--fd-idle) 10%, transparent); border: 1px solid color-mix(in srgb, var(--fd-idle) 25%, transparent); }
-  .zoom .icon { width: 14px; height: 14px; }
+  /* The mini card's detail button: 24 px round, in the top right corner. */
+  .zoom { all: unset; position: absolute; z-index: 2; top: 5px; right: 5px; cursor: pointer; width: 24px; height: 24px; border-radius: 50%;
+          display: grid; place-items: center; color: var(--secondary-text-color); box-sizing: border-box;
+          box-shadow: inset 0 0 0 1px var(--divider-color, rgba(127,127,127,.3)); }
+  .zoom .icon { width: 16px; height: 16px; }
   .zoom:hover { background: color-mix(in srgb, var(--fd-idle) 18%, transparent); color: var(--primary-text-color); }
   .zoom[aria-pressed="true"] { color: var(--fd-accent); border-color: color-mix(in srgb, var(--fd-accent) 45%, transparent); }
   .zoom:focus-visible { outline: 2px solid var(--primary-color, var(--fd-accent)); outline-offset: 1px; }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .extras { margin-left: 0; }
     .extras.mini { margin-left: 12px; }
     .xgroups { margin-left: 0; }
   }
-  @container (max-width: 230px) {
-    .chip { padding: 4px; flex: none; }
-    .chip-text { display: none; }
+  @container fd-card (max-width: 230px) {
     .header { gap: 6px; }
   }
 `;
@@ -2183,7 +2212,7 @@ const FULL_STYLE = `
   .line .end { flex: none; font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; }
   .line .bar { margin-left: 24px; }
   .muted { color: var(--secondary-text-color); }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .headline .answer { font-size: 16px; }
     .headline { gap: 10px; }
     .headline .art { width: 32px; height: 32px; }
@@ -2208,13 +2237,13 @@ const TWODAY_STYLE = `
   .daysec .indent { padding-left: 52px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
   .daysec .indent .extras { margin: 0; }
   .daysec .indent .kids { margin: 0; }
-  @container (max-width: 300px) {
+  @container fd-card (max-width: 300px) {
     .daysec .indent { padding-left: 0; }
     .dayhead { gap: 10px; }
     .dayhead .art { width: 32px; height: 32px; }
     .daylabel .ans { font-size: 15px; }
   }
-  @container (max-width: 230px) {
+  @container fd-card (max-width: 230px) {
     .daylabel .lab .date { display: none; }
   }
 `;
@@ -2227,11 +2256,9 @@ const MINI_STYLE = `
   .ill .extras.mini { margin-bottom: 10px; }
   /* The answer wraps rather than being cut: it is the whole point of the mini card. */
   .compact .name.answer { white-space: normal; overflow-wrap: break-word; }
-  @container (max-width: 230px) {
+  @container fd-card (max-width: 230px) {
     .compact .name.answer { font-size: 13px; }
     .compact .sub { font-size: 11px; }
-    /* The answer says it already: the pill gives way to it. */
-    .compact .chip { display: none; }
   }
 `;
 
@@ -2734,18 +2761,26 @@ class FamilyDayBase extends HTMLElement {
   // Badge, title and subtitle, status pill of tomorrow and the mini card's detail button.
   _header({ name, nameCls = "", sub, subCls = "", day }) {
     if (this._illustrated()) return this._banner({ name, nameCls, sub, subCls, day });
-    const pill = esc(this._kindLabel(day.kind));
-    const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
     return `
       <div class="header">
         <span class="badge">${svgIcon(ICONS.bag)}</span>
-        <div class="titles">
-          <div class="name${nameCls}">${esc(name)}</div>
-          ${sub ? `<div class="sub${subCls}">${esc(sub)}</div>` : ""}
-        </div>
-        <span class="chip k-${day.kind}${attrs} title="${pill}" aria-label="${pill}"><span class="dot"></span><span class="chip-text">${pill}</span></span>
+        ${this._titles({ name, nameCls, sub, subCls, day })}
         ${this._zoomButton()}
       </div>`;
+  }
+
+  // The title, then tomorrow's status pill right after it (in the colour of the round icon); when the title block is
+  // narrow the pill takes a line of its own under the subtitle (the copy in .pill-line), and on a very narrow card
+  // only its dot stays (its text stays in its title and aria-label).
+  _titles({ name, nameCls = "", sub, subCls = "", day }) {
+    const label = esc(this._kindLabel(day.kind));
+    const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
+    const pill = `<span class="chip k-${day.kind}${attrs} title="${label}" aria-label="${label}"><span class="dot"></span><span class="chip-text">${label}</span></span>`;
+    return `<div class="titles">
+          <div class="title-row"><div class="name${nameCls}">${esc(name)}</div>${pill}</div>
+          ${sub ? `<div class="sub${subCls}">${esc(sub)}</div>` : ""}
+          <div class="pill-line">${pill}</div>
+        </div>`;
   }
 
   _zoomButton() {
@@ -2762,16 +2797,12 @@ class FamilyDayBase extends HTMLElement {
   _banner({ name, nameCls = "", sub, subCls = "", day }) {
     const night = isNight(this._hass, this._config);
     const pill = esc(this._kindLabel(day.kind));
-    const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
     return `
       <div class="banner k-${day.kind}${night ? " night" : ""}">
         ${fdSceneSvg(day.kind, night, this._uid)}
-        <div class="htext${attrs}>
+        <div class="htext">
           <span class="badge" role="img" title="${pill}" aria-label="${pill}">${svgIcon(SCHOOL_ICON)}</span>
-          <div class="titles">
-            <div class="name${nameCls}">${esc(name)}</div>
-            ${sub ? `<div class="sub${subCls}">${esc(sub)}</div>` : ""}
-          </div>
+          ${this._titles({ name, nameCls, sub, subCls, day })}
         </div>
         ${this._zoomButton()}
       </div>`;
