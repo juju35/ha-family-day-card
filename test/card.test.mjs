@@ -542,7 +542,7 @@ test("the illustrated header: tomorrow's scene and ground, the icon coloured by 
     assert.match(out, new RegExp(`class="fd-ground g-${ground}"`));
     assert.match(out, part);
     // The status pill right after the title, in the icon's colour (its kind); the icon carries the kind too.
-    assert.match(out, new RegExp(`class="title-row"><div class="name">[^<]*</div><span class="chip k-${kind}`));
+    assert.match(out, new RegExp(`class="title-row"><div class="name" title="[^"]*">[^<]*</div><span class="chip k-${kind}`));
     assert.match(out, new RegExp(`class="badge" role="img" title="${fd.STRINGS.en[`kind_${kind}`]}"`));
   }
   const { fd, hass } = setup(SCENARIOS.sunday);
@@ -566,4 +566,20 @@ test("the illustrated header: tomorrow's scene and ground, the icon coloured by 
   const classic = html(await mount(fd, hass, { illustration: false }));
   assert.doesNotMatch(classic, /class="banner/);
   assert.match(classic, /class="header"/);
+});
+
+test("the status pill is placed by measure: beside the whole title, else under the subtitle, else its dot alone", () => {
+  const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
+  // No fixed width or share of the title block decides where the pill goes
+  assert.doesNotMatch(src, /@container fd-titles|\.title-row > \.chip \{[^}]*max-width: \d/);
+  assert.match(src, /\.titles\.below \.title-row > \.chip \{ display: none; \}/);
+  assert.match(src, /\.titles\.below \.pill-line \{ display: flex;/);
+  assert.match(src, /\.banner \.htext \.titles\.below \.sub \{ -webkit-line-clamp: 1; \}/, "the subtitle keeps one line above the pill");
+  assert.match(src, /\.titles\.dot-only \.chip-text \{ display: none; \}/);
+  assert.match(src, /@container fd-card \(max-width: 200px\) \{ \.titles \.chip \{ padding: 4px; \} \.titles \.chip-text \{ display: none; \} \}/);
+  // Measured after each render: the whole title, the room on its row, the line under the subtitle and the ground
+  const fit = src.slice(src.indexOf("  _fitPill() {"), src.indexOf("\n  }\n", src.indexOf("  _fitPill() {")));
+  for (const part of ["fdTextWidth(name)", 'classList.add("below")', 'classList.add("dot-only")', '.querySelector(".fd-ground")', "tx.scrollWidth <= tx.clientWidth"])
+    assert.ok(fit.includes(part), `_fitPill measures ${part}`);
+  assert.match(src, /morph\(root, tpl\.content\);\n {4}\}\n {4}this\._fitPill\(\);/, "fitted again after each render");
 });

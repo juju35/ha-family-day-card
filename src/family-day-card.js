@@ -2102,29 +2102,25 @@ const BASE_STYLE = `
   .header { display: flex; align-items: center; gap: 10px; padding: 12px 12px 0; }
   .header { position: relative; }
   .header:has(> .zoom) { padding-right: 34px; }
-  .titles { flex: 1 1 0; min-width: 5ch; container: fd-titles / inline-size; }
-  /* The title line: the title, then the status pill, which keeps its whole label (the title gives way first). */
+  .titles { flex: 1 1 0; min-width: 5ch; }
+  /* The title line: the title, then the status pill when the whole title (on one line) and the pill's whole label fit
+     there (measured, see _fitPill). Otherwise the pill takes a line of its own under the subtitle (its copy in
+     .pill-line), the subtitle on one line and the mini card's answer tighter; when that does not fit in the banner
+     above the ground, or on a card of 200 px or less, only its dot stays. */
   .title-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .title-row > .name { flex: 0 1 auto; min-width: 4ch; }
-  .title-row > .chip { flex: none; max-width: 51%; }
+  .title-row > .name { flex: 0 1 auto; min-width: 0; }
+  .title-row > .chip { flex: none; max-width: none; }
   .pill-line { display: none; }
-  @container fd-titles (max-width: 205px) {
-    .title-row > .chip { display: none; }
-    .pill-line { display: flex; min-width: 0; margin-top: 2px; }
-    .pill-line > .chip { max-width: 100%; }
-    /* Room for the pill's line in the 90 px banner: one line of subtitle, a tighter answer. */
-    .banner .htext .titles .sub { -webkit-line-clamp: 1; }
-    .compact .banner .htext .titles .name { font-size: 14px; line-height: 1.15; }
-  }
-  @container fd-card (max-width: 260px) {
-    .title-row > .chip { display: none; }
-    .pill-line { display: flex; min-width: 0; margin-top: 2px; }
-    .pill-line > .chip { max-width: 100%; }
-  }
-  @container fd-card (max-width: 200px) {
-    .title-row > .chip { display: inline-flex; padding: 4px; }
-    .title-row .chip-text, .pill-line { display: none; }
-  }
+  .titles.below .title-row > .chip { display: none; }
+  .titles.below .pill-line { display: flex; min-width: 0; margin-top: 2px; }
+  .pill-line > .chip { max-width: 100%; }
+  .banner .htext .titles.below .sub { -webkit-line-clamp: 1; }
+  .compact .banner .htext .titles.below .name { font-size: 14px; line-height: 1.15; }
+  .titles.dot-only .chip { padding: 4px; } .titles.dot-only .chip-text { display: none; }
+  /* Still no room under the lines (a long answer on the narrowest mini card): the answer one line shorter (whole in
+     its tooltip). */
+  .banner .htext .titles.tight .name { -webkit-line-clamp: 2; }
+  @container fd-card (max-width: 200px) { .titles .chip { padding: 4px; } .titles .chip-text { display: none; } }
   :host([hide-title]) .title-row > .name:not(.answer), :host([hide-subtitle]) .titles > .sub:not(.countdown) { display: none; }
   .name { font-size: 16px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sub { font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -2370,6 +2366,17 @@ const sameDeps = (a, b) => !!a && a.length === b.length && a.every((d, i) => d =
 
 let fdUid = 0;
 
+// The width of an element's whole text in its own font, in fractional pixels (scrollWidth is rounded).
+let fdTextCtx;
+const fdTextWidth = (el) => {
+  const cs = getComputedStyle(el);
+  fdTextCtx ??= document.createElement("canvas").getContext?.("2d");
+  if (!fdTextCtx) return el.scrollWidth;
+  fdTextCtx.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  const pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+  return Math.max(el.scrollWidth, fdTextCtx.measureText(el.textContent.trim()).width + pad);
+};
+
 class FamilyDayBase extends HTMLElement {
   constructor() {
     super();
@@ -2423,6 +2430,9 @@ class FamilyDayBase extends HTMLElement {
 
   connectedCallback() {
     if (this._hass && this._config) this._update();
+    if (!this._fitObserver && typeof ResizeObserver === "function") this._fitObserver = new ResizeObserver(() => this._fitPill());
+    this._fitObserver?.observe(this);
+    document.fonts?.ready?.then(() => this._fitPill());
     // "Tomorrow" moves at midnight: checked every minute while the card is on the page.
     clearInterval(this._tick);
     this._tick = setInterval(() => {
@@ -2434,6 +2444,7 @@ class FamilyDayBase extends HTMLElement {
   disconnectedCallback() {
     clearInterval(this._tick);
     this._tick = null;
+    this._fitObserver?.disconnect();
     this._dropPress();
   }
 
@@ -2499,13 +2510,45 @@ class FamilyDayBase extends HTMLElement {
     if (html === this._html) return;
     this._html = html;
     const root = this.shadowRoot;
-    if (!root.firstChild) {
-      root.innerHTML = html;
-      return;
+    if (!root.firstChild) root.innerHTML = html;
+    else {
+      const tpl = document.createElement("template");
+      tpl.innerHTML = html;
+      morph(root, tpl.content);
     }
-    const tpl = document.createElement("template");
-    tpl.innerHTML = html;
-    morph(root, tpl.content);
+    this._fitPill();
+  }
+
+  // Tomorrow's status pill, measured after each render and on a new width (in every language): it sits on the title's
+  // row, right after the title, only when the whole title (on one line) and the pill's whole label fit there;
+  // otherwise it takes a line of its own under the subtitle (.below). When the lines do not fit in the banner above
+  // the ground, or the label does not fit its line, the pill shows its dot alone (.dot-only): beside the title when
+  // the whole title leaves it room, else under the subtitle, the answer then one line shorter if need be (.tight).
+  _fitPill() {
+    for (const t of this.shadowRoot?.querySelectorAll?.(".titles") || []) {
+      const row = t.querySelector(".title-row");
+      const pill = row?.querySelector(":scope > .chip");
+      if (!pill?.getBoundingClientRect) continue;
+      t.classList.remove("below", "dot-only", "tight");
+      const name = row.querySelector(".name");
+      const shown = getComputedStyle(name).display !== "none";
+      const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+      const room = row.getBoundingClientRect().width;
+      const title = shown ? fdTextWidth(name) + gap : 0;
+      if (title + pill.getBoundingClientRect().width <= room) continue;
+      t.classList.add("below");
+      const line = t.querySelector(".pill-line > .chip");
+      const banner = t.closest(".banner");
+      const floor = banner ? banner.querySelector(".fd-ground").getBoundingClientRect().top : Infinity;
+      const box = t.getBoundingClientRect();
+      const tx = line?.querySelector(".chip-text");
+      const whole = !tx || (tx.scrollWidth <= tx.clientWidth + 0.5 && line.getBoundingClientRect().right <= box.right + 0.5);
+      if (whole && box.bottom <= floor + 0.5 && (!banner || box.top >= banner.getBoundingClientRect().top - 0.5)) continue;
+      t.classList.add("dot-only");
+      if (title + (line || pill).getBoundingClientRect().width <= room) t.classList.remove("below");
+      // Still into the ground (a long answer on the narrowest mini card): the answer one line shorter.
+      else if (banner && t.querySelector(":scope > .sub") && t.getBoundingClientRect().bottom > floor + 0.5) t.classList.add("tight");
+    }
   }
 
   _onClick(ev) {
@@ -2769,16 +2812,16 @@ class FamilyDayBase extends HTMLElement {
       </div>`;
   }
 
-  // The title, then tomorrow's status pill right after it (in the colour of the round icon); when the title block is
-  // narrow the pill takes a line of its own under the subtitle (the copy in .pill-line), and on a very narrow card
-  // only its dot stays (its text stays in its title and aria-label).
+  // The title, then tomorrow's status pill right after it (in the colour of the round icon). Where the pill goes is
+  // measured (_fitPill): beside the whole title, else on a line of its own under the subtitle (the copy in
+  // .pill-line), else only its dot (its text stays in its title and aria-label).
   _titles({ name, nameCls = "", sub, subCls = "", day }) {
     const label = esc(this._kindLabel(day.kind));
     const attrs = day.entity ? ` clickable" role="button" tabindex="0" data-entity="${esc(day.entity)}"` : '"';
     const pill = `<span class="chip k-${day.kind}${attrs} title="${label}" aria-label="${label}"><span class="dot"></span><span class="chip-text">${label}</span></span>`;
     return `<div class="titles">
-          <div class="title-row"><div class="name${nameCls}">${esc(name)}</div>${pill}</div>
-          ${sub ? `<div class="sub${subCls}">${esc(sub)}</div>` : ""}
+          <div class="title-row"><div class="name${nameCls}" title="${esc(name)}">${esc(name)}</div>${pill}</div>
+          ${sub ? `<div class="sub${subCls}" title="${esc(sub)}">${esc(sub)}</div>` : ""}
           <div class="pill-line">${pill}</div>
         </div>`;
   }
