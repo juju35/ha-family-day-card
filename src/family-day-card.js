@@ -51,7 +51,7 @@ const STRINGS = {
     opt_zoom: "Detail button",
     opt_illustration: "Animated illustration",
     opt_illustration_theme: "Illustration theme",
-    theme_auto: "Automatic (sun or dark theme)",
+    theme_auto: "Automatic (follows the theme)",
     theme_day: "Day",
     theme_night: "Night",
     help_workday: "Binary sensor of the Workday integration (found automatically when left empty)",
@@ -115,7 +115,7 @@ const STRINGS = {
     opt_zoom: "Bouton détail",
     opt_illustration: "Illustration animée",
     opt_illustration_theme: "Thème de l’illustration",
-    theme_auto: "Automatique (soleil ou thème sombre)",
+    theme_auto: "Automatique (suit le thème)",
     theme_day: "Jour",
     theme_night: "Nuit",
     help_workday: "Capteur binaire de l'intégration Workday (trouvé automatiquement si vide)",
@@ -179,7 +179,7 @@ const STRINGS = {
     opt_zoom: "Detail-Schaltfläche",
     opt_illustration: "Animierte Illustration",
     opt_illustration_theme: "Thema der Illustration",
-    theme_auto: "Automatisch (Sonne oder dunkles Design)",
+    theme_auto: "Automatisch (folgt dem Thema)",
     theme_day: "Tag",
     theme_night: "Nacht",
     help_workday: "Binärsensor der Workday-Integration (leer: automatisch gefunden)",
@@ -243,7 +243,7 @@ const STRINGS = {
     opt_zoom: "Botón de detalle",
     opt_illustration: "Ilustración animada",
     opt_illustration_theme: "Tema de la ilustración",
-    theme_auto: "Automático (sol o tema oscuro)",
+    theme_auto: "Automático (sigue el tema)",
     theme_day: "Día",
     theme_night: "Noche",
     help_workday: "Sensor binario de la integración Workday (se encuentra automáticamente si está vacío)",
@@ -307,7 +307,7 @@ const STRINGS = {
     opt_zoom: "Pulsante dettaglio",
     opt_illustration: "Illustrazione animata",
     opt_illustration_theme: "Tema dell’illustrazione",
-    theme_auto: "Automatico (sole o tema scuro)",
+    theme_auto: "Automatico (segue il tema)",
     theme_day: "Giorno",
     theme_night: "Notte",
     help_workday: "Sensore binario dell'integrazione Workday (trovato automaticamente se vuoto)",
@@ -371,7 +371,7 @@ const STRINGS = {
     opt_zoom: "Detailknop",
     opt_illustration: "Geanimeerde illustratie",
     opt_illustration_theme: "Thema van de illustratie",
-    theme_auto: "Automatisch (zon of donker thema)",
+    theme_auto: "Automatisch (volgt het thema)",
     theme_day: "Dag",
     theme_night: "Nacht",
     help_workday: "Binaire sensor van de Workday-integratie (leeg: automatisch gevonden)",
@@ -435,7 +435,7 @@ const STRINGS = {
     opt_zoom: "Botão de detalhe",
     opt_illustration: "Ilustração animada",
     opt_illustration_theme: "Tema da ilustração",
-    theme_auto: "Automático (sol ou tema escuro)",
+    theme_auto: "Automático (segue o tema)",
     theme_day: "Dia",
     theme_night: "Noite",
     help_workday: "Sensor binário da integração Workday (encontrado automaticamente se vazio)",
@@ -499,7 +499,7 @@ const STRINGS = {
     opt_zoom: "Przycisk szczegółów",
     opt_illustration: "Animowana ilustracja",
     opt_illustration_theme: "Motyw ilustracji",
-    theme_auto: "Automatycznie (słońce lub ciemny motyw)",
+    theme_auto: "Automatycznie (według motywu)",
     theme_day: "Dzień",
     theme_night: "Noc",
     help_workday: "Czujnik binarny integracji Workday (pusty: wyszukiwany automatycznie)",
@@ -563,7 +563,7 @@ const STRINGS = {
     opt_zoom: "Дугме за детаље",
     opt_illustration: "Анимирана илустрација",
     opt_illustration_theme: "Тема илустрације",
-    theme_auto: "Аутоматски (сунце или тамна тема)",
+    theme_auto: "Аутоматски (прати тему)",
     theme_day: "Дан",
     theme_night: "Ноћ",
     help_workday: "Бинарни сензор интеграције Workday (ако је празно, проналази се аутоматски)",
@@ -627,7 +627,7 @@ const STRINGS = {
     opt_zoom: "Dugme za detalje",
     opt_illustration: "Animirana ilustracija",
     opt_illustration_theme: "Tema ilustracije",
-    theme_auto: "Automatski (sunce ili tamna tema)",
+    theme_auto: "Automatski (prati temu)",
     theme_day: "Dan",
     theme_night: "Noć",
     help_workday: "Binarni senzor integracije Workday (ako je prazno, pronalazi se automatski)",
@@ -691,7 +691,7 @@ const STRINGS = {
     opt_zoom: "Buton de detalii",
     opt_illustration: "Ilustrație animată",
     opt_illustration_theme: "Tema ilustrației",
-    theme_auto: "Automat (soare sau temă întunecată)",
+    theme_auto: "Automat (urmează tema)",
     theme_day: "Zi",
     theme_night: "Noapte",
     help_workday: "Senzorul binar al integrării Workday (găsit automat dacă e gol)",
@@ -755,7 +755,7 @@ const STRINGS = {
     opt_zoom: "Detaljeknap",
     opt_illustration: "Animeret illustration",
     opt_illustration_theme: "Illustrationens tema",
-    theme_auto: "Automatisk (sol eller mørkt tema)",
+    theme_auto: "Automatisk (følger temaet)",
     theme_day: "Dag",
     theme_night: "Nat",
     help_workday: "Binær sensor fra Workday-integrationen (findes automatisk, hvis tom)",
@@ -819,7 +819,7 @@ const STRINGS = {
     opt_zoom: "Detaljknapp",
     opt_illustration: "Animerad illustration",
     opt_illustration_theme: "Illustrationens tema",
-    theme_auto: "Automatiskt (sol eller mörkt tema)",
+    theme_auto: "Automatiskt (följer temat)",
     theme_day: "Dag",
     theme_night: "Natt",
     help_workday: "Binär sensor från Workday-integrationen (hittas automatiskt om tom)",
@@ -883,7 +883,7 @@ const STRINGS = {
     opt_zoom: "Бутон за подробности",
     opt_illustration: "Анимирана илюстрация",
     opt_illustration_theme: "Тема на илюстрацията",
-    theme_auto: "Автоматично (слънце или тъмна тема)",
+    theme_auto: "Автоматично (следва темата)",
     theme_day: "Ден",
     theme_night: "Нощ",
     help_workday: "Двоичен сензор на интеграцията Workday (намира се автоматично, ако е празно)",
@@ -947,7 +947,7 @@ const STRINGS = {
     opt_zoom: "Кнопка подробностей",
     opt_illustration: "Анимированная иллюстрация",
     opt_illustration_theme: "Тема иллюстрации",
-    theme_auto: "Автоматически (солнце или тёмная тема)",
+    theme_auto: "Автоматически (по теме)",
     theme_day: "День",
     theme_night: "Ночь",
     help_workday: "Бинарный датчик интеграции Workday (если пусто, находится автоматически)",
@@ -1011,7 +1011,7 @@ const STRINGS = {
     opt_zoom: "Кнопка подробиць",
     opt_illustration: "Анімована ілюстрація",
     opt_illustration_theme: "Тема ілюстрації",
-    theme_auto: "Автоматично (сонце або темна тема)",
+    theme_auto: "Автоматично (за темою)",
     theme_day: "День",
     theme_night: "Ніч",
     help_workday: "Бінарний датчик інтеграції Workday (якщо порожньо, знаходиться автоматично)",
@@ -1075,7 +1075,7 @@ const STRINGS = {
     opt_zoom: "Részletek gomb",
     opt_illustration: "Animált illusztráció",
     opt_illustration_theme: "Az illusztráció témája",
-    theme_auto: "Automatikus (nap vagy sötét téma)",
+    theme_auto: "Automatikus (a témát követi)",
     theme_day: "Nappal",
     theme_night: "Éjszaka",
     help_workday: "A Workday integráció bináris érzékelője (üresen automatikusan megtalálja)",
@@ -1139,7 +1139,7 @@ const STRINGS = {
     opt_zoom: "Tlačidlo podrobností",
     opt_illustration: "Animovaná ilustrácia",
     opt_illustration_theme: "Téma ilustrácie",
-    theme_auto: "Automaticky (slnko alebo tmavá téma)",
+    theme_auto: "Automaticky (podľa témy)",
     theme_day: "Deň",
     theme_night: "Noc",
     help_workday: "Binárny senzor integrácie Workday (ak je prázdne, nájde sa automaticky)",
@@ -1203,7 +1203,7 @@ const STRINGS = {
     opt_zoom: "Tlačítko podrobností",
     opt_illustration: "Animovaná ilustrace",
     opt_illustration_theme: "Motiv ilustrace",
-    theme_auto: "Automaticky (slunce nebo tmavý motiv)",
+    theme_auto: "Automaticky (podle motivu)",
     theme_day: "Den",
     theme_night: "Noc",
     help_workday: "Binární senzor integrace Workday (pokud je prázdné, najde se automaticky)",
@@ -1267,7 +1267,7 @@ const STRINGS = {
     opt_zoom: "Gumb za podrobnosti",
     opt_illustration: "Animirana ilustracija",
     opt_illustration_theme: "Tema ilustracije",
-    theme_auto: "Samodejno (sonce ali temna tema)",
+    theme_auto: "Samodejno (sledi temi)",
     theme_day: "Dan",
     theme_night: "Noč",
     help_workday: "Binarni senzor integracije Workday (če je prazno, se najde samodejno)",
@@ -1331,7 +1331,7 @@ const STRINGS = {
     opt_zoom: "Detaļu poga",
     opt_illustration: "Animēta ilustrācija",
     opt_illustration_theme: "Ilustrācijas motīvs",
-    theme_auto: "Automātiski (saule vai tumšais motīvs)",
+    theme_auto: "Automātiski (seko tēmai)",
     theme_day: "Diena",
     theme_night: "Nakts",
     help_workday: "Workday integrācijas binārais sensors (ja tukšs, tiek atrasts automātiski)",
@@ -1395,7 +1395,7 @@ const STRINGS = {
     opt_zoom: "Κουμπί λεπτομερειών",
     opt_illustration: "Κινούμενη εικονογράφηση",
     opt_illustration_theme: "Θέμα εικονογράφησης",
-    theme_auto: "Αυτόματο (ήλιος ή σκούρο θέμα)",
+    theme_auto: "Αυτόματο (ακολουθεί το θέμα)",
     theme_day: "Ημέρα",
     theme_night: "Νύχτα",
     help_workday: "Δυαδικός αισθητήρας της ενσωμάτωσης Workday (αν είναι κενό, βρίσκεται αυτόματα)",
@@ -1819,13 +1819,11 @@ const art = (kind) => `<svg class="art-svg" viewBox="0 0 24 24" aria-hidden="tru
 // mdiSchool: the round icon of the illustrated header.
 const SCHOOL_ICON = "M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z";
 
-// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme (dark mode alone without a valid sun.sun).
+// Night picture: forced by illustration_theme, else Home Assistant's dark theme alone (a light theme keeps the day picture after sunset).
 const isNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  const sun = hass?.states?.["sun.sun"];
-  if (valid(sun)) return sun.state === "below_horizon" || !!hass?.themes?.darkMode;
   return !!hass?.themes?.darkMode;
 };
 
@@ -2425,7 +2423,7 @@ class FamilyDayBase extends HTMLElement {
     if (!h || !this._config) return null;
     const src = this._sources();
     const ids = [src.workday, src.school_holidays, src.public_holidays, ...src.waste, ...src.birthdays, ...src.children.flatMap((c) => [c.today, c.tomorrow, c.next_day])];
-    return [h.entities, h.devices, h.language, h.locale, this._loaded, this._minute, h.states?.["sun.sun"]?.state, h.themes?.darkMode, ...ids.map((id) => (id ? h.states[id] : undefined))];
+    return [h.entities, h.devices, h.language, h.locale, this._loaded, this._minute, h.themes?.darkMode, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
   connectedCallback() {
