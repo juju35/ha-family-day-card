@@ -134,6 +134,8 @@ children:
   - name: Sam
     tomorrow: sensor.pronote_martin_sam_tomorrow_s_timetable
 ignore: "enseignant|prérentrée"
+illustration: true
+illustration_theme: auto
 show_title: true
 show_subtitle: true
 show_children: true
@@ -166,6 +168,8 @@ language: fr
 | `school_days` | both | Workday's days, else Monday to Friday | Days of the week with school (`mon` … `sun`), e.g. without Wednesday for a primary school |
 | `children` | both | Pronote children found | **YAML only.** List of children: `name` and their Pronote timetable sensors `tomorrow` (tomorrow's timetable), and optionally `next_day` and `today`. Replaces the children found; `[]` hides them |
 | `ignore` | both | `enseignant\|prérentrée\|teacher` | **YAML only.** Regular expression (case-insensitive) of school holidays events that are not holidays for the pupils, such as the teachers' pre-term day of the ministry's calendar; `""` keeps every event |
+| `illustration` | both | `true` | Illustrated header: an animated 90 px banner showing what tomorrow is — the school and its bus (school day), the park and its swings (weekend), the beach on a sand strip (school holidays), the town hall with flags and fireworks (public holiday), a hammock (day off) — with the round icon coloured by tomorrow's kind of day. `false` brings back the classic header with its status pill |
+| `illustration_theme` | both | `auto` | Day or night picture: `auto` follows `sun.sun` (else Home Assistant's dark mode), `day` or `night` forces it |
 | `show_title` | both | `true` | Show the title in the header (e.g. `false` under a section heading of your own) |
 | `show_subtitle` | both | `true` | Show tomorrow's date under the title |
 | `show_children` | both | `true` | One row per child on a school day (Pronote) |

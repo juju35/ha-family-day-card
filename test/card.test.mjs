@@ -189,7 +189,8 @@ test("no school tomorrow: weekend, public holiday, day off, holidays — without
   ];
   for (const [now, re, kind] of cases) {
     const { fd, hass } = setup(now);
-    const card = await mount(fd, hass);
+    // The classic header (illustration: false) keeps the status pill.
+    const card = await mount(fd, hass, { illustration: false });
     // Workday's answer for tomorrow comes after the first render.
     card._minute = 1;
     card.hass = { ...hass };
@@ -225,7 +226,7 @@ test("the options hide the children, the holidays and the public holidays", asyn
 test("the mini card answers for tomorrow in one line, with the holidays countdown", async () => {
   {
     const { fd, hass } = setup(SCENARIOS.sunday);
-    const card = await mount(fd, hass, {}, fd.FamilyDayMiniCard);
+    const card = await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard);
     assert.match(text(card), /Tomorrow: school 8:00 AM Holidays in 34 days School/);
     assert.doesNotMatch(html(card), /class="headline/);
     // The badge keeps the full size: the same header as the full card.
@@ -233,15 +234,15 @@ test("the mini card answers for tomorrow in one line, with the holidays countdow
   }
   {
     const { fd, hass } = setup(SCENARIOS.friday);
-    assert.match(text(await mount(fd, hass, {}, fd.FamilyDayMiniCard)), /No school tomorrow Holidays in 36 days Weekend/);
+    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Holidays in 36 days Weekend/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.holidays);
-    assert.match(text(await mount(fd, hass, {}, fd.FamilyDayMiniCard)), /No school tomorrow Back to school in 7 days Holidays/);
+    assert.match(text(await mount(fd, hass, { illustration: false }, fd.FamilyDayMiniCard)), /No school tomorrow Back to school in 7 days Holidays/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.sunday);
-    const out = text(await mount(fd, hass, { show_countdown: false, children: [] }, fd.FamilyDayMiniCard));
+    const out = text(await mount(fd, hass, { show_countdown: false, children: [], illustration: false }, fd.FamilyDayMiniCard));
     assert.match(out, /Tomorrow: school School/);
     assert.doesNotMatch(out, /Holidays in/);
   }
@@ -338,9 +339,11 @@ test("no source at all: a message, not an error", async () => {
 test("a calendar still loading leaves tomorrow unknown; one that fails is left out", async () => {
   {
     const { fd, hass } = setup(SCENARIOS.friday, { callApi: () => new Promise(() => {}) });
-    const card = await mount(fd, hass);
+    const card = await mount(fd, hass, { illustration: false });
     assert.match(text(card), /Unknown Loading…/);
     assert.match(html(card), /class="headline k-unknown/);
+    // Illustrated: the neutral scene and a grey icon while tomorrow is not known.
+    assert.match(html(await mount(fd, hass)), /class="banner k-unknown/);
   }
   {
     const { fd, hass } = setup(SCENARIOS.friday, { callApi: async () => Promise.reject(new Error("boom")) });
@@ -520,4 +523,41 @@ test("the sun's rays turn around its centre in every browser (transform-box of t
   // `.art-svg rect { transform-box: fill-box }` would make Safari read a ray's rotate(… 12 12) around the ray's own box.
   const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
   assert.match(src, /\.a-sun \.rays rect \{ transform-box: view-box; \}/);
+});
+
+test("the illustrated header: tomorrow's scene and ground, the icon coloured by its kind, night mode, unique ids", async () => {
+  const cases = [
+    [SCENARIOS.sunday, "school", "lawn", /class="fds-bus"/],
+    [SCENARIOS.friday, "weekend", "lawn", /class="fds-swing"/],
+    [SCENARIOS.armistice_eve, "public_holiday", "lawn", /class="fds-burst/],
+    [SCENARIOS.holidays, "holidays", "sand", /class="fds-sea"/],
+  ];
+  for (const [now, kind, ground, part] of cases) {
+    const { fd, hass } = setup(now);
+    const card = await mount(fd, hass);
+    const out = html(card);
+    assert.match(out, new RegExp(`class="banner k-${kind}"`));
+    assert.match(out, new RegExp(`class="fd-ground g-${ground}"`));
+    assert.match(out, part);
+    // The status pill gives way to the scene; the icon carries the kind (its colour and its label).
+    assert.doesNotMatch(out, /class="chip /);
+    assert.match(out, new RegExp(`class="badge" role="img" title="${fd.STRINGS.en[`kind_${kind}`]}"`));
+  }
+  const { fd, hass } = setup(SCENARIOS.sunday);
+  // Night: the sun below the horizon, else the dark theme; illustration_theme forces it.
+  const night = async (h, c = {}) => /class="banner k-school night"/.test(html(await mount(fd, h, c)));
+  assert.equal(await night({ ...hass, states: { ...hass.states, "sun.sun": { state: "below_horizon" } } }), true);
+  assert.equal(await night({ ...hass, states: { ...hass.states, "sun.sun": { state: "above_horizon" } }, themes: { darkMode: true } }), false);
+  assert.equal(await night({ ...hass, themes: { darkMode: true } }), true);
+  assert.equal(await night({ ...hass, themes: { darkMode: true } }, { illustration_theme: "day" }), false);
+  assert.equal(await night(hass, { illustration_theme: "night" }), true);
+  // Each card has its own ids; the mini card has the banner too; illustration: false brings the classic header back.
+  const a = html(await mount(fd, hass, {}, fd.FamilyDayMiniCard));
+  const b = html(await mount(fd, hass, {}, fd.FamilyDayMiniCard));
+  const id = (h) => h.match(/id="(fd-glow-\d+)"/)[1];
+  assert.notEqual(id(a), id(b));
+  assert.match(a, /class="banner k-school/);
+  const classic = html(await mount(fd, hass, { illustration: false }));
+  assert.doesNotMatch(classic, /class="banner/);
+  assert.match(classic, /class="header"/);
 });
