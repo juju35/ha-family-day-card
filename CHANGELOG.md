@@ -5,6 +5,7 @@
 ### Features
 - **Animated illustrated header** on the full and mini cards (`illustration`, on by default): a 90 px banner with the title and subtitle on the sky at the left and a scene of tomorrow at the right, over a 10 px ground strip — the school with its clock, flag and school bus (school day), the park and its swings (weekend), the sea and beach on a sand strip (school holidays), the town hall with flags, bunting and fireworks (public holiday), a hammock by the house (day off). The round icon (`mdi:school`) takes the colour of tomorrow's kind of day (grey while not known). Night picture after sunset or with a dark theme, forced with `illustration_theme: day | night`; still under *reduce motion*. `illustration: false` keeps the classic header with its status pill. Both options are in the visual editors.
 - Tomorrow's status pill on every header, the illustrated one and the mini card included: right after the title, in the round icon's colour; it takes a line of its own under the subtitle when the title block is narrow, and only its dot stays below 200 px. The mini card's detail button is a 24 px round glass button in the top right corner of the header.
+- Night picture with the dark theme even while the sun is up.
 
 ## 1.3.0 - 2026-11-15
 

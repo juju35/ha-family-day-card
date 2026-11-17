@@ -546,10 +546,14 @@ test("the illustrated header: tomorrow's scene and ground, the icon coloured by 
     assert.match(out, new RegExp(`class="badge" role="img" title="${fd.STRINGS.en[`kind_${kind}`]}"`));
   }
   const { fd, hass } = setup(SCENARIOS.sunday);
-  // Night: the sun below the horizon, else the dark theme; illustration_theme forces it.
+  // Night: the sun below the horizon or the dark theme (even with the sun up); illustration_theme forces it.
   const night = async (h, c = {}) => /class="banner k-school night"/.test(html(await mount(fd, h, c)));
+  const up = { ...hass, states: { ...hass.states, "sun.sun": { state: "above_horizon" } } };
   assert.equal(await night({ ...hass, states: { ...hass.states, "sun.sun": { state: "below_horizon" } } }), true);
-  assert.equal(await night({ ...hass, states: { ...hass.states, "sun.sun": { state: "above_horizon" } }, themes: { darkMode: true } }), false);
+  assert.equal(await night({ ...up, themes: { darkMode: true } }), true);
+  assert.equal(await night({ ...up, themes: { darkMode: false } }), false);
+  assert.equal(await night({ ...up, themes: { darkMode: true } }, { illustration_theme: "day" }), false);
+  assert.equal(await night({ ...up, themes: { darkMode: false } }, { illustration_theme: "night" }), true);
   assert.equal(await night({ ...hass, themes: { darkMode: true } }), true);
   assert.equal(await night({ ...hass, themes: { darkMode: true } }, { illustration_theme: "day" }), false);
   assert.equal(await night(hass, { illustration_theme: "night" }), true);
