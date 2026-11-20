@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2 - 2026-11-20
+
+### Fixes
+- School holidays discovery: a calendar is no longer taken for the school holidays because its id or name merely contains "lov" (a `lovelace` or `glove` calendar); the Swedish *lov* (sportlov, höstlov…) still counts at the end of a word.
+- README: `show_today` is marked for both cards — the mini card's detailed view shows it too.
+
 ## 1.4.1 - 2026-11-18
 
 ### Fixes
