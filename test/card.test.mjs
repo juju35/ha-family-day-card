@@ -94,6 +94,27 @@ test("calendar events: all-day and timed events, end exclusive, ignored summarie
   assert.equal(fd.parseEvents([{ start: { date: "2027-05-07" }, summary: "a" }], "UTC", "(").length, 1);
 });
 
+test("a school holidays calendar is told from other calendars by its name", () => {
+  const fd = load();
+  const school = (id, name) => {
+    const hass = { entities: { [id]: { entity_id: id, platform: "local_calendar" } }, states: { [id]: { state: "off", attributes: { friendly_name: name } } }, devices: {} };
+    return fd.discover(hass).school_holidays;
+  };
+  for (const [id, name] of [
+    ["calendar.vacances_scolaires", "Vacances scolaires"],
+    ["calendar.skollov", "Skollov"],
+    ["calendar.school", "Höstlov och sportlov"],
+    ["calendar.schulferien", "Schulferien"],
+  ])
+    assert.equal(school(id, name), id, name);
+  for (const [id, name] of [
+    ["calendar.lovelace_events", "Lovelace events"],
+    ["calendar.glovebox", "Glove box"],
+    ["calendar.family", "Family"],
+  ])
+    assert.equal(school(id, name), undefined, name);
+});
+
 test("sources and children are found through the registries", () => {
   const { fd, hass } = setup(SCENARIOS.friday);
   const found = fd.discover(hass);

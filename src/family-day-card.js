@@ -1709,6 +1709,9 @@ const checkDate = (hass, id, key, onLoad) => {
 // ---- Discovery through the registries -------------------------------------
 
 const _discovery = new WeakMap();
+// A calendar of school holidays, from its id or name. Swedish "lov" (sportlov, höstlov) only at the end of a word, so
+// that "lovelace" or "glove" is not taken for one.
+const SCHOOL_HOLIDAYS_RE = /vacances|scolaire|school|ferien|vacaciones|vacanze|vakantie|ferie|lov(?![a-zåäö])/i;
 const regEntities = (hass) => Object.values(hass?.entities || {});
 const discover = (hass) => {
   if (!hass?.entities) return {};
@@ -1722,7 +1725,7 @@ const discover = (hass) => {
     (e) =>
       e.entity_id.startsWith("calendar.") &&
       !["holiday", "workday"].includes(e.platform) &&
-      /vacances|scolaire|school|ferien|vacaciones|vacanze|vakantie|ferie|lov/i.test(`${e.entity_id} ${name(e)}`),
+      SCHOOL_HOLIDAYS_RE.test(`${e.entity_id} ${name(e)}`),
   )?.entity_id;
   // Bin collections: the calendars of Waste Collection Schedule, or named after the bins; birthdays: by their name.
   const calendars = list.filter((e) => e.entity_id.startsWith("calendar.") && e.entity_id !== pub && e.entity_id !== school && !e.hidden);
