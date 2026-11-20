@@ -57,6 +57,8 @@ const STRINGS = {
     help_workday: "Binary sensor of the Workday integration (found automatically when left empty)",
     help_school_holidays: "Calendar of the school holidays, such as the French education ministry's ICS in Remote calendar (found automatically when left empty)",
     help_public_holidays: "Calendar of the Holiday integration (found automatically when left empty)",
+    opt_ignore: "Events to ignore",
+    help_ignore: "Regular expression of school holidays events that are not pupils' holidays (teachers' days); empty: every event counts",
     help_school_days: "Days with school (the days of the Workday sensor when left empty)",
     help_zoom: "Button at the top right that switches the mini card to the full card and back",
     lang_auto: "Automatic",
@@ -121,6 +123,8 @@ const STRINGS = {
     help_workday: "Capteur binaire de l'intégration Workday (trouvé automatiquement si vide)",
     help_school_holidays: "Calendrier des vacances scolaires, comme l'ICS du ministère de l'Éducation nationale dans Remote calendar (trouvé automatiquement si vide)",
     help_public_holidays: "Calendrier de l'intégration Holiday (trouvé automatiquement si vide)",
+    opt_ignore: "Événements à ignorer",
+    help_ignore: "Expression régulière des événements de vacances scolaires qui ne sont pas des vacances pour les élèves (journées des enseignants) ; vide : tous les événements comptent",
     help_school_days: "Jours avec école (les jours du capteur Workday si vide)",
     help_zoom: "Bouton en haut à droite qui bascule la mini-carte vers la carte complète et inversement",
     lang_auto: "Automatique",
@@ -185,6 +189,8 @@ const STRINGS = {
     help_workday: "Binärsensor der Workday-Integration (leer: automatisch gefunden)",
     help_school_holidays: "Kalender der Schulferien, z. B. die ICS-Datei des französischen Bildungsministeriums in Remote calendar (leer: automatisch gefunden)",
     help_public_holidays: "Kalender der Holiday-Integration (leer: automatisch gefunden)",
+    opt_ignore: "Zu ignorierende Ereignisse",
+    help_ignore: "Regulärer Ausdruck für Schulferien-Ereignisse, die für die Schüler keine Ferien sind (Lehrertage); leer: alle Ereignisse zählen",
     help_school_days: "Tage mit Schule (leer: die Tage des Workday-Sensors)",
     help_zoom: "Schaltfläche oben rechts, die die Mini-Karte zur vollständigen Karte und zurück umschaltet",
     lang_auto: "Automatisch",
@@ -249,6 +255,8 @@ const STRINGS = {
     help_workday: "Sensor binario de la integración Workday (se encuentra automáticamente si está vacío)",
     help_school_holidays: "Calendario de vacaciones escolares, como el ICS del ministerio de Educación francés en Remote calendar (se encuentra automáticamente si está vacío)",
     help_public_holidays: "Calendario de la integración Holiday (se encuentra automáticamente si está vacío)",
+    opt_ignore: "Eventos a ignorar",
+    help_ignore: "Expresión regular de los eventos de vacaciones escolares que no son vacaciones para los alumnos (días de profesores); vacío: cuentan todos los eventos",
     help_school_days: "Días con colegio (los días del sensor Workday si está vacío)",
     help_zoom: "Botón arriba a la derecha que cambia la minitarjeta a la tarjeta completa y viceversa",
     lang_auto: "Automático",
@@ -313,6 +321,8 @@ const STRINGS = {
     help_workday: "Sensore binario dell'integrazione Workday (trovato automaticamente se vuoto)",
     help_school_holidays: "Calendario delle vacanze scolastiche, come l'ICS del ministero dell'Istruzione francese in Remote calendar (trovato automaticamente se vuoto)",
     help_public_holidays: "Calendario dell'integrazione Holiday (trovato automaticamente se vuoto)",
+    opt_ignore: "Eventi da ignorare",
+    help_ignore: "Espressione regolare degli eventi di vacanze scolastiche che non sono vacanze per gli alunni (giornate degli insegnanti); vuoto: contano tutti gli eventi",
     help_school_days: "Giorni con scuola (i giorni del sensore Workday se vuoto)",
     help_zoom: "Pulsante in alto a destra che passa dalla mini scheda alla scheda completa e viceversa",
     lang_auto: "Automatica",
@@ -377,6 +387,8 @@ const STRINGS = {
     help_workday: "Binaire sensor van de Workday-integratie (leeg: automatisch gevonden)",
     help_school_holidays: "Kalender van de schoolvakanties, zoals de ICS van het Franse ministerie van Onderwijs in Remote calendar (leeg: automatisch gevonden)",
     help_public_holidays: "Kalender van de Holiday-integratie (leeg: automatisch gevonden)",
+    opt_ignore: "Te negeren gebeurtenissen",
+    help_ignore: "Reguliere expressie van schoolvakantie-gebeurtenissen die geen vakantie zijn voor de leerlingen (lerarendagen); leeg: alle gebeurtenissen tellen",
     help_school_days: "Dagen met school (leeg: de dagen van de Workday-sensor)",
     help_zoom: "Knop rechtsboven die de minikaart naar de volledige kaart en terug schakelt",
     lang_auto: "Automatisch",
@@ -441,6 +453,8 @@ const STRINGS = {
     help_workday: "Sensor binário da integração Workday (encontrado automaticamente se vazio)",
     help_school_holidays: "Calendário das férias escolares, como o ICS do ministério da Educação francês no Remote calendar (encontrado automaticamente se vazio)",
     help_public_holidays: "Calendário da integração Holiday (encontrado automaticamente se vazio)",
+    opt_ignore: "Eventos a ignorar",
+    help_ignore: "Expressão regular dos eventos de férias escolares que não são férias para os alunos (dias de professores); vazio: todos os eventos contam",
     help_school_days: "Dias com escola (os dias do sensor Workday se vazio)",
     help_zoom: "Botão no canto superior direito que alterna o mini cartão para o cartão completo e vice-versa",
     lang_auto: "Automático",
@@ -505,6 +519,8 @@ const STRINGS = {
     help_workday: "Czujnik binarny integracji Workday (pusty: wyszukiwany automatycznie)",
     help_school_holidays: "Kalendarz ferii szkolnych, np. plik ICS francuskiego ministerstwa edukacji w Remote calendar (pusty: wyszukiwany automatycznie)",
     help_public_holidays: "Kalendarz integracji Holiday (pusty: wyszukiwany automatycznie)",
+    opt_ignore: "Zdarzenia do pominięcia",
+    help_ignore: "Wyrażenie regularne zdarzeń ferii szkolnych, które nie są wolne dla uczniów (dni nauczycieli); puste: liczą się wszystkie zdarzenia",
     help_school_days: "Dni ze szkołą (pusty: dni czujnika Workday)",
     help_zoom: "Przycisk w prawym górnym rogu, który przełącza minikartę na pełną kartę i z powrotem",
     lang_auto: "Automatyczny",
@@ -569,6 +585,8 @@ const STRINGS = {
     help_workday: "Бинарни сензор интеграције Workday (ако је празно, проналази се аутоматски)",
     help_school_holidays: "Календар школских распуста, нпр. ICS француског министарства просвете у Remote calendar (ако је празно, проналази се аутоматски)",
     help_public_holidays: "Календар интеграције Holiday (ако је празно, проналази се аутоматски)",
+    opt_ignore: "Догађаји које треба занемарити",
+    help_ignore: "Регуларни израз за догађаје школског распуста који нису распуст за ученике (дани наставника); празно: рачунају се сви догађаји",
     help_school_days: "Дани са школом (ако је празно, дани Workday сензора)",
     help_zoom: "Дугме горе десно које пребацује мини картицу на пуну картицу и назад",
     lang_auto: "Аутоматски",
@@ -633,6 +651,8 @@ const STRINGS = {
     help_workday: "Binarni senzor integracije Workday (ako je prazno, pronalazi se automatski)",
     help_school_holidays: "Kalendar školskih raspusta, npr. ICS francuskog ministarstva prosvete u Remote calendar (ako je prazno, pronalazi se automatski)",
     help_public_holidays: "Kalendar integracije Holiday (ako je prazno, pronalazi se automatski)",
+    opt_ignore: "Događaji koje treba zanemariti",
+    help_ignore: "Regularni izraz za događaje školskog raspusta koji nisu raspust za učenike (dani nastavnika); prazno: računaju se svi događaji",
     help_school_days: "Dani sa školom (ako je prazno, dani Workday senzora)",
     help_zoom: "Dugme gore desno koje prebacuje mini karticu na punu karticu i nazad",
     lang_auto: "Automatski",
@@ -697,6 +717,8 @@ const STRINGS = {
     help_workday: "Senzorul binar al integrării Workday (găsit automat dacă e gol)",
     help_school_holidays: "Calendarul vacanțelor școlare, de exemplu ICS-ul ministerului francez al educației în Remote calendar (găsit automat dacă e gol)",
     help_public_holidays: "Calendarul integrării Holiday (găsit automat dacă e gol)",
+    opt_ignore: "Evenimente de ignorat",
+    help_ignore: "Expresie regulată a evenimentelor de vacanță școlară care nu sunt vacanță pentru elevi (zilele profesorilor); gol: contează toate evenimentele",
     help_school_days: "Zile cu școală (zilele senzorului Workday dacă e gol)",
     help_zoom: "Buton din dreapta sus care comută mini cardul la cardul complet și înapoi",
     lang_auto: "Automat",
@@ -761,6 +783,8 @@ const STRINGS = {
     help_workday: "Binær sensor fra Workday-integrationen (findes automatisk, hvis tom)",
     help_school_holidays: "Kalender over skoleferier, f.eks. det franske undervisningsministeriums ICS i Remote calendar (findes automatisk, hvis tom)",
     help_public_holidays: "Kalender fra Holiday-integrationen (findes automatisk, hvis tom)",
+    opt_ignore: "Begivenheder der ignoreres",
+    help_ignore: "Regulært udtryk for skoleferiebegivenheder, der ikke er ferie for eleverne (lærerdage); tom: alle begivenheder tæller",
     help_school_days: "Dage med skole (Workday-sensorens dage, hvis tom)",
     help_zoom: "Knap øverst til højre, der skifter minikortet til det fulde kort og tilbage",
     lang_auto: "Automatisk",
@@ -825,6 +849,8 @@ const STRINGS = {
     help_workday: "Binär sensor från Workday-integrationen (hittas automatiskt om tom)",
     help_school_holidays: "Kalender för skollov, t.ex. det franska utbildningsdepartementets ICS i Remote calendar (hittas automatiskt om tom)",
     help_public_holidays: "Kalender från Holiday-integrationen (hittas automatiskt om tom)",
+    opt_ignore: "Händelser att ignorera",
+    help_ignore: "Reguljärt uttryck för skollovshändelser som inte är lov för eleverna (lärardagar); tom: alla händelser räknas",
     help_school_days: "Dagar med skola (Workday-sensorns dagar om tom)",
     help_zoom: "Knapp uppe till höger som växlar minikortet till hela kortet och tillbaka",
     lang_auto: "Automatiskt",
@@ -889,6 +915,8 @@ const STRINGS = {
     help_workday: "Двоичен сензор на интеграцията Workday (намира се автоматично, ако е празно)",
     help_school_holidays: "Календар на ученическите ваканции, напр. ICS на френското министерство на образованието в Remote calendar (намира се автоматично, ако е празно)",
     help_public_holidays: "Календар на интеграцията Holiday (намира се автоматично, ако е празно)",
+    opt_ignore: "Събития за пренебрегване",
+    help_ignore: "Регулярен израз за събития от училищните ваканции, които не са ваканция за учениците (дни на учителите); празно: всички събития се броят",
     help_school_days: "Дни с училище (дните на сензора Workday, ако е празно)",
     help_zoom: "Бутон горе вдясно, който превключва мини картата към пълната карта и обратно",
     lang_auto: "Автоматично",
@@ -953,6 +981,8 @@ const STRINGS = {
     help_workday: "Бинарный датчик интеграции Workday (если пусто, находится автоматически)",
     help_school_holidays: "Календарь школьных каникул, например ICS министерства образования Франции в Remote calendar (если пусто, находится автоматически)",
     help_public_holidays: "Календарь интеграции Holiday (если пусто, находится автоматически)",
+    opt_ignore: "Игнорируемые события",
+    help_ignore: "Регулярное выражение для событий школьных каникул, которые не являются каникулами для учеников (дни учителей); пусто: учитываются все события",
     help_school_days: "Дни с занятиями (если пусто, дни датчика Workday)",
     help_zoom: "Кнопка в правом верхнем углу, переключающая мини-карточку на полную карточку и обратно",
     lang_auto: "Автоматически",
@@ -1017,6 +1047,8 @@ const STRINGS = {
     help_workday: "Бінарний датчик інтеграції Workday (якщо порожньо, знаходиться автоматично)",
     help_school_holidays: "Календар шкільних канікул, наприклад ICS міністерства освіти Франції в Remote calendar (якщо порожньо, знаходиться автоматично)",
     help_public_holidays: "Календар інтеграції Holiday (якщо порожньо, знаходиться автоматично)",
+    opt_ignore: "Події, які ігнорувати",
+    help_ignore: "Регулярний вираз для подій шкільних канікул, які не є канікулами для учнів (дні вчителів); порожньо: враховуються всі події",
     help_school_days: "Дні із заняттями (якщо порожньо, дні датчика Workday)",
     help_zoom: "Кнопка вгорі праворуч, що перемикає міні-картку на повну картку й назад",
     lang_auto: "Автоматично",
@@ -1081,6 +1113,8 @@ const STRINGS = {
     help_workday: "A Workday integráció bináris érzékelője (üresen automatikusan megtalálja)",
     help_school_holidays: "Az iskolai szünetek naptára, pl. a francia oktatási minisztérium ICS-e a Remote calendarban (üresen automatikusan megtalálja)",
     help_public_holidays: "A Holiday integráció naptára (üresen automatikusan megtalálja)",
+    opt_ignore: "Figyelmen kívül hagyott események",
+    help_ignore: "Reguláris kifejezés az iskolai szünet azon eseményeire, amelyek a tanulóknak nem szünetek (tanári napok); üres: minden esemény számít",
     help_school_days: "Iskolás napok (üresen a Workday érzékelő napjai)",
     help_zoom: "Jobb felső gomb, amely a mini kártyát a teljes kártyára és vissza váltja",
     lang_auto: "Automatikus",
@@ -1145,6 +1179,8 @@ const STRINGS = {
     help_workday: "Binárny senzor integrácie Workday (ak je prázdne, nájde sa automaticky)",
     help_school_holidays: "Kalendár školských prázdnin, napr. ICS francúzskeho ministerstva školstva v Remote calendar (ak je prázdne, nájde sa automaticky)",
     help_public_holidays: "Kalendár integrácie Holiday (ak je prázdne, nájde sa automaticky)",
+    opt_ignore: "Ignorované udalosti",
+    help_ignore: "Regulárny výraz udalostí školských prázdnin, ktoré nie sú prázdninami pre žiakov (dni učiteľov); prázdne: počítajú sa všetky udalosti",
     help_school_days: "Dni so školou (ak je prázdne, dni senzora Workday)",
     help_zoom: "Tlačidlo vpravo hore, ktoré prepína minikartu na úplnú kartu a späť",
     lang_auto: "Automaticky",
@@ -1209,6 +1245,8 @@ const STRINGS = {
     help_workday: "Binární senzor integrace Workday (pokud je prázdné, najde se automaticky)",
     help_school_holidays: "Kalendář školních prázdnin, např. ICS francouzského ministerstva školství v Remote calendar (pokud je prázdné, najde se automaticky)",
     help_public_holidays: "Kalendář integrace Holiday (pokud je prázdné, najde se automaticky)",
+    opt_ignore: "Ignorované události",
+    help_ignore: "Regulární výraz událostí školních prázdnin, které nejsou prázdninami pro žáky (dny učitelů); prázdné: počítají se všechny události",
     help_school_days: "Dny se školou (pokud je prázdné, dny senzoru Workday)",
     help_zoom: "Tlačítko vpravo nahoře, které přepíná minikartu na úplnou kartu a zpět",
     lang_auto: "Automaticky",
@@ -1273,6 +1311,8 @@ const STRINGS = {
     help_workday: "Binarni senzor integracije Workday (če je prazno, se najde samodejno)",
     help_school_holidays: "Koledar šolskih počitnic, npr. ICS francoskega ministrstva za šolstvo v Remote calendar (če je prazno, se najde samodejno)",
     help_public_holidays: "Koledar integracije Holiday (če je prazno, se najde samodejno)",
+    opt_ignore: "Prezrti dogodki",
+    help_ignore: "Regularni izraz dogodkov šolskih počitnic, ki za učence niso počitnice (dnevi učiteljev); prazno: štejejo vsi dogodki",
     help_school_days: "Dnevi s šolo (če je prazno, dnevi senzorja Workday)",
     help_zoom: "Gumb zgoraj desno, ki preklopi mini kartico na polno kartico in nazaj",
     lang_auto: "Samodejno",
@@ -1337,6 +1377,8 @@ const STRINGS = {
     help_workday: "Workday integrācijas binārais sensors (ja tukšs, tiek atrasts automātiski)",
     help_school_holidays: "Skolas brīvdienu kalendārs, piem., Francijas izglītības ministrijas ICS Remote calendar (ja tukšs, tiek atrasts automātiski)",
     help_public_holidays: "Holiday integrācijas kalendārs (ja tukšs, tiek atrasts automātiski)",
+    opt_ignore: "Ignorējamie notikumi",
+    help_ignore: "Regulārā izteiksme skolas brīvdienu notikumiem, kas skolēniem nav brīvdienas (skolotāju dienas); tukšs: tiek ņemti vērā visi notikumi",
     help_school_days: "Dienas ar skolu (ja tukšs, Workday sensora dienas)",
     help_zoom: "Poga augšā pa labi, kas pārslēdz mini karti uz pilno karti un atpakaļ",
     lang_auto: "Automātiski",
@@ -1401,6 +1443,8 @@ const STRINGS = {
     help_workday: "Δυαδικός αισθητήρας της ενσωμάτωσης Workday (αν είναι κενό, βρίσκεται αυτόματα)",
     help_school_holidays: "Ημερολόγιο σχολικών διακοπών, π.χ. το ICS του γαλλικού υπουργείου Παιδείας στο Remote calendar (αν είναι κενό, βρίσκεται αυτόματα)",
     help_public_holidays: "Ημερολόγιο της ενσωμάτωσης Holiday (αν είναι κενό, βρίσκεται αυτόματα)",
+    opt_ignore: "Συμβάντα προς παράβλεψη",
+    help_ignore: "Κανονική έκφραση των συμβάντων σχολικών διακοπών που δεν είναι διακοπές για τους μαθητές (ημέρες εκπαιδευτικών)· κενό: μετρούν όλα τα συμβάντα",
     help_school_days: "Μέρες με σχολείο (αν είναι κενό, οι μέρες του αισθητήρα Workday)",
     help_zoom: "Κουμπί πάνω δεξιά που αλλάζει τη μίνι κάρτα στην πλήρη κάρτα και πίσω",
     lang_auto: "Αυτόματα",
@@ -3117,6 +3161,15 @@ const cleanConfig = (value, defaults) => {
   return config;
 };
 
+// The editor shows the default `ignore` pattern: left as is it stays out of the YAML; cleared (the form sends "" or
+// drops the key), it becomes "" — every school holidays event counts, as in YAML.
+const withIgnore = (config, ignore) => {
+  const out = { ...config };
+  delete out.ignore;
+  const v = ignore ?? "";
+  if (v !== DEFAULT_IGNORE) out.ignore = v;
+  return out;
+};
 
 class FamilyDayCardEditor extends HTMLElement {
   static get toggles() {
@@ -3152,6 +3205,7 @@ class FamilyDayCardEditor extends HTMLElement {
       { name: "title", selector: { text: {} } },
       { name: "workday", selector: { entity: { domain: "binary_sensor", integration: "workday" } } },
       { name: "school_holidays", selector: { entity: { domain: "calendar" } } },
+      { name: "ignore", selector: { text: {} } },
       { name: "public_holidays", selector: { entity: { domain: "calendar" } } },
       { name: "waste", selector: { entity: { domain: "calendar", multiple: true } } },
       { name: "birthdays", selector: { entity: { domain: "calendar", multiple: true } } },
@@ -3195,10 +3249,10 @@ class FamilyDayCardEditor extends HTMLElement {
     if (!this._form) {
       this._form = document.createElement("ha-form");
       this._form.computeLabel = (s) => tr(`opt_${s.name}`);
-      this._form.computeHelper = (s) => (["workday", "school_holidays", "public_holidays", "waste", "birthdays", "zoom", "school_days"].includes(s.name) ? tr(`help_${s.name}`) : undefined);
+      this._form.computeHelper = (s) => (["workday", "school_holidays", "ignore", "public_holidays", "waste", "birthdays", "zoom", "school_days"].includes(s.name) ? tr(`help_${s.name}`) : undefined);
       this._form.addEventListener("value-changed", (ev) => {
         ev.stopPropagation();
-        this._config = cleanConfig(ev.detail.value, this._defaults(ev.detail.value));
+        this._config = withIgnore(cleanConfig(ev.detail.value, this._defaults(ev.detail.value)), ev.detail.value.ignore);
         this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: this._config }, bubbles: true, composed: true }));
       });
       this.appendChild(this._form);
@@ -3208,6 +3262,7 @@ class FamilyDayCardEditor extends HTMLElement {
     for (const [name] of toggles) if (data[name] === undefined) data[name] = defaults[name];
     if (data.extras === undefined) data.extras = defaults.extras;
     if (data.illustration_theme === undefined) data.illustration_theme = defaults.illustration_theme;
+    if (data.ignore === undefined) data.ignore = DEFAULT_IGNORE;
     this._form.hass = this._hass;
     if (!sameDeps(this._dataDeps, [this._config])) {
       this._dataDeps = [this._config];

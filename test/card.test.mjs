@@ -456,9 +456,9 @@ test("the editors keep options at their default out of the YAML", () => {
   ed.setConfig({});
   ed.hass = { states: {}, entities: {}, devices: {}, language: "en" };
   const names = ed._form.schema.flatMap((s) => (s.schema ? s.schema.map((x) => x.name) : [s.name]));
-  for (const n of ["title", "workday", "school_holidays", "public_holidays", "school_days", "show_children", "show_holidays", "show_public_holidays", "show_countdown", "language", "zoom"])
+  for (const n of ["title", "workday", "school_holidays", "ignore", "public_holidays", "school_days", "show_children", "show_holidays", "show_public_holidays", "show_countdown", "language", "zoom"])
     assert.ok(names.includes(n), n);
-  assert.ok(!names.includes("children") && !names.includes("ignore"), "children and ignore stay YAML only");
+  assert.ok(!names.includes("children"), "children stays YAML only");
   assert.equal(ed._form.computeLabel({ name: "workday" }), "Workday sensor");
   assert.equal(ed._form.data.show_countdown, true);
   for (const n of ["waste", "birthdays", "show_waste", "show_birthdays", "show_saint"]) assert.ok(names.includes(n), n);
@@ -470,8 +470,19 @@ test("the editors keep options at their default out of the YAML", () => {
   assert.equal(fr._form.data.show_saint, true);
   const sent = [];
   fr.dispatchEvent = (ev) => sent.push(ev.detail.config);
-  fr._form.listeners["value-changed"]({ detail: { value: { language: "fr", show_saint: true }, }, stopPropagation() {} });
+  const ignore = fr._form.data.ignore;
+  assert.equal(ignore, "enseignant|prérentrée|teacher");
+  const change = (value) => fr._form.listeners["value-changed"]({ detail: { value }, stopPropagation() {} });
+  change({ language: "fr", show_saint: true, ignore });
   assert.deepEqual({ ...sent.at(-1) }, { language: "fr" });
+  // `ignore`: a pattern of one's own is kept; cleared (sent empty or dropped by the form), every event counts.
+  change({ language: "fr", ignore: "conférence" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "conférence" });
+  change({ language: "fr", ignore: "" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "" });
+  change({ language: "fr" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "" });
+  assert.equal(fr._form.computeLabel({ name: "ignore" }), "Événements à ignorer");
 });
 
 test("the cards register their pickers and sizes", () => {
@@ -607,3 +618,4 @@ test("the status pill is placed by measure: beside the whole title, else under t
     assert.ok(fit.includes(part), `_fitPill measures ${part}`);
   assert.match(src, /morph\(root, tpl\.content\);\n {4}\}\n {4}this\._fitPill\(\);/, "fitted again after each render");
 });
+
