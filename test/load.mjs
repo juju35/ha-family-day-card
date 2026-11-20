@@ -117,7 +117,7 @@ export const load = () => {
   return vm.runInContext(
     `${source}
     ({ STRINGS, KINDS, esc, lang, intlLocale, dayKey, addDays, diffDays, weekday, eventSpan, parseEvents, covering, discover, childName,
-       timetableOf, subjectName, cleanConfig, weekdayName, CAL_CACHE, WORKDAY_CACHE, SAINTS, NAME_DAYS, saintOf, binColor, birthdayName, birthdayAge, FamilyDayCard: customElements.get("family-day-card"),
+       timetableOf, subjectName, cleanConfig, weekdayName, CAL_CACHE, WORKDAY_CACHE, checkDate, SAINTS, NAME_DAYS, saintOf, binColor, birthdayName, birthdayAge, FamilyDayCard: customElements.get("family-day-card"),
        FamilyDayMiniCard: customElements.get("family-day-mini-card"), FamilyDayCardEditor: customElements.get("family-day-card-editor"),
        FamilyDayMiniCardEditor: customElements.get("family-day-mini-card-editor"), window, document, setNow })`,
     sandbox,

@@ -94,6 +94,27 @@ test("calendar events: all-day and timed events, end exclusive, ignored summarie
   assert.equal(fd.parseEvents([{ start: { date: "2027-05-07" }, summary: "a" }], "UTC", "(").length, 1);
 });
 
+test("a school holidays calendar is told from other calendars by its name", () => {
+  const fd = load();
+  const school = (id, name) => {
+    const hass = { entities: { [id]: { entity_id: id, platform: "local_calendar" } }, states: { [id]: { state: "off", attributes: { friendly_name: name } } }, devices: {} };
+    return fd.discover(hass).school_holidays;
+  };
+  for (const [id, name] of [
+    ["calendar.vacances_scolaires", "Vacances scolaires"],
+    ["calendar.skollov", "Skollov"],
+    ["calendar.school", "Höstlov och sportlov"],
+    ["calendar.schulferien", "Schulferien"],
+  ])
+    assert.equal(school(id, name), id, name);
+  for (const [id, name] of [
+    ["calendar.lovelace_events", "Lovelace events"],
+    ["calendar.glovebox", "Glove box"],
+    ["calendar.family", "Family"],
+  ])
+    assert.equal(school(id, name), undefined, name);
+});
+
 test("sources and children are found through the registries", () => {
   const { fd, hass } = setup(SCENARIOS.friday);
   const found = fd.discover(hass);
@@ -435,9 +456,9 @@ test("the editors keep options at their default out of the YAML", () => {
   ed.setConfig({});
   ed.hass = { states: {}, entities: {}, devices: {}, language: "en" };
   const names = ed._form.schema.flatMap((s) => (s.schema ? s.schema.map((x) => x.name) : [s.name]));
-  for (const n of ["title", "workday", "school_holidays", "public_holidays", "school_days", "show_children", "show_holidays", "show_public_holidays", "show_countdown", "language", "zoom"])
+  for (const n of ["title", "workday", "school_holidays", "ignore", "public_holidays", "school_days", "show_children", "show_holidays", "show_public_holidays", "show_countdown", "language", "zoom"])
     assert.ok(names.includes(n), n);
-  assert.ok(!names.includes("children") && !names.includes("ignore"), "children and ignore stay YAML only");
+  assert.ok(!names.includes("children"), "children stays YAML only");
   assert.equal(ed._form.computeLabel({ name: "workday" }), "Workday sensor");
   assert.equal(ed._form.data.show_countdown, true);
   for (const n of ["waste", "birthdays", "show_waste", "show_birthdays", "show_saint"]) assert.ok(names.includes(n), n);
@@ -449,8 +470,19 @@ test("the editors keep options at their default out of the YAML", () => {
   assert.equal(fr._form.data.show_saint, true);
   const sent = [];
   fr.dispatchEvent = (ev) => sent.push(ev.detail.config);
-  fr._form.listeners["value-changed"]({ detail: { value: { language: "fr", show_saint: true }, }, stopPropagation() {} });
+  const ignore = fr._form.data.ignore;
+  assert.equal(ignore, "enseignant|prérentrée|teacher");
+  const change = (value) => fr._form.listeners["value-changed"]({ detail: { value }, stopPropagation() {} });
+  change({ language: "fr", show_saint: true, ignore });
   assert.deepEqual({ ...sent.at(-1) }, { language: "fr" });
+  // `ignore`: a pattern of one's own is kept; cleared (sent empty or dropped by the form), every event counts.
+  change({ language: "fr", ignore: "conférence" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "conférence" });
+  change({ language: "fr", ignore: "" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "" });
+  change({ language: "fr" });
+  assert.deepEqual({ ...sent.at(-1) }, { language: "fr", ignore: "" });
+  assert.equal(fr._form.computeLabel({ name: "ignore" }), "Événements à ignorer");
 });
 
 test("the cards register their pickers and sizes", () => {
@@ -585,4 +617,13 @@ test("the status pill is placed by measure: beside the whole title, else under t
   for (const part of ["fdTextWidth(name)", 'classList.add("below")', 'classList.add("dot-only")', '.querySelector(".fd-ground")', "tx.scrollWidth <= tx.clientWidth"])
     assert.ok(fit.includes(part), `_fitPill measures ${part}`);
   assert.match(src, /morph\(root, tpl\.content\);\n {4}\}\n {4}this\._fitPill\(\);/, "fitted again after each render");
+});
+
+test("the workday answers of the days gone by are dropped", () => {
+  const fd = load();
+  fd.WORKDAY_CACHE.set("binary_sensor.workday|2026-01-05", { at: 0, loading: false, workday: true });
+  fd.WORKDAY_CACHE.set("binary_sensor.workday|2026-01-06", { at: 0, loading: true, workday: null, waiting: new Set() });
+  const hass = { callWS: () => new Promise(() => {}) };
+  fd.checkDate(hass, "binary_sensor.workday", "2026-11-21", () => {});
+  assert.deepEqual([...fd.WORKDAY_CACHE.keys()], ["binary_sensor.workday|2026-01-06", "binary_sensor.workday|2026-11-21"]);
 });

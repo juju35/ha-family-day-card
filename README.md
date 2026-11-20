@@ -102,7 +102,7 @@ The Marketplace adds the resource `/local/community/ha-family-day-card/family-da
 
 ### Visual editor
 
-Edit a dashboard, click **Add card** and search for **Family Day Card** or **Family Day Mini Card**. The Workday sensor and the calendars found are used without any setting; pick other ones if you have several, choose the school days, what is shown and the language. The preview updates live, and options left at their default are kept out of the generated YAML. The list of children (`children`) and the `ignore` pattern are YAML only.
+Edit a dashboard, click **Add card** and search for **Family Day Card** or **Family Day Mini Card**. The Workday sensor and the calendars found are used without any setting; pick other ones if you have several, choose the school days, what is shown and the language. The preview updates live, and options left at their default are kept out of the generated YAML. The list of children (`children`) is YAML only; the `ignore` pattern is a text field showing its default (clear it to count every event).
 
 ### Minimal
 
@@ -167,7 +167,7 @@ language: fr
 | `public_holidays` | both | First Holiday calendar | Calendar of the public holidays; `false` to use none |
 | `school_days` | both | Workday's days, else Monday to Friday | Days of the week with school (`mon` … `sun`), e.g. without Wednesday for a primary school |
 | `children` | both | Pronote children found | **YAML only.** List of children: `name` and their Pronote timetable sensors `tomorrow` (tomorrow's timetable), and optionally `next_day` and `today`. Replaces the children found; `[]` hides them |
-| `ignore` | both | `enseignant\|prérentrée\|teacher` | **YAML only.** Regular expression (case-insensitive) of school holidays events that are not holidays for the pupils, such as the teachers' pre-term day of the ministry's calendar; `""` keeps every event |
+| `ignore` | both | `enseignant\|prérentrée\|teacher` | Regular expression (case-insensitive) of school holidays events that are not holidays for the pupils, such as the teachers' pre-term day of the ministry's calendar; `""` keeps every event |
 | `illustration` | both | `true` | Illustrated header: an animated 90 px banner showing what tomorrow is — the school and its bus (school day), the park and its swings (weekend), the beach on a sand strip (school holidays), the town hall with flags and fireworks (public holiday), a hammock (day off) — with the round icon coloured by tomorrow's kind of day. `false` brings back the classic header with its status pill |
 | `illustration_theme` | both | `auto` | Day or night picture: `auto` (follows the Home Assistant theme: night with a dark theme, day with a light theme), `day` or `night` forces it |
 | `show_title` | both | `true` | Show the title in the header (e.g. `false` under a section heading of your own) |
@@ -180,7 +180,7 @@ language: fr
 | `show_waste` | both | `true` | Chip of each bin collected tomorrow (to put out tonight) |
 | `show_birthdays` | both | `true` | Chip of each birthday of today and tomorrow |
 | `show_saint` | both | `true` in French, else `false` | Chips of today's and tomorrow's name days, from the French calendar of saints |
-| `show_today` | full | `false` | Split the full card into two sections — **Today** and **Tomorrow** — each with its short date, picture, answer, status pill and chips (bins under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's rows |
+| `show_today` | both | `false` | Split the full card into two sections — **Today** and **Tomorrow** — each with its short date, picture, answer, status pill and chips (bins under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's rows |
 | `extras` | both | `both` | Which day's chips to show: `both`, `today` or `tomorrow`. On the full card the two days are split into labelled **Today** / **Tomorrow** groups; the mini card keeps them in one row with a *· tomorrow* cue |
 | `show_countdown` | mini | `true` | School holidays countdown under the mini card's answer |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card (with the same options, so `show_children`, `show_holidays`… can be set on the mini card too, in YAML or in its visual editor) and switches back; a click outside the card also brings the compact view back. `false` removes the button |
