@@ -619,3 +619,11 @@ test("the status pill is placed by measure: beside the whole title, else under t
   assert.match(src, /morph\(root, tpl\.content\);\n {4}\}\n {4}this\._fitPill\(\);/, "fitted again after each render");
 });
 
+test("the workday answers of the days gone by are dropped", () => {
+  const fd = load();
+  fd.WORKDAY_CACHE.set("binary_sensor.workday|2026-01-05", { at: 0, loading: false, workday: true });
+  fd.WORKDAY_CACHE.set("binary_sensor.workday|2026-01-06", { at: 0, loading: true, workday: null, waiting: new Set() });
+  const hass = { callWS: () => new Promise(() => {}) };
+  fd.checkDate(hass, "binary_sensor.workday", "2026-11-21", () => {});
+  assert.deepEqual([...fd.WORKDAY_CACHE.keys()], ["binary_sensor.workday|2026-01-06", "binary_sensor.workday|2026-11-21"]);
+});

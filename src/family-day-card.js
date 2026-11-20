@@ -1723,6 +1723,8 @@ const checkDate = (hass, id, key, onLoad) => {
   }
   if (typeof hass.callWS !== "function") return null;
   const ticket = { at: Date.now(), loading: true, workday: c?.workday ?? null, waiting: new Set([onLoad]) };
+  // One entry per sensor and day: the days gone by (answers older than two refreshes) are dropped.
+  for (const [key2, old] of WORKDAY_CACHE) if (!old.loading && Date.now() - old.at > 2 * CALENDAR_REFRESH_MS) WORKDAY_CACHE.delete(key2);
   WORKDAY_CACHE.set(k, ticket);
   Promise.resolve(
     hass.callWS({
