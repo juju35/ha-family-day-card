@@ -180,7 +180,7 @@ language: fr
 | `show_waste` | both | `true` | Chip of each bin collected tomorrow (to put out tonight) |
 | `show_birthdays` | both | `true` | Chip of each birthday of today and tomorrow |
 | `show_saint` | both | `true` in French, else `false` | Chips of today's and tomorrow's name days, from the French calendar of saints |
-| `show_today` | full | `false` | Split the full card into two sections — **Today** and **Tomorrow** — each with its short date, picture, answer, status pill and chips (bins under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's rows |
+| `show_today` | both | `false` | Split the full card into two sections — **Today** and **Tomorrow** — each with its short date, picture, answer, status pill and chips (bins under **Today**, birthdays and name days on their own day). **Tomorrow** keeps the children's rows |
 | `extras` | both | `both` | Which day's chips to show: `both`, `today` or `tomorrow`. On the full card the two days are split into labelled **Today** / **Tomorrow** groups; the mini card keeps them in one row with a *· tomorrow* cue |
 | `show_countdown` | mini | `true` | School holidays countdown under the mini card's answer |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card (with the same options, so `show_children`, `show_holidays`… can be set on the mini card too, in YAML or in its visual editor) and switches back; a click outside the card also brings the compact view back. `false` removes the button |
