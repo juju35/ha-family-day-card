@@ -1,6 +1,6 @@
 {
   "name": "ha-family-day-card",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Lovelace cards for Home Assistant that answer \"is there school tomorrow?\": school days, weekends, French school holidays and public holidays, with the first lesson of each child from Pronote.",
   "private": true,
   "type": "module",

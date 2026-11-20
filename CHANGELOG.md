@@ -1,10 +1,16 @@
 # Changelog
 
-## 1.4.2 - 2026-11-20
+## 1.5.0 - 2026-11-20
+
+### Features
+- Visual editor: the `ignore` pattern (school holidays events that are not pupils' holidays) is a text field under the school holidays calendar, showing its default; left as is it stays out of the YAML, cleared it counts every event. In the 22 languages.
 
 ### Fixes
 - School holidays discovery: a calendar is no longer taken for the school holidays because its id or name merely contains "lov" (a `lovelace` or `glove` calendar); the Swedish *lov* (sportlov, höstlov…) still counts at the end of a word.
 - README: `show_today` is marked for both cards — the mini card's detailed view shows it too.
+
+### Performance
+- The Workday answers of the days gone by are dropped from the shared cache instead of piling up, one per sensor and day, until the page is reloaded.
 
 ## 1.4.1 - 2026-11-18
 
