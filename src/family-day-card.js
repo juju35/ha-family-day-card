@@ -3306,7 +3306,7 @@ for (const card of [
   },
   { type: "family-day-mini-card", name: "Family Day Mini Card", description: "One line for tomorrow (school at 8:00, weekend, holidays) and the school holidays countdown, with a detail button." },
 ]) {
-  if (!window.customCards.some((c) => c.type === card.type)) window.customCards.push({ ...card, preview: true, documentationURL: "https://github.com/juju35/ha-family-day-card" });
+  if (!window.customCards.some((c) => c.type === card.type)) window.customCards.push({ ...card, preview: false, documentationURL: "https://github.com/juju35/ha-family-day-card" });
 }
 
 console.info(`%c FAMILY-DAY-CARD %c v${VERSION} `, "color: white; background: #d81b60; font-weight: 700;", "color: #d81b60; background: white; font-weight: 700;");
