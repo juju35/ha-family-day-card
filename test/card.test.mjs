@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { calendarEvents, IDS, SCENARIOS, scenario, workdayResponse } from "../scripts/mock-states.mjs";
 import { load } from "./load.mjs";
+import { source } from "./source.mjs";
 
 const flush = () => new Promise((r) => setTimeout(r, 0));
 
@@ -403,7 +403,7 @@ test("every language has every English text, and the same placeholders", () => {
 });
 
 test("every English text is used by the cards", () => {
-  const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
+  const src = source;
   const code = src.slice(src.indexOf("// Icons"));
   const fd = load();
   for (const k of Object.keys(fd.STRINGS.en)) {
@@ -555,7 +555,7 @@ test("name days, bin colours, birthday names and ages", () => {
 
 test("the sun's rays turn around its centre in every browser (transform-box of the rays)", () => {
   // `.art-svg rect { transform-box: fill-box }` would make Safari read a ray's rotate(… 12 12) around the ray's own box.
-  const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
+  const src = source;
   assert.match(src, /\.a-sun \.rays rect \{ transform-box: view-box; \}/);
 });
 
@@ -604,7 +604,7 @@ test("the illustrated header: tomorrow's scene and ground, the icon coloured by 
 });
 
 test("the status pill is placed by measure: beside the whole title, else under the subtitle, else its dot alone", () => {
-  const src = readFileSync(new URL("../src/family-day-card.js", import.meta.url), "utf8");
+  const src = source;
   // No fixed width or share of the title block decides where the pill goes
   assert.doesNotMatch(src, /@container fd-titles|\.title-row > \.chip \{[^}]*max-width: \d/);
   assert.match(src, /\.titles\.below \.title-row > \.chip \{ display: none; \}/);
