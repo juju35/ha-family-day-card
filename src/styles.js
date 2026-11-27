@@ -4,7 +4,7 @@
 
 export const BASE_STYLE = `
   :host { --fd-accent: #d81b60; --fd-school: #1e88e5; --fd-weekend: var(--success-color, #43a047); --fd-holidays: #fb8c00;
-          --fd-public: #5e35b1; --fd-off: #00897b; --fd-idle: var(--disabled-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
+          --fd-public: #5e35b1; --fd-off: #00897b; --fd-idle: var(--secondary-text-color, #9e9e9e); --fd-warn: var(--warning-color, #ffa600); }
   ha-card { overflow: hidden; container: fd-card / inline-size; }
   /* A size container has no width of its own: this zero-height grid gives the card a natural width without a minimum. */
   :host { display: block; min-width: 0; --fd-natural-width: 380px; }
